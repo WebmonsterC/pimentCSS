@@ -1,0 +1,91 @@
+{
+  "fileKey": "Vnc34wL28GUCKuCG7C3lEO",
+  "fileName": "Design-system-Numera11y-v-1.3",
+  "pageId": "1:2623",
+  "pageUrl": "https://www.figma.com/design/Vnc34wL28GUCKuCG7C3lEO/Design-system-Numera11y-v-1.3?node-id=1-2623",
+  "name": "Checkboxes - Radios - Switch",
+  "frameNodeId": "1:3099",
+  "status": "synced",
+  "syncedAt": "2026-05-21",
+  "components": [
+    {
+      "name": "Checkbox",
+      "nodeId": "1:3103",
+      "variants": {
+        "type": ["Default", "Selected", "Indeterminate"],
+        "state": ["Default", "Focus", "Hover", "Disabled", "Error"]
+      },
+      "layout": { "size": "24px", "border": "2px", "radius": "4px" },
+      "classes": [
+        "checkbox",
+        "checkbox--error",
+        "checkbox__control",
+        "checkbox__control--checked",
+        "checkbox__control--indeterminate",
+        "checkbox__control--focus",
+        "checkbox__control--hover",
+        "checkbox__control--disabled",
+        "checkbox__control--error",
+        "checkbox__text--pill"
+      ]
+    },
+    {
+      "name": "Checkbox label",
+      "nodeId": "1:3149",
+      "variants": { "type": ["Default", "Selected"] },
+      "classes": ["checkbox", "checkbox__text", "checkbox__text--pill"]
+    },
+    {
+      "name": "Radio button",
+      "nodeId": "1:3159",
+      "variants": {
+        "type": ["Active", "Inactive"],
+        "state": ["Default", "Focus", "Hover", "Disabled"]
+      },
+      "layout": { "size": "24px", "focusRing": "32px" },
+      "classes": [
+        "radio",
+        "radio__control",
+        "radio__control--checked",
+        "radio__control--focus",
+        "radio__control--hover",
+        "radio__control--disabled",
+        "radio__text--pill"
+      ]
+    },
+    {
+      "name": "Radio button label",
+      "nodeId": "1:3191",
+      "variants": { "type": ["Default", "Selected"] },
+      "classes": ["radio", "radio__text", "radio__text--pill"]
+    },
+    {
+      "name": "Switch (.Items)",
+      "nodeId": "1:3200",
+      "variants": {
+        "type": ["Active", "Inactive"],
+        "state": ["Default", "Focus", "Hover", "Disabled"]
+      },
+      "layout": { "width": "48px", "height": "26px", "knob": "24×20px" },
+      "classes": [
+        "switch",
+        "switch__control",
+        "switch__control--on",
+        "switch__control--focus",
+        "switch__control--hover",
+        "switch__control--disabled",
+        "switch__knob"
+      ]
+    },
+    {
+      "name": "Switch label",
+      "nodeId": "1:3240",
+      "classes": ["switch", "switch__text"]
+    }
+  ],
+  "codePaths": [
+    "scss/components/_checkbox.scss",
+    "scss/components/_radio.scss",
+    "scss/components/_switch.scss"
+  ]
+}

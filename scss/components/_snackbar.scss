@@ -1,0 +1,191 @@
+/**
+ * Snackbar — PimentCSS v1
+ */
+@use "../abstracts/variables" as v;
+
+.#{v.class-seg()}snackbar {
+  --snackbar-accent: var(--text-action);
+  --snackbar-progress-fill: var(--surface-action);
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: v.$snackbar-max-width;
+  padding: v.$snackbar-padding-y v.$snackbar-padding-x calc(v.$snackbar-padding-y + #{v.$progress-height-sm});
+  background: var(--surface-primary);
+  border: v.$border-width-1 solid var(--border-primary);
+  border-radius: v.$border-radius-8;
+  box-shadow: var(--shadow-sm);
+  font-family: var(--font-family-body);
+  overflow: hidden;
+}
+
+.#{v.class-seg()}snackbar--brand {
+  --snackbar-accent: var(--text-action);
+  --snackbar-progress-fill: var(--surface-action);
+}
+
+.#{v.class-seg()}snackbar--information {
+  --snackbar-accent: var(--text-information);
+  --snackbar-progress-fill: var(--icon-information);
+}
+
+.#{v.class-seg()}snackbar--success {
+  --snackbar-accent: var(--text-success);
+  --snackbar-progress-fill: var(--icon-success);
+}
+
+.#{v.class-seg()}snackbar--warning {
+  --snackbar-accent: var(--text-warning);
+  --snackbar-progress-fill: var(--icon-warning);
+}
+
+.#{v.class-seg()}snackbar--error {
+  --snackbar-accent: var(--text-error);
+  --snackbar-progress-fill: var(--icon-error);
+}
+
+.#{v.class-seg()}snackbar__main {
+  display: flex;
+  gap: v.$snackbar-gap;
+  align-items: flex-start;
+}
+
+.#{v.class-seg()}snackbar__icon {
+  flex-shrink: 0;
+  width: v.$snackbar-icon-size;
+  height: v.$snackbar-icon-size;
+  color: var(--snackbar-accent);
+
+  svg,
+  .ph {
+    width: 100%;
+    height: 100%;
+    font-size: inherit;
+  }
+}
+
+.#{v.class-seg()}snackbar__body {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  gap: v.$snackbar-gap;
+  min-width: 0;
+}
+
+.#{v.class-seg()}snackbar__text {
+  display: flex;
+  flex-direction: column;
+  gap: v.$snackbar-text-gap;
+}
+
+.#{v.class-seg()}snackbar__title {
+  margin: 0;
+  font-size: var(--font-size-body-large);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-body-large);
+  letter-spacing: var(--letter-spacing-body-large);
+  color: var(--snackbar-accent);
+}
+
+.#{v.class-seg()}snackbar__description {
+  margin: 0;
+  font-size: var(--font-size-body-medium);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-body-medium);
+  letter-spacing: var(--letter-spacing-body-medium);
+  color: var(--text-body);
+}
+
+.#{v.class-seg()}snackbar__link {
+  display: inline-flex;
+  align-items: center;
+  gap: v.$btn-gap;
+  align-self: flex-start;
+  padding: 2px;
+  border: 0;
+  border-radius: v.$border-radius-4;
+  background: none;
+  font-family: inherit;
+  font-size: var(--font-size-body-medium);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-body-medium);
+  letter-spacing: var(--letter-spacing-body-medium);
+  color: var(--snackbar-accent);
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover .#{v.class-seg()}snackbar__link-label {
+    text-decoration: underline;
+  }
+}
+
+.#{v.class-seg()}snackbar__link-icon {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: v.$snackbar-link-icon-size;
+  height: v.$snackbar-link-icon-size;
+  color: currentColor;
+  text-decoration: none;
+
+  svg,
+  .ph,
+  i[class*="ph-"] {
+    width: 100%;
+    height: 100%;
+    font-size: v.$snackbar-link-icon-size;
+  }
+}
+
+.#{v.class-seg()}snackbar__link-label {
+  white-space: nowrap;
+}
+
+.#{v.class-seg()}snackbar__close {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: v.$snackbar-close-target;
+  height: v.$snackbar-close-target;
+  margin: calc((v.$snackbar-close-target - v.$snackbar-close-icon-size) * -0.5);
+  padding: 0;
+  border: 0;
+  border-radius: v.$border-radius-8;
+  background: none;
+  color: var(--text-muted);
+  cursor: pointer;
+
+  svg,
+  .ph {
+    width: v.$snackbar-close-icon-size;
+    height: v.$snackbar-close-icon-size;
+    font-size: v.$snackbar-close-icon-size;
+  }
+
+  &:hover {
+    color: var(--text-body);
+    background: var(--surface-muted);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--border-focus);
+    outline-offset: 2px;
+  }
+}
+
+.#{v.class-seg()}snackbar__progress {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  max-width: none;
+  border-radius: 0;
+
+  .#{v.class-seg()}progress__fill {
+    background: var(--snackbar-progress-fill);
+  }
+}

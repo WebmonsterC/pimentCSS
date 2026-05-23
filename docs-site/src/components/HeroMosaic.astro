@@ -1,0 +1,61 @@
+---
+/** Hero showcase: native markup only (no HTML string injection). */
+const swatches = [
+  { name: 'Lagoon', bg: 'var(--information-400)' },
+  { name: 'Mango', bg: 'var(--accent-400)' },
+  { name: 'Canopy', bg: 'var(--success-400)' },
+  { name: 'Papaya', bg: 'var(--psite-papaya)' },
+];
+---
+
+<div class="psite-mosaic">
+  <div class="psite-mosaic__chrome" aria-hidden="true">
+    <span></span><span></span><span></span>
+    <p class="psite-mosaic__chrome-title">PimentCSS · preview</p>
+  </div>
+
+  <div class="psite-mosaic__palette" aria-hidden="true">
+    {swatches.map((s) => (
+      <div class="psite-mosaic__palette-item">
+        <span
+          class="psite-mosaic__swatch"
+          style={`background: ${s.bg}`}
+        ></span>
+        <span class="psite-mosaic__swatch-name">{s.name}</span>
+      </div>
+    ))}
+  </div>
+
+  <div class="psite-mosaic__demo">
+    <div class="alert alert--success alert--with-icon" role="status">
+      <span class="alert__icon" aria-hidden="true">
+        <i class="ph ph-check-circle" aria-hidden="true"></i>
+      </span>
+      <div class="alert__content">
+        <p class="alert__title">Contrast verified</p>
+        <p class="alert__body">Semantic pairs for light and dark.</p>
+      </div>
+    </div>
+
+    <div class="field" role="presentation">
+      <span class="field__icon" aria-hidden="true">
+        <i class="ph ph-magnifying-glass" aria-hidden="true"></i>
+      </span>
+      <input type="search" class="field__input" placeholder="Search components" disabled tabindex="-1" />
+    </div>
+
+    <div class="psite-mosaic__actions">
+      <button type="button" class="btn btn--outline" disabled tabindex="-1">Outline</button>
+      <button type="button" class="btn btn--primary" disabled tabindex="-1">
+        <i class="ph ph-arrow-right btn__icon" aria-hidden="true"></i>
+        Primary
+      </button>
+    </div>
+
+    <div class="psite-mosaic__tags">
+      <span class="tag tag--information">Lagoon</span>
+      <span class="tag tag--mango">Mango</span>
+      <span class="tag tag--success">Canopy</span>
+    </div>
+  </div>
+</div>

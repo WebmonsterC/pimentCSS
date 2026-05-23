@@ -1,0 +1,103 @@
+{
+  "brand": "PimentCSS",
+  "version": "1.0",
+  "sections": [
+    {
+      "id": "start",
+      "title": "Getting started",
+      "items": [
+        { "href": "index.html", "label": "Introduction", "keywords": "home intro" },
+        { "href": "whats-new.html", "label": "What's new", "keywords": "changelog release v1 whats new" },
+        { "href": "installation.html", "label": "Installation", "keywords": "npm cdn sass" },
+        { "href": "customization.html", "label": "Customization", "keywords": "theme variables sass" }
+      ]
+    },
+    {
+      "id": "foundation",
+      "title": "Foundations",
+      "items": [
+        { "href": "colors.html", "label": "Colors", "keywords": "palette oklch tokens" },
+        { "href": "typography.html", "label": "Typography", "keywords": "font text heading" },
+        { "href": "layout.html", "label": "Layout", "keywords": "grid container spacing" },
+        { "href": "depth.html", "label": "Depth & shadows", "keywords": "elevation shadow z-index" },
+        { "href": "theme-toggle.html", "label": "Theme toggle", "keywords": "dark light mode color scheme" },
+        { "href": "icons.html", "label": "Icons", "keywords": "icon svg phosphor slot aria" }
+      ]
+    },
+    {
+      "id": "forms",
+      "title": "Forms",
+      "items": [
+        { "href": "input-fields.html", "label": "Input fields", "keywords": "input label field textarea" },
+        { "href": "checkboxes-radios-switch.html", "label": "Checkboxes, radios & switches", "keywords": "checkbox radio switch selection" },
+        { "href": "form.html", "label": "Form", "keywords": "form contact" },
+        { "href": "date-picker.html", "label": "Date picker", "keywords": "calendar date" },
+        { "href": "autocomplete.html", "label": "Autocomplete", "keywords": "suggest search combobox" }
+      ]
+    },
+    {
+      "id": "actions",
+      "title": "Actions",
+      "items": [
+        { "href": "buttons.html", "label": "Buttons", "keywords": "button btn primary" },
+        { "href": "button-group.html", "label": "Button group", "keywords": "button group segmented" },
+        { "href": "link-breadcrumb.html", "label": "Links & breadcrumb", "keywords": "link breadcrumb" }
+      ]
+    },
+    {
+      "id": "navigation",
+      "title": "Navigation",
+      "items": [
+        { "href": "navigation.html", "label": "Navigation", "keywords": "nav navbar menu" },
+        { "href": "menu-dropdown.html", "label": "Menu & dropdown", "keywords": "dropdown menu popover" },
+        { "href": "tabs.html", "label": "Tabs", "keywords": "tabs tablist" },
+        { "href": "pagination.html", "label": "Pagination", "keywords": "pager pages" },
+        { "href": "anchor-inpage-nav.html", "label": "In-page anchors", "keywords": "anchor scroll spy" },
+        { "href": "carousel.html", "label": "Carousel", "keywords": "slider carousel" }
+      ]
+    },
+    {
+      "id": "content",
+      "title": "Content",
+      "items": [
+        { "href": "table.html", "label": "Tables", "keywords": "table data grid" },
+        { "href": "list.html", "label": "Lists", "keywords": "list ul ol" },
+        { "href": "tree.html", "label": "Tree", "keywords": "tree hierarchy" },
+        { "href": "badge.html", "label": "Badges", "keywords": "badge pill label" },
+        { "href": "tags.html", "label": "Tags", "keywords": "tag chip" },
+        { "href": "keyline.html", "label": "Dividers", "keywords": "divider hr keyline" },
+        { "href": "placeholder.html", "label": "Placeholder", "keywords": "skeleton loading" }
+      ]
+    },
+    {
+      "id": "feedback",
+      "title": "Feedback",
+      "items": [
+        { "href": "alerts.html", "label": "Alerts", "keywords": "alert dialog dismiss feedback status" },
+        { "href": "modals.html", "label": "Modals", "keywords": "modal dialog overlay focus trap aria-modal" },
+        { "href": "cards.html", "label": "Cards", "keywords": "card copy newsletter blank slot media ratio" },
+        { "href": "snackbar.html", "label": "Snackbar", "keywords": "toast notification" },
+        { "href": "progress.html", "label": "Progress", "keywords": "progress bar loader" },
+        { "href": "loader.html", "label": "Loader", "keywords": "spinner loading" }
+      ]
+    },
+    {
+      "id": "layout-patterns",
+      "title": "Patterns",
+      "items": [
+        { "href": "patterns.html", "label": "Overview", "keywords": "patterns compose page recipe" },
+        { "href": "pattern-contact-form.html", "label": "Contact form", "keywords": "pattern form contact" },
+        { "href": "pattern-toolbar-modal.html", "label": "Toolbar + modal", "keywords": "pattern toolbar modal alert" },
+        { "href": "pattern-table-pagination.html", "label": "Table + pagination", "keywords": "pattern table pagination data" },
+        { "href": "slots-layouts.html", "label": "Slots & layouts", "keywords": "slot layout template wireframe" }
+      ]
+    },
+    {
+      "id": "a11y",
+      "title": "Accessibility",
+      "items": [
+        { "href": "a11y.html", "label": "Accessibility guide", "keywords": "a11y wcag focus contrast" }
+      ]
+    }
+  ]
+}

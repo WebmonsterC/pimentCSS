@@ -1,0 +1,61 @@
+/**
+ * Link — PimentCSS v1
+ */
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+.#{v.class-seg()}link {
+  display: inline-flex;
+  align-items: center;
+  gap: v.$link-gap;
+  padding: v.$link-padding;
+  border: 0;
+  border-radius: v.$border-radius-4;
+  background: transparent;
+  color: var(--text-action);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-body-medium);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-body-medium);
+  letter-spacing: var(--letter-spacing-body-medium);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color v.$motion-duration-fast v.$motion-easing,
+    color v.$motion-duration-fast v.$motion-easing;
+
+  &:hover:not(:disabled):not([aria-disabled="true"]),
+  &.#{v.class-seg()}link--hover {
+    background: var(--surface-action-hover-2);
+    color: var(--primary-600);
+  }
+
+  &:focus-visible {
+    outline: v.$border-width-2 solid var(--border-focus);
+    outline-offset: 2px;
+  }
+
+  &:disabled,
+  &[aria-disabled="true"],
+  &.#{v.class-seg()}link--disabled {
+    background: var(--surface-disabled);
+    color: var(--text-on-disabled);
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+
+.#{v.class-seg()}link--inline {
+  text-decoration: underline;
+  text-underline-position: from-font;
+}
+
+.#{v.class-seg()}link__icon {
+  flex-shrink: 0;
+  width: v.$link-icon-size;
+  height: v.$link-icon-size;
+  color: currentColor;
+}
+
+.#{v.class-seg()}link__label {
+  white-space: nowrap;
+}

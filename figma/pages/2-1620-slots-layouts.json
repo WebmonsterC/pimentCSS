@@ -1,0 +1,41 @@
+{
+  "fileKey": "Vnc34wL28GUCKuCG7C3lEO",
+  "fileName": "Design-system-Numera11y-v-1.3",
+  "pageId": "2:1619",
+  "pageUrl": "https://www.figma.com/design/Vnc34wL28GUCKuCG7C3lEO/Design-system-Numera11y-v-1.3?node-id=2-1619",
+  "name": "Slots layouts",
+  "frameNodeId": "2:1620",
+  "status": "synced",
+  "syncedAt": "2026-05-21",
+  "components": [
+    {
+      "name": "Slot",
+      "nodeId": "2:1624",
+      "css": "scss/components/_slot.scss",
+      "specs": { "padding": "8px", "minWidth": "139px", "minHeight": "42px" }
+    },
+    {
+      "name": "Column",
+      "nodeId": "2:1628",
+      "variants": ["1", "2", "3", "4", "5", "6"],
+      "nodeIds": ["2:1629", "2:1631", "2:1635", "2:1640", "2:1646", "2:1653"],
+      "css": "scss/components/_slots-layout.scss",
+      "class": "slots-layout slots-layout--column",
+      "gap": "24px"
+    },
+    {
+      "name": "Row",
+      "nodeId": "2:1662",
+      "variants": ["1", "2", "3", "4", "5", "6"],
+      "nodeIds": ["2:1663", "2:1665", "2:1669", "2:1674", "2:1680", "2:1687"],
+      "css": "scss/components/_slots-layout.scss",
+      "class": "slots-layout slots-layout--row",
+      "gap": "24px",
+      "width": "139px"
+    }
+  ],
+  "codePaths": [
+    "scss/components/_slot.scss",
+    "scss/components/_slots-layout.scss"
+  ]
+}

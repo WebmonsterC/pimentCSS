@@ -1,0 +1,114 @@
+/**
+ * Carousel — PimentCSS v1
+ * 48px arrows + horizontal scroll bar
+ */
+@use "../abstracts/variables" as v;
+
+.#{v.class-seg()}carousel {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: v.$carousel-gap;
+  width: 100%;
+  max-width: v.$carousel-max-width;
+}
+
+/* --- Arrows --- */
+.#{v.class-seg()}carousel__arrow {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: v.$carousel-arrow-size;
+  height: v.$carousel-arrow-size;
+  padding: v.$carousel-arrow-padding;
+  border: v.$border-width-2 solid var(--border-action);
+  border-radius: var(--border-radius-round);
+  background: var(--surface-primary);
+  color: var(--text-action);
+  cursor: pointer;
+  transition:
+    background-color v.$motion-duration-fast v.$motion-easing,
+    border-color v.$motion-duration-fast v.$motion-easing;
+
+  &:hover:not(:disabled):not([aria-disabled="true"]),
+  &.#{v.class-seg()}carousel__arrow--hover {
+    background: var(--surface-action-hover-2);
+    border-color: var(--border-action-hover);
+  }
+
+  &:focus-visible {
+    outline: v.$border-width-2 solid var(--border-focus);
+    outline-offset: 4px;
+  }
+
+  &:disabled,
+  &[aria-disabled="true"] {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+}
+
+.#{v.class-seg()}carousel__arrow-icon {
+  display: block;
+  width: v.$carousel-arrow-icon;
+  height: v.$carousel-arrow-icon;
+  flex-shrink: 0;
+}
+
+.#{v.class-seg()}carousel__arrow--prev .#{v.class-seg()}carousel__arrow-icon {
+  transform: scaleX(-1);
+}
+
+/* --- Scroll bar --- */
+.#{v.class-seg()}carousel__scrollbar {
+  position: relative;
+  flex: 1 1 auto;
+  min-width: 0;
+  /* content-box: global border-box + 2px height + vertical padding collapsed the track to 0 */
+  box-sizing: content-box;
+  height: v.$carousel-scrollbar-height;
+  padding: 2px 0;
+  cursor: pointer;
+  transition: height v.$motion-duration-fast v.$motion-easing;
+
+  &:hover,
+  &.#{v.class-seg()}carousel__scrollbar--hover {
+    height: v.$carousel-scrollbar-height-hover;
+    padding: 0;
+  }
+
+  &:focus-within .#{v.class-seg()}carousel__scrollbar-thumb,
+  &.#{v.class-seg()}carousel__scrollbar--focus .#{v.class-seg()}carousel__scrollbar-thumb {
+    outline: v.$border-width-2 solid var(--border-focus);
+    outline-offset: 4px;
+  }
+}
+
+.#{v.class-seg()}carousel__scrollbar-track {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: var(--border-primary);
+  border-radius: var(--border-radius-round);
+  overflow: visible;
+}
+
+.#{v.class-seg()}carousel__scrollbar-thumb {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: v.$carousel-scrollbar-thumb-width;
+  height: 100%;
+  min-width: 2rem;
+  background: var(--border-action);
+  border-radius: var(--border-radius-round);
+  transition:
+    background-color v.$motion-duration-fast v.$motion-easing,
+    height v.$motion-duration-fast v.$motion-easing;
+
+  .#{v.class-seg()}carousel__scrollbar:hover &,
+  .#{v.class-seg()}carousel__scrollbar--hover & {
+    background: var(--border-action-hover);
+  }
+}

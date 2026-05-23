@@ -1,0 +1,27 @@
+@use "../abstracts/variables" as v;
+
+.#{v.class-seg()}d-flex {
+  display: flex !important;
+}
+.#{v.class-seg()}d-inline-flex {
+  display: inline-flex !important;
+}
+.#{v.class-seg()}d-block {
+  display: block !important;
+}
+.#{v.class-seg()}d-none {
+  display: none !important;
+}
+
+.#{v.class-seg()}flex-column {
+  flex-direction: column !important;
+}
+.#{v.class-seg()}align-center {
+  align-items: center !important;
+}
+.#{v.class-seg()}justify-between {
+  justify-content: space-between !important;
+}
+.#{v.class-seg()}text-center {
+  text-align: center !important;
+}

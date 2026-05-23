@@ -1,0 +1,62 @@
+/**
+ * Icon slots — agnostic sizing for SVG or icon fonts (Phosphor, etc.).
+ * PimentCSS does not ship a global icon library.
+ */
+@use "../abstracts/variables" as v;
+
+@mixin slot-icon-child {
+  display: block;
+  width: 100%;
+  height: 100%;
+  line-height: 1;
+}
+
+.#{v.class-seg()}btn__icon,
+.#{v.class-seg()}field__icon,
+.#{v.class-seg()}textarea-field__icon,
+.#{v.class-seg()}tree__toggle-icon,
+.#{v.class-seg()}tree__icon,
+.#{v.class-seg()}table__icon,
+.#{v.class-seg()}alert__icon,
+.#{v.class-seg()}alert__close,
+.#{v.class-seg()}snackbar__icon,
+.#{v.class-seg()}snackbar__link-icon,
+.#{v.class-seg()}tag__icon,
+.#{v.class-seg()}nav-item__icon,
+.#{v.class-seg()}link__icon,
+.#{v.class-seg()}checkbox__icon.ph,
+.#{v.class-seg()}checkbox__icon,
+.#{v.class-seg()}menu__item-icon,
+.#{v.class-seg()}tab__icon,
+.#{v.class-seg()}pagination__item-icon,
+.#{v.class-seg()}carousel__arrow-icon,
+.#{v.class-seg()}btn-group__icon,
+.#{v.class-seg()}anchor-item__icon,
+.#{v.class-seg()}breadcrumb__separator,
+.#{v.class-seg()}list__indicator-icon,
+.#{v.class-seg()}dropdown__chevron {
+  svg,
+  .ph,
+  i[class*="ph-"] {
+    @include slot-icon-child;
+  }
+}
+
+.#{v.class-seg()}pdoc-icon,
+.#{v.class-seg()}pdoc-anchor__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  svg,
+  .ph,
+  i[class*="ph-"] {
+    @include slot-icon-child;
+  }
+}
+
+.#{v.class-seg()}pdoc-anchor__icon {
+  width: 24px;
+  height: 24px;
+}

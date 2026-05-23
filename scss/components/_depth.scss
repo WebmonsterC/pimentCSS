@@ -1,0 +1,65 @@
+/**
+ * Depth demos — (doc only)
+ */
+@use "../abstracts/variables" as v;
+
+.#{v.class-seg()}depth-inset-stage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: v.$space-7;
+  background: var(--neutral-700);
+  border-radius: v.$border-radius-8;
+}
+
+.#{v.class-seg()}depth-inset-item {
+  width: 12rem;
+  height: 12rem;
+  border-radius: v.$border-radius-8;
+  background: var(--neutral-900);
+  box-shadow: var(--shadow-inset);
+}
+
+.#{v.class-seg()}depth-elevation-stage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: v.$space-7;
+  background: var(--surface-muted);
+  border: v.$border-width-1 solid var(--border-default);
+  border-radius: v.$border-radius-8;
+}
+
+.#{v.class-seg()}depth-elevation-item {
+  width: 12rem;
+  height: 12rem;
+  border-radius: v.$border-radius-8;
+  background: var(--surface-elevated);
+  border: v.$border-width-1 solid var(--border-default);
+}
+
+.#{v.class-seg()}depth-spec {
+  margin: 0;
+  font-size: var(--font-size-body-medium);
+  line-height: var(--line-height-body-medium);
+  color: var(--text-body);
+  font-family: ui-monospace, "Cascadia Code", monospace;
+}
+
+.#{v.class-seg()}depth-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  gap: v.$space-4;
+}
+
+.#{v.class-seg()}depth-card {
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-3;
+}
+
+.#{v.class-seg()}depth-card__label {
+  margin: 0;
+  font-weight: var(--font-weight-semi-bold);
+  color: var(--text-body);
+}

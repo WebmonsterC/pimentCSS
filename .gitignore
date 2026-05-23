@@ -1,0 +1,17 @@
+/vendor/
+node_modules/
+.DS_Store
+.env
+
+/tmp-*.json
+
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/playwright/.auth/
+.playwright-auto-fix/
+dist-docs/
+docs-site/node_modules/
+docs-site/.astro/

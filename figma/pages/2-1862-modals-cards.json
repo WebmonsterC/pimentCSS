@@ -1,0 +1,42 @@
+{
+  "fileKey": "Vnc34wL28GUCKuCG7C3lEO",
+  "fileName": "Design-system-Numera11y-v-1.3",
+  "pageId": "2:1788",
+  "pageUrl": "https://www.figma.com/design/Vnc34wL28GUCKuCG7C3lEO/Design-system-Numera11y-v-1.3?node-id=2-1788",
+  "name": "Modals - Cards",
+  "frameNodeId": "2:1862",
+  "status": "synced",
+  "syncedAt": "2026-05-21",
+  "note": "Le frame Figma 2:1862 ne contient que les variantes Cards. Modals implémentés dans le DS (scss/components/_modal.scss) en attendant les frames Figma.",
+  "components": [
+    {
+      "name": "Cards",
+      "nodeId": "2:1865",
+      "variants": [
+        { "name": "Copy card", "nodeId": "2:1866", "maxWidth": "415px" },
+        { "name": "Newsletter signup", "nodeId": "2:1868", "maxWidth": "512px" },
+        { "name": "Blank card", "nodeId": "2:1870", "maxWidth": "187px" }
+      ],
+      "css": "scss/components/_card.scss"
+    },
+    {
+      "name": "Slot",
+      "nodeId": "2:1624",
+      "page": "Slots layouts (2:1619)",
+      "css": "scss/components/_slot.scss"
+    },
+    {
+      "name": "Copy block",
+      "nodeId": "2:1771",
+      "page": "Placeholder (2:1739)",
+      "css": ["scss/components/_copy.scss", "scss/tokens/_typography.scss"]
+    }
+  ],
+  "codePaths": [
+    "scss/components/_modal.scss",
+    "scss/components/_card.scss",
+    "scss/components/_slot.scss",
+    "scss/components/_copy.scss",
+    "tokens/typography.css"
+  ]
+}

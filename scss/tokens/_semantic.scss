@@ -1,0 +1,140 @@
+@use "../abstracts/variables" as v;
+
+@mixin dark-semantic-tokens {
+  --surface-page: var(--neutral-900);
+  --surface-action: var(--primary-600);
+  --surface-action-hover: var(--primary-700);
+  --surface-disabled: var(--neutral-800);
+  --surface-muted: var(--neutral-800);
+  --surface-elevated: var(--neutral-800);
+  --surface-primary: var(--neutral-800);
+
+  --text-body: var(--neutral-200);
+  --text-disabled: var(--neutral-500);
+  --text-filled: var(--neutral-100);
+  --text-heading: var(--neutral-100);
+  --text-headings: var(--neutral-200);
+  --text-on-action: var(--neutral-100);
+  --text-action: var(--primary-300);
+  --text-on-disabled: var(--neutral-400);
+  --text-muted: var(--neutral-400);
+  --text-inverse: var(--neutral-900);
+
+  --text-information: var(--information-200);
+  --text-success: var(--success-200);
+  --text-warning: var(--warning-200);
+  --text-error: var(--error-200);
+
+  --border-default: var(--neutral-700);
+  --border-action: var(--primary-400);
+  --border-focus: var(--primary-300);
+  --border-error: var(--error-400);
+  --border-success: var(--success-400);
+  --border-active: var(--primary-300);
+  --border-hover: var(--neutral-500);
+  --border-disabled: var(--neutral-700);
+  --border-action-hover: var(--primary-300);
+
+  --surface-action-hover-2: var(--primary-900);
+  --surface-disabled-selected: var(--neutral-500);
+  --surface-error: var(--error-900);
+  --border-error-input: var(--error-400);
+  --icon-on-action: var(--text-on-action);
+  --icon-information: var(--information-300);
+  --icon-success: var(--success-300);
+  --icon-warning: var(--warning-300);
+  --icon-error: var(--error-400);
+
+  --surface-information: var(--information-800);
+  --surface-success: var(--success-800);
+  --surface-warning: var(--warning-800);
+  --text-on-information: var(--information-100);
+  --text-on-success: var(--success-100);
+  --text-on-warning: var(--warning-100);
+  --text-on-error: var(--error-100);
+  --border-information: var(--information-700);
+  --border-success: var(--success-700);
+  --border-warning: var(--warning-700);
+  --border-error-soft: var(--error-700);
+}
+
+:root {
+  color-scheme: light;
+  --surface-page: #{v.$surface-page};
+  --surface-action: #{v.$surface-action};
+  --surface-action-hover: #{v.$surface-action-hover};
+  --surface-disabled: #{v.$surface-disabled};
+  --surface-muted: #{v.$surface-muted};
+  --surface-elevated: #{v.$surface-elevated};
+  --surface-primary: #{v.$surface-primary};
+
+  --text-body: #{v.$text-body};
+  --text-disabled: #{v.$text-disabled};
+  --text-filled: #{v.$text-filled};
+  --text-heading: #{v.$text-heading};
+  --text-headings: #{v.$text-headings};
+  --text-on-action: #{v.$text-on-action};
+  --text-action: #{v.$text-action};
+  --text-on-disabled: #{v.$text-on-disabled};
+  --text-muted: #{v.$text-muted};
+  --text-inverse: var(--neutral-100);
+
+  --text-information: var(--information-700);
+  --text-success: var(--success-700);
+  --text-warning: var(--warning-800);
+  --text-error: var(--error-700);
+
+  --border-default: var(--border-primary);
+  --border-action: #{v.$border-action};
+  --border-focus: #{v.$border-focus};
+  --border-error: #{v.$border-error};
+  --border-success: #{v.$border-success};
+  --border-active: var(--border-action-hover);
+  --border-hover: var(--neutral-400);
+  --border-disabled: #{v.$border-disabled};
+  --border-action-hover: #{v.$border-action-hover};
+
+  --surface-action-hover-2: #{v.$surface-action-hover-2};
+  --surface-disabled-selected: #{v.$surface-disabled-selected};
+  --surface-error: #{v.$surface-error};
+  --border-error-input: #{v.$border-error-input};
+  --icon-on-action: var(--text-on-action);
+  --icon-information: var(--information-500);
+  --icon-success: var(--success-650);
+  --icon-warning: var(--warning-500);
+  --icon-error: var(--error-500);
+
+  --surface-information: var(--information-100);
+  --surface-success: var(--success-100);
+  --surface-warning: var(--warning-100);
+  --text-on-information: var(--information-800);
+  --text-on-success: var(--success-800);
+  --text-on-warning: var(--warning-900);
+  --text-on-error: var(--error-800);
+  --border-information: var(--information-300);
+  --border-success: var(--success-300);
+  --border-warning: var(--warning-300);
+  --border-error-soft: var(--error-300);
+
+  --field-width: #{v.$field-width};
+  --field-width-defined: #{v.$field-width-defined};
+  --field-padding-x: #{v.$field-padding-x};
+  --field-padding-y: #{v.$field-padding-y};
+  --field-gap: #{v.$field-gap};
+  --field-min-height: #{v.$field-min-height};
+  --field-icon-size: #{v.$field-icon-size};
+}
+
+@if v.$enable-dark-theme {
+  [data-theme="dark"] {
+    color-scheme: dark;
+    @include dark-semantic-tokens;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      @include dark-semantic-tokens;
+    }
+  }
+}

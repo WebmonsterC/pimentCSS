@@ -1,0 +1,9 @@
+/*! PimentCSS v1 — Webmonster.tech × numera11y — https://piment.webmonster.tech */
+@charset "UTF-8";
+
+@forward "abstracts/variables";
+
+@use "core";
+@use "components";
+
+@import "../styles/palettes.css";

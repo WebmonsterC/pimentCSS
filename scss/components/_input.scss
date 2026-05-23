@@ -1,0 +1,275 @@
+/**
+ * Input fields — PimentCSS v1
+ */
+
+@use "../abstracts/variables" as v;
+@use "../abstracts/icon-glyphs" as ig;
+
+// --- Champ (.field) ---
+.#{v.class-seg()}field {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: v.$field-gap;
+  width: 100%;
+  max-width: v.$field-width;
+  min-height: v.$field-min-height;
+  padding: v.$field-padding-y v.$field-padding-x;
+  background: var(--surface-primary);
+  border: v.$border-width-1 solid var(--border-default);
+  border-radius: v.$border-radius-4;
+  transition: border-color v.$motion-duration-fast v.$motion-easing;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: -3px;
+    border: v.$border-width-2 solid transparent;
+    border-radius: v.$border-radius-6;
+    pointer-events: none;
+    transition: border-color v.$motion-duration-fast v.$motion-easing;
+  }
+}
+
+.#{v.class-seg()}field--defined {
+  max-width: none;
+}
+
+.#{v.class-seg()}field__input {
+  flex: 1 1 0;
+  min-width: 0;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-body-medium);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-body-medium);
+  letter-spacing: var(--letter-spacing-body-medium);
+  color: var(--text-filled);
+
+  &::placeholder {
+    color: var(--text-disabled);
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+select.#{v.class-seg()}field__input {
+  appearance: none;
+  cursor: pointer;
+  width: 100%;
+  text-overflow: ellipsis;
+}
+
+.#{v.class-seg()}field:has(select.#{v.class-seg()}field__input) {
+  padding-right: calc(v.$field-padding-x + v.$field-icon-size + v.$field-gap);
+
+  &::before {
+    content: "";
+    position: absolute;
+    right: v.$field-padding-x;
+    top: 50%;
+    width: v.$field-icon-size;
+    height: v.$field-icon-size;
+    transform: translateY(-50%);
+    pointer-events: none;
+    @include ig.mask-chevron-down(16px);
+  }
+}
+
+.#{v.class-seg()}field__icon {
+  flex-shrink: 0;
+  width: v.$field-icon-size;
+  height: v.$field-icon-size;
+  color: var(--text-body);
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// Active — spec: border-action-hover
+.#{v.class-seg()}field--active {
+  border-color: var(--border-action-hover);
+}
+
+// Hover (neutral states)
+.#{v.class-seg()}field--hover,
+.#{v.class-seg()}field:not(.#{v.class-seg()}field--disabled):not(.#{v.class-seg()}field--error):not(.#{v.class-seg()}field--success):hover {
+  border-color: var(--border-hover);
+}
+
+// Focus — spec: border-action-hover + anneau 2px
+.#{v.class-seg()}field:focus-within,
+.#{v.class-seg()}field--focus {
+  border-color: var(--border-action-hover);
+
+  &::after {
+    border-color: var(--border-focus);
+  }
+}
+
+.#{v.class-seg()}field--error {
+  border-color: var(--border-error);
+
+  &:focus-within::after {
+    border-color: var(--error-400);
+  }
+}
+
+.#{v.class-seg()}field--success {
+  border-color: var(--border-success);
+}
+
+.#{v.class-seg()}field--disabled,
+.#{v.class-seg()}field:has(.#{v.class-seg()}field__input:disabled) {
+  background: var(--surface-muted);
+  border-color: var(--border-default);
+  cursor: not-allowed;
+
+  .#{v.class-seg()}field__input {
+    color: var(--text-disabled);
+    cursor: not-allowed;
+  }
+
+  .#{v.class-seg()}field__icon {
+    color: var(--text-disabled);
+  }
+}
+
+// --- Bloc Input (label + hint + field) ---
+.#{v.class-seg()}input {
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-1; /* 4px — spec Input */
+  max-width: v.$field-width;
+}
+
+.#{v.class-seg()}input--defined {
+  max-width: v.$field-width-defined;
+}
+
+.#{v.class-seg()}input__hint {
+  margin: 0;
+  font-size: var(--font-size-caption);
+  line-height: var(--line-height-caption);
+  letter-spacing: var(--letter-spacing-caption);
+  color: var(--text-body);
+}
+
+.#{v.class-seg()}input__hint--error {
+  color: var(--text-error);
+}
+
+.#{v.class-seg()}input__hint--success {
+  color: var(--text-success);
+}
+
+// Mot de passe
+.#{v.class-seg()}password-toggle {
+  border: 0;
+  padding: 0;
+  background: none;
+  font-family: var(--font-family-body);
+  font-size: 0.875rem;
+  font-weight: var(--font-weight-semi-bold);
+  color: var(--primary-500);
+  cursor: pointer;
+
+  &:hover {
+    color: var(--primary-600);
+  }
+
+  &.#{v.class-seg()}focus-visible:focus-visible {
+    outline: var(--focus-ring);
+    outline-offset: var(--focus-ring-offset);
+  }
+}
+
+// --- Defined field (pre/post tab) — ---
+.#{v.class-seg()}field-group {
+  display: flex;
+  align-items: stretch;
+  max-width: v.$field-width-defined;
+  border: v.$border-width-1 solid var(--border-default);
+  border-radius: v.$border-radius-4;
+  overflow: hidden;
+  transition: border-color v.$motion-duration-fast v.$motion-easing;
+}
+
+.#{v.class-seg()}field-group--hover,
+.#{v.class-seg()}field-group:hover:not(:has(:disabled)) {
+  border-color: var(--border-action-hover);
+}
+
+.#{v.class-seg()}field-group__tab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: v.$field-gap;
+  min-height: v.$field-min-height;
+  padding: v.$field-padding-y v.$field-padding-x;
+  background: var(--surface-disabled);
+  border: 0;
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-body-medium);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-body-medium);
+  letter-spacing: var(--letter-spacing-body-medium);
+  color: var(--text-disabled);
+  white-space: nowrap;
+
+  svg {
+    width: v.$field-icon-size;
+    height: v.$field-icon-size;
+    flex-shrink: 0;
+  }
+}
+
+.#{v.class-seg()}field-group__tab--pre {
+  border-right: v.$border-width-1 solid var(--border-default);
+}
+
+.#{v.class-seg()}field-group__tab--post {
+  border-left: v.$border-width-1 solid var(--border-default);
+}
+
+.#{v.class-seg()}field-group__tab--active {
+  background: var(--surface-action);
+  color: var(--text-on-action);
+  border-color: var(--surface-action);
+}
+
+.#{v.class-seg()}field-group__tab:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.#{v.class-seg()}field-group .#{v.class-seg()}field {
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: none;
+  border: 0;
+  border-radius: 0;
+
+  &::after {
+    display: none;
+  }
+}
+
+.#{v.class-seg()}field-group .#{v.class-seg()}field:focus-within {
+  z-index: 1;
+  box-shadow: inset 0 0 0 1px var(--border-action-hover);
+}
+
+.#{v.class-seg()}field-group--focus,
+.#{v.class-seg()}field-group:focus-within {
+  border-color: var(--border-action-hover);
+  outline: v.$border-width-2 solid var(--border-focus);
+  outline-offset: 2px;
+}

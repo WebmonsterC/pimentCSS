@@ -1,0 +1,219 @@
+/**
+ * Checkbox — PimentCSS v1
+ * Types: Default | Selected | Indeterminate
+ * États: Default | Focus | Hover | Disabled | Error
+ */
+
+@use "../abstracts/variables" as v;
+
+$control-size: 1.5rem; /* 24px */
+
+@mixin checkbox-focus-ring {
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -4px;
+    border: v.$border-width-2 solid var(--border-focus);
+    border-radius: v.$border-radius-8;
+    pointer-events: none;
+  }
+}
+
+.#{v.class-seg()}checkbox {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: v.$btn-gap;
+  min-height: v.$min-touch-target;
+  cursor: pointer;
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-body-medium);
+  line-height: var(--line-height-body-medium);
+  letter-spacing: var(--letter-spacing-body-medium);
+  color: var(--text-body);
+}
+
+.#{v.class-seg()}checkbox__input {
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: $control-size;
+  height: $control-size;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.#{v.class-seg()}checkbox__control {
+  position: relative;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: $control-size;
+  height: $control-size;
+  border: v.$border-width-2 solid var(--border-primary);
+  border-radius: v.$border-radius-4;
+  background: var(--surface-primary);
+  transition: background-color v.$motion-duration-fast v.$motion-easing,
+    border-color v.$motion-duration-fast v.$motion-easing;
+}
+
+.#{v.class-seg()}checkbox__icon {
+  display: none;
+  width: 100%;
+  height: 100%;
+  color: var(--text-on-action);
+}
+
+.#{v.class-seg()}checkbox__icon svg,
+.#{v.class-seg()}checkbox__icon.ph,
+.#{v.class-seg()}checkbox__icon .ph {
+  width: 100%;
+  height: 100%;
+  display: block;
+  font-size: 1.125rem;
+  line-height: 1;
+}
+
+// Checked
+.#{v.class-seg()}checkbox__input:checked + .#{v.class-seg()}checkbox__control {
+  background: var(--surface-action);
+  border-color: var(--border-action);
+
+  .#{v.class-seg()}checkbox__icon--check {
+    display: block;
+  }
+}
+
+// Indeterminate
+.#{v.class-seg()}checkbox__input:indeterminate + .#{v.class-seg()}checkbox__control {
+  background: var(--surface-action);
+  border-color: var(--border-action);
+
+  .#{v.class-seg()}checkbox__icon--minus {
+    display: block;
+    width: 1rem;
+    height: 1rem;
+  }
+}
+
+// Hover (unchecked)
+.#{v.class-seg()}checkbox:hover:not(:has(:disabled)) .#{v.class-seg()}checkbox__input:not(:checked):not(:indeterminate) + .#{v.class-seg()}checkbox__control,
+.#{v.class-seg()}checkbox__control--hover:not(.#{v.class-seg()}checkbox__control--checked) {
+  background: var(--surface-action-hover-2);
+  border-color: var(--border-action-hover);
+}
+
+// Hover (checked / indeterminate)
+.#{v.class-seg()}checkbox:hover:not(:has(:disabled)) .#{v.class-seg()}checkbox__input:checked + .#{v.class-seg()}checkbox__control,
+.#{v.class-seg()}checkbox:hover:not(:has(:disabled)) .#{v.class-seg()}checkbox__input:indeterminate + .#{v.class-seg()}checkbox__control,
+.#{v.class-seg()}checkbox__control--hover.#{v.class-seg()}checkbox__control--checked {
+  background: var(--surface-action-hover);
+  border-color: var(--border-action-hover);
+}
+
+// Focus
+.#{v.class-seg()}checkbox__input:focus-visible + .#{v.class-seg()}checkbox__control {
+  @include checkbox-focus-ring;
+}
+
+.#{v.class-seg()}checkbox__control--focus {
+  @include checkbox-focus-ring;
+}
+
+// Disabled
+.#{v.class-seg()}checkbox__input:disabled + .#{v.class-seg()}checkbox__control,
+.#{v.class-seg()}checkbox__control--disabled {
+  background: var(--surface-disabled);
+  border-color: var(--border-disabled);
+  cursor: not-allowed;
+}
+
+.#{v.class-seg()}checkbox:has(:disabled) {
+  cursor: not-allowed;
+  color: var(--text-on-disabled);
+}
+
+/* Compact checkbox in table cells (dense data grid) */
+.#{v.class-seg()}table__item.#{v.class-seg()}checkbox {
+  min-height: 0;
+}
+
+.#{v.class-seg()}checkbox__input:disabled:checked + .#{v.class-seg()}checkbox__control,
+.#{v.class-seg()}checkbox__input:disabled:indeterminate + .#{v.class-seg()}checkbox__control {
+  .#{v.class-seg()}checkbox__icon {
+    color: var(--text-on-disabled);
+  }
+}
+
+// Error
+.#{v.class-seg()}checkbox--error .#{v.class-seg()}checkbox__control,
+.#{v.class-seg()}checkbox__control--error {
+  background: var(--surface-error);
+  border-color: var(--border-error-input);
+}
+
+.#{v.class-seg()}checkbox--error .#{v.class-seg()}checkbox__input:checked + .#{v.class-seg()}checkbox__control,
+.#{v.class-seg()}checkbox--error .#{v.class-seg()}checkbox__input:indeterminate + .#{v.class-seg()}checkbox__control {
+  .#{v.class-seg()}checkbox__icon {
+    color: var(--error-700);
+  }
+}
+
+// Static demo (spec matrix — no input)
+.#{v.class-seg()}checkbox__control--checked {
+  background: var(--surface-action);
+  border-color: var(--border-action);
+
+  .#{v.class-seg()}checkbox__icon--check {
+    display: block;
+  }
+}
+
+.#{v.class-seg()}checkbox__control--indeterminate {
+  background: var(--surface-action);
+  border-color: var(--border-action);
+
+  .#{v.class-seg()}checkbox__icon--minus {
+    display: block;
+    width: 1rem;
+    height: 1rem;
+  }
+
+  &.#{v.class-seg()}checkbox__control--error {
+    background: var(--surface-error);
+    border-color: var(--border-error-input);
+
+    .#{v.class-seg()}checkbox__icon--minus {
+      color: var(--error-700);
+    }
+  }
+}
+
+.#{v.class-seg()}checkbox__control--checked.#{v.class-seg()}checkbox__control--error {
+  background: var(--surface-error);
+  border-color: var(--border-error-input);
+
+  .#{v.class-seg()}checkbox__icon--check {
+    color: var(--error-700);
+  }
+}
+
+// Label en pastille 
+.#{v.class-seg()}checkbox__text--pill {
+  padding: 0.125rem 0.375rem;
+  border-radius: v.$border-radius-6;
+  transition: background-color v.$motion-duration-fast v.$motion-easing,
+    color v.$motion-duration-fast v.$motion-easing;
+}
+
+.#{v.class-seg()}checkbox__input:checked ~ .#{v.class-seg()}checkbox__text--pill {
+  background: var(--surface-action);
+  color: var(--text-on-action);
+}

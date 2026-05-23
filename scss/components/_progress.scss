@@ -1,0 +1,124 @@
+/**
+ * Progress — PimentCSS v1
+ */
+@use "../abstracts/variables" as v;
+
+// --- Linear bar (Progress 2:1424) ---
+.#{v.class-seg()}progress {
+  display: block;
+  width: 100%;
+  max-width: v.$progress-width;
+  height: v.$progress-height-md;
+  overflow: hidden;
+  background: var(--surface-disabled);
+  border-radius: var(--border-radius-round);
+}
+
+.#{v.class-seg()}progress--sm {
+  height: v.$progress-height-sm;
+}
+
+.#{v.class-seg()}progress__fill {
+  display: block;
+  height: 100%;
+  min-width: 0;
+  background: var(--surface-action);
+  border-radius: var(--border-radius-round);
+  transition: width v.$motion-duration-base v.$motion-easing;
+}
+
+// --- Progress bar (label + bar, 2:1429) ---
+.#{v.class-seg()}progress-bar {
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-1;
+  width: 100%;
+  max-width: v.$progress-bar-max-width;
+}
+
+.#{v.class-seg()}progress-bar__label {
+  margin: 0;
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-body-medium);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-body-medium);
+  letter-spacing: var(--letter-spacing-body-medium);
+  color: var(--text-action);
+}
+
+.#{v.class-seg()}progress-bar--sm .#{v.class-seg()}progress {
+  height: v.$progress-height-sm;
+}
+
+.#{v.class-seg()}progress-bar--md .#{v.class-seg()}progress {
+  height: v.$progress-height-md;
+}
+
+// --- Cercle (2:1437) ---
+.#{v.class-seg()}progress-circle {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  width: v.$progress-circle-md;
+  height: v.$progress-circle-md;
+}
+
+.#{v.class-seg()}progress-circle--sm {
+  width: v.$progress-circle-sm;
+  height: v.$progress-circle-sm;
+}
+
+.#{v.class-seg()}progress-circle__svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.#{v.class-seg()}progress-circle__track,
+.#{v.class-seg()}progress-circle__fill {
+  fill: none;
+  stroke-linecap: butt;
+}
+
+.#{v.class-seg()}progress-circle__track {
+  stroke: var(--surface-disabled);
+}
+
+.#{v.class-seg()}progress-circle__fill {
+  stroke: var(--surface-action);
+  transition: stroke-dasharray v.$motion-duration-base v.$motion-easing;
+}
+
+.#{v.class-seg()}progress-circle--sm .#{v.class-seg()}progress-circle__track,
+.#{v.class-seg()}progress-circle--sm .#{v.class-seg()}progress-circle__fill {
+  stroke-width: v.$progress-circle-stroke-sm;
+}
+
+.#{v.class-seg()}progress-circle--md .#{v.class-seg()}progress-circle__track,
+.#{v.class-seg()}progress-circle--md .#{v.class-seg()}progress-circle__fill,
+.#{v.class-seg()}progress-circle:not(.#{v.class-seg()}progress-circle--sm) .#{v.class-seg()}progress-circle__track,
+.#{v.class-seg()}progress-circle:not(.#{v.class-seg()}progress-circle--sm) .#{v.class-seg()}progress-circle__fill {
+  stroke-width: v.$progress-circle-stroke-md;
+}
+
+.#{v.class-seg()}progress-circle__label {
+  position: absolute;
+  margin: 0;
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-regular);
+  color: var(--text-action);
+  text-align: center;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.#{v.class-seg()}progress-circle--sm .#{v.class-seg()}progress-circle__label {
+  font-size: var(--font-size-body-medium);
+  letter-spacing: var(--letter-spacing-body-medium);
+}
+
+.#{v.class-seg()}progress-circle--md .#{v.class-seg()}progress-circle__label,
+.#{v.class-seg()}progress-circle:not(.#{v.class-seg()}progress-circle--sm) .#{v.class-seg()}progress-circle__label {
+  font-size: var(--font-size-body-large);
+  letter-spacing: var(--letter-spacing-body-large);
+}

@@ -1,0 +1,68 @@
+/**
+ * Breadcrumb — PimentCSS v1
+ */
+@use "../abstracts/variables" as v;
+
+.#{v.class-seg()}breadcrumb {
+  display: block;
+}
+
+.#{v.class-seg()}breadcrumb__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: v.$breadcrumb-gap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.#{v.class-seg()}breadcrumb__item {
+  display: inline-flex;
+  align-items: center;
+}
+
+.#{v.class-seg()}breadcrumb__link {
+  display: inline-flex;
+  align-items: center;
+  gap: v.$link-gap;
+  padding: v.$link-padding;
+  border-radius: v.$border-radius-4;
+  color: var(--text-action);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-body-medium);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-body-medium);
+  letter-spacing: var(--letter-spacing-body-medium);
+  text-decoration: none;
+  transition: background-color v.$motion-duration-fast v.$motion-easing,
+    color v.$motion-duration-fast v.$motion-easing;
+
+  &:hover {
+    background: var(--surface-action-hover-2);
+    color: var(--primary-600);
+  }
+
+  &:focus-visible {
+    outline: v.$border-width-2 solid var(--border-focus);
+    outline-offset: 2px;
+  }
+}
+
+.#{v.class-seg()}breadcrumb__separator {
+  flex-shrink: 0;
+  width: v.$link-icon-size;
+  height: v.$link-icon-size;
+  color: currentColor;
+}
+
+.#{v.class-seg()}breadcrumb__current {
+  padding: v.$link-padding;
+  color: var(--text-body);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-body-medium);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-body-medium);
+  letter-spacing: var(--letter-spacing-body-medium);
+  white-space: nowrap;
+}

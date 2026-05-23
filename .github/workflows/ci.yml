@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+jobs:
+  verify-doc-classes:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build CSS
+        run: npm run build:css
+
+      - name: Generate palette preview CSS
+        run: node scripts/generate-palette-css.mjs
+
+      - name: Verify documented classes exist in built CSS
+        run: npm run test:doc-classes
+
+      - name: Impeccable documentation checks (context + copy)
+        run: npm run test:doc-impeccable

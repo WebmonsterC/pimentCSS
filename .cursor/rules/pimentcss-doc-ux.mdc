@@ -1,0 +1,16 @@
+---
+description: PimentCSS docs-site UX — match Astro/Starlight documentation patterns
+globs:
+  - docs-site/**
+---
+
+When editing documentation UI (`docs-site/`, `doc.css`, `pdoc-html.ts`, `static-content.ts`):
+
+- Benchmark: https://docs.astro.build/en/install-and-setup/ — sidebar + TOC + section anchors + package-manager tabs + terminal blocks.
+- Use existing helpers: `pdocPackageTabs`, `pdocTerminal`, `pdocSnippet`, `pdoc-aside`; body class `pdoc--docs-ux`.
+- Typography: prose measure ~42rem; `h2` with top border (except first); anchor links on hover for `h2[id]` / `h3[id]`.
+- Prefer tabs over commented multi-line install commands.
+- Keep WCAG AA contrast for code tokens in light and dark (`--pdoc-tok-*`).
+- Optional AI polish: Impeccable skill (`npx skills add pbakaus/impeccable`) — guides the agent, not runtime CSS.
+
+See `docs-site/DESIGN.md` for the full UX checklist.

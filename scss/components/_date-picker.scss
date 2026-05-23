@@ -1,0 +1,313 @@
+/**
+ * Date picker — PimentCSS v1
+ * Day (.calendar-day), calendar (.calendar), picker (.date-picker)
+ */
+@use "../abstracts/variables" as v;
+
+// --- Cellule jour ---
+.#{v.class-seg()}calendar-day {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: v.$calendar-day-size;
+  height: v.$calendar-day-size;
+  padding: 0;
+  border: v.$border-width-1 solid transparent;
+  border-radius: v.$border-radius-4;
+  background: var(--surface-primary);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-body-medium);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-body-medium);
+  letter-spacing: var(--letter-spacing-body-medium);
+  color: var(--text-body);
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  transition:
+    background-color v.$motion-duration-fast v.$motion-easing,
+    color v.$motion-duration-fast v.$motion-easing,
+    border-color v.$motion-duration-fast v.$motion-easing;
+
+  &:hover:not(:disabled):not(.#{v.class-seg()}calendar-day--blank) {
+    background: var(--surface-action-hover-2);
+    color: var(--text-action-hover);
+  }
+
+  &:focus-visible {
+    outline: none;
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: -2px;
+      border: v.$border-width-2 solid var(--border-focus);
+      border-radius: v.$border-radius-6;
+      pointer-events: none;
+    }
+  }
+}
+
+.#{v.class-seg()}calendar-day--selected {
+  background: var(--surface-action);
+  color: var(--text-on-action);
+  border-color: transparent;
+
+  &:hover:not(:disabled) {
+    background: var(--surface-action-hover);
+    color: var(--text-on-action);
+  }
+}
+
+.#{v.class-seg()}calendar-day--current:not(.#{v.class-seg()}calendar-day--selected) {
+  border-color: var(--border-action);
+}
+
+.#{v.class-seg()}calendar-day--disabled {
+  background: var(--surface-disabled);
+  color: var(--icon-on-disabled);
+  cursor: not-allowed;
+
+  &:hover {
+    background: var(--surface-disabled);
+    color: var(--icon-on-disabled);
+  }
+}
+
+.#{v.class-seg()}calendar-day--selected.#{v.class-seg()}calendar-day--disabled {
+  background: var(--surface-disabled-selected);
+  color: var(--text-on-action);
+}
+
+.#{v.class-seg()}calendar-day--blank {
+  visibility: hidden;
+  pointer-events: none;
+  cursor: default;
+  border-color: transparent;
+  background: transparent;
+}
+
+.#{v.class-seg()}calendar-day--hover:not(:disabled):not(.#{v.class-seg()}calendar-day--blank) {
+  background: var(--surface-action-hover-2);
+  color: var(--text-action-hover);
+}
+
+.#{v.class-seg()}calendar-day--selected.#{v.class-seg()}calendar-day--hover:not(:disabled) {
+  background: var(--surface-action-hover);
+  color: var(--text-on-action);
+}
+
+.#{v.class-seg()}calendar-day--focus::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border: v.$border-width-2 solid var(--border-focus);
+  border-radius: v.$border-radius-6;
+  pointer-events: none;
+}
+
+.#{v.class-seg()}calendar-day--weekday {
+  cursor: default;
+  font-weight: var(--font-weight-regular);
+
+  &:hover {
+    background: var(--surface-primary);
+    color: var(--text-body);
+  }
+
+  &:focus-visible::after,
+  &.#{v.class-seg()}calendar-day--focus::after {
+    display: none;
+  }
+}
+
+// --- Calendrier ---
+.#{v.class-seg()}calendar {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: v.$calendar-inner-gap;
+  width: 100%;
+  max-width: v.$date-picker-width;
+  padding: v.$calendar-padding;
+  background: var(--surface-primary);
+  border: v.$border-width-1 solid var(--border-primary);
+  border-radius: v.$border-radius-4;
+}
+
+.#{v.class-seg()}calendar__header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: v.$calendar-month-gap;
+  width: 100%;
+}
+
+.#{v.class-seg()}calendar__nav-group {
+  display: flex;
+  align-items: center;
+  gap: v.$calendar-nav-gap;
+}
+
+.#{v.class-seg()}calendar__nav {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: v.$calendar-nav-icon;
+  height: v.$calendar-nav-icon;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--text-action);
+  cursor: pointer;
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  &:hover {
+    color: var(--text-action-hover);
+  }
+
+  &.#{v.class-seg()}focus-visible:focus-visible {
+    outline: var(--focus-ring);
+    outline-offset: var(--focus-ring-offset);
+    border-radius: v.$border-radius-4;
+  }
+}
+
+.#{v.class-seg()}calendar__month {
+  margin: 0;
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-body-medium);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-body-medium);
+  letter-spacing: var(--letter-spacing-body-medium);
+  color: var(--text-action);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.#{v.class-seg()}calendar__weekdays,
+.#{v.class-seg()}calendar__week {
+  display: flex;
+  gap: v.$calendar-gap;
+  width: 100%;
+}
+
+.#{v.class-seg()}calendar__weeks {
+  display: flex;
+  flex-direction: column;
+  gap: v.$calendar-gap;
+  width: 100%;
+}
+
+// --- Date picker (champ + calendrier) ---
+.#{v.class-seg()}date-picker {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: v.$space-1;
+  width: 100%;
+  max-width: v.$date-picker-width;
+  position: relative;
+}
+
+.#{v.class-seg()}date-picker__hint {
+  margin: 0;
+  width: 100%;
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-body-medium);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-body-medium);
+  letter-spacing: var(--letter-spacing-body-medium);
+  color: var(--neutral-500);
+}
+
+.#{v.class-seg()}date-picker__body {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: v.$space-2;
+  width: 100%;
+}
+
+.#{v.class-seg()}date-picker__control {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: v.$form-field-gap;
+  width: 100%;
+}
+
+.#{v.class-seg()}date-picker__control .#{v.class-seg()}label {
+  width: 100%;
+}
+
+.#{v.class-seg()}date-picker .#{v.class-seg()}field-group {
+  width: 100%;
+  max-width: 100%;
+  border-color: var(--border-primary);
+}
+
+.#{v.class-seg()}date-picker .#{v.class-seg()}field-group .#{v.class-seg()}field {
+  flex: 1 1 0;
+  min-width: 0;
+  min-height: v.$field-min-height;
+  border: 0;
+  border-radius: 0;
+}
+
+.#{v.class-seg()}date-picker__trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  align-self: stretch;
+  min-width: v.$field-min-height;
+  min-height: v.$field-min-height;
+  padding: v.$field-padding-y v.$field-padding-x;
+  border: 0;
+  border-left: v.$border-width-1 solid var(--border-primary);
+  border-radius: 0;
+  background: var(--surface-action);
+  color: var(--text-on-action);
+  cursor: pointer;
+
+  svg {
+    width: v.$field-icon-size;
+    height: v.$field-icon-size;
+    flex-shrink: 0;
+  }
+
+  &:hover {
+    background: var(--surface-action-hover);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+  }
+
+  &.#{v.class-seg()}focus-visible:focus-visible {
+    outline: var(--focus-ring);
+    outline-offset: calc(-1 * var(--focus-ring-offset));
+    z-index: 1;
+  }
+}
+
+.#{v.class-seg()}calendar__nav:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  color: var(--text-disabled);
+}
+
+.#{v.class-seg()}date-picker__panel {
+  display: none;
+  width: 100%;
+}
+
+.#{v.class-seg()}date-picker--open .#{v.class-seg()}date-picker__panel {
+  display: block;
+}

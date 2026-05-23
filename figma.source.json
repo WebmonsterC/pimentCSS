@@ -1,0 +1,289 @@
+{
+  "product": {
+    "name": "PimentCSS",
+    "version": "1.0.0",
+    "docs": "https://pimentcss.webmonster.tech",
+    "maintainer": "https://www.webmonster.tech",
+    "collaboration": {
+      "webmonster": "https://www.webmonster.tech",
+      "numera11y": "https://www.numera11y.fr"
+    },
+    "repository": "https://github.com/WebmonsterC/pimentCSS",
+    "upstream": "https://github.com/freepiment/Piment-Css"
+  },
+  "fileKey": "Vnc34wL28GUCKuCG7C3lEO",
+  "fileName": "Design-system-Numera11y-v-1.3",
+  "url": "https://www.figma.com/design/Vnc34wL28GUCKuCG7C3lEO/Design-system-Numera11y-v-1.3",
+  "version": "1.3",
+  "previousFile": {
+    "fileKey": "A5d96NkDwQ1t1EVqVNfxzW",
+    "fileName": "DS-hubmonster.io",
+    "note": "Legacy source — color tokens retained"
+  },
+  "colorsPage": {
+    "id": "2:2097",
+    "name": "Colors",
+    "pageUrl": "https://www.figma.com/design/Vnc34wL28GUCKuCG7C3lEO/Design-system-Numera11y-v-1.3?node-id=2-2097",
+    "registry": "figma/pages/2-2097-colors.json"
+  },
+  "syncedPages": [
+    {
+      "id": "2:2097",
+      "name": "Colors",
+      "pageUrl": "https://www.figma.com/design/Vnc34wL28GUCKuCG7C3lEO/Design-system-Numera11y-v-1.3?node-id=2-2097",
+      "frameNodeId": "2:2100",
+      "registry": "figma/pages/2-2097-colors.json",
+      "codePaths": ["tokens/colors.css", "styles/palettes.css"]
+    },
+    {
+      "id": "2:1453",
+      "name": "Snackbar",
+      "pageUrl": "https://www.figma.com/design/Vnc34wL28GUCKuCG7C3lEO/Design-system-Numera11y-v-1.3?node-id=2-1453",
+      "frameNodeId": "2:1488",
+      "registry": "figma/pages/2-1453-snackbar.json",
+      "codePaths": ["scss/components/_snackbar.scss"]
+    },
+    {
+      "id": "2:1419",
+      "name": "Progress",
+      "pageUrl": "https://www.figma.com/design/Vnc34wL28GUCKuCG7C3lEO/Design-system-Numera11y-v-1.3?node-id=2-1420",
+      "frameNodeId": "2:1420",
+      "registry": "figma/pages/2-1420-progress.json",
+      "codePaths": ["scss/components/_progress.scss"]
+    },
+    {
+      "id": "1:3262",
+      "name": "Date picker",
+      "pageUrl": "https://www.figma.com/design/Vnc34wL28GUCKuCG7C3lEO/Design-system-Numera11y-v-1.3?node-id=1-3262",
+      "frameNodeId": "1:5354",
+      "registry": "figma/pages/1-5354-date-picker.json",
+      "codePaths": ["scss/components/_date-picker.scss"]
+    },
+    {
+      "id": "1:5692",
+      "name": "Autocomplete",
+      "pageUrl": "https://www.figma.com/design/Vnc34wL28GUCKuCG7C3lEO/Design-system-Numera11y-v-1.3?node-id=1-5692",
+      "frameNodeId": "1:5784",
+      "registry": "figma/pages/1-5784-autocomplete.json",
+      "codePaths": ["scss/components/_autocomplete.scss"]
+    },
+    {
+      "id": "1:5854",
+      "name": "Form",
+      "pageUrl": "https://www.figma.com/design/Vnc34wL28GUCKuCG7C3lEO/Design-system-Numera11y-v-1.3?node-id=1-5854",
+      "frameNodeId": "1:7477",
+      "registry": "figma/pages/1-7477-form.json",
+      "codePaths": ["scss/components/_form.scss"]
+    },
+    {
+      "id": "1:7574",
+      "name": "Keyline",
+      "pageUrl": "https://www.figma.com/design/Vnc34wL28GUCKuCG7C3lEO/Design-system-Numera11y-v-1.3?node-id=1-7574",
+      "frameNodeId": "1:7575",
+      "registry": "figma/pages/1-7575-keyline.json",
+      "codePaths": ["scss/components/_keyline.scss"]
+    },
+    {
+      "id": "1:7587",
+      "name": "Tab",
+      "pageUrl": "https://www.figma.com/design/Vnc34wL28GUCKuCG7C3lEO/Design-system-Numera11y-v-1.3?node-id=1-7587",
+      "frameNodeId": "1:7630",
+      "registry": "figma/pages/1-7630-tab.json",
+      "codePaths": ["scss/components/_tab.scss"]
+    },
+    {
+      "id": "1:7720",
+      "name": "Button group",
+      "pageUrl": "https://www.figma.com/design/Vnc34wL28GUCKuCG7C3lEO/Design-system-Numera11y-v-1.3?node-id=1-7720",
+      "frameNodeId": "1:7734",
+      "registry": "figma/pages/1-7734-button-group.json",
+      "codePaths": ["scss/components/_button-group.scss"]
+    },
+    {
+      "id": "1:7831",
+      "name": "Pagination",
+      "pageUrl": "https://www.figma.com/design/Vnc34wL28GUCKuCG7C3lEO/Design-system-Numera11y-v-1.3?node-id=1-7831",
+      "frameNodeId": "1:8057",
+      "registry": "figma/pages/1-8057-pagination.json",
+      "codePaths": ["scss/components/_pagination.scss"]
+    },
+    {
+      "id": "1:8184",
+      "name": "Carousel",
+      "pageUrl": "https://www.figma.com/design/Vnc34wL28GUCKuCG7C3lEO/Design-system-Numera11y-v-1.3?node-id=1-8184",
+      "frameNodeId": "1:8211",
+      "registry": "figma/pages/1-8211-carousel.json",
+      "codePaths": ["scss/components/_carousel.scss"]
+    },
+    {
+      "id": "1:8275",
+      "name": "Anchor - Inpage nav",
+      "pageUrl": "https://www.figma.com/design/Vnc34wL28GUCKuCG7C3lEO/Design-system-Numera11y-v-1.3?node-id=1-8275",
+      "frameNodeId": "1:8629",
+      "registry": "figma/pages/1-8629-anchor-inpage-nav.json",
+      "codePaths": ["scss/components/_anchor-nav.scss"]
+    },
+    {
+      "id": "1:8750",
+      "name": "Navigation",
+      "pageUrl": "https://www.figma.com/design/Vnc34wL28GUCKuCG7C3lEO/Design-system-Numera11y-v-1.3?node-id=1-8750",
+      "frameNodeId": "1:8817",
+      "registry": "figma/pages/1-8817-navigation.json",
+      "codePaths": ["scss/components/_navigation.scss"]
+    },
+    {
+      "id": "1:8874",
+      "name": "Link - Breadcrumb",
+      "pageUrl": "https://www.figma.com/design/Vnc34wL28GUCKuCG7C3lEO/Design-system-Numera11y-v-1.3?node-id=1-8874",
+      "frameNodeId": "1:9039",
+      "registry": "figma/pages/1-9039-link-breadcrumb.json",
+      "codePaths": ["scss/components/_link.scss", "scss/components/_breadcrumb.scss"]
+    },
+    {
+      "id": "1:9185",
+      "name": "Table",
+      "pageUrl": "https://www.figma.com/design/Vnc34wL28GUCKuCG7C3lEO/Design-system-Numera11y-v-1.3?node-id=1-9185",
+      "frameNodeId": "1:9246",
+      "registry": "figma/pages/1-9246-table.json",
+      "codePaths": ["scss/components/_table.scss"]
+    },
+    {
+      "id": "1:10539",
+      "name": "Tags",
+      "pageUrl": "https://www.figma.com/design/Vnc34wL28GUCKuCG7C3lEO/Design-system-Numera11y-v-1.3?node-id=1-10539",
+      "frameNodeId": "1:10564",
+      "registry": "figma/pages/1-10564-tags.json",
+      "codePaths": ["scss/components/_tag.scss"]
+    },
+    {
+      "id": "2:73",
+      "name": "Loader",
+      "pageUrl": "https://www.figma.com/design/Vnc34wL28GUCKuCG7C3lEO/Design-system-Numera11y-v-1.3?node-id=2-73",
+      "frameNodeId": "2:77",
+      "registry": "figma/pages/2-77-loader.json",
+      "codePaths": ["scss/components/_loader.scss"]
+    },
+    {
+      "id": "2:167",
+      "name": "List",
+      "pageUrl": "https://www.figma.com/design/Vnc34wL28GUCKuCG7C3lEO/Design-system-Numera11y-v-1.3?node-id=2-167",
+      "frameNodeId": "2:415",
+      "registry": "figma/pages/2-415-list.json",
+      "codePaths": ["scss/components/_list.scss"]
+    },
+    {
+      "id": "2:526",
+      "name": "Badge",
+      "pageUrl": "https://www.figma.com/design/Vnc34wL28GUCKuCG7C3lEO/Design-system-Numera11y-v-1.3?node-id=2-526",
+      "frameNodeId": "2:526",
+      "registry": "figma/pages/2-526-badge.json",
+      "codePaths": ["scss/components/_badge.scss"]
+    },
+    {
+      "id": "2:561",
+      "name": "Tree",
+      "pageUrl": "https://www.figma.com/design/Vnc34wL28GUCKuCG7C3lEO/Design-system-Numera11y-v-1.3?node-id=2-561",
+      "frameNodeId": "2:1013",
+      "registry": "figma/pages/2-1013-tree.json",
+      "codePaths": ["scss/components/_tree.scss"]
+    },
+    {
+      "id": "2:1619",
+      "name": "Slots layouts",
+      "pageUrl": "https://www.figma.com/design/Vnc34wL28GUCKuCG7C3lEO/Design-system-Numera11y-v-1.3?node-id=2-1619",
+      "frameNodeId": "2:1620",
+      "registry": "figma/pages/2-1620-slots-layouts.json",
+      "codePaths": ["scss/components/_slot.scss", "scss/components/_slots-layout.scss"]
+    },
+    {
+      "id": "2:1739",
+      "name": "Placeholder",
+      "pageUrl": "https://www.figma.com/design/Vnc34wL28GUCKuCG7C3lEO/Design-system-Numera11y-v-1.3?node-id=2-1739",
+      "frameNodeId": "2:1746",
+      "registry": "figma/pages/2-1746-placeholder.json",
+      "codePaths": [
+        "tokens/typography.css",
+        "scss/tokens/_typography.scss",
+        "scss/components/_copy.scss",
+        "scss/components/_media.scss"
+      ]
+    },
+    {
+      "id": "2:1788",
+      "name": "Modals - Cards",
+      "pageUrl": "https://www.figma.com/design/Vnc34wL28GUCKuCG7C3lEO/Design-system-Numera11y-v-1.3?node-id=2-1788",
+      "frameNodeId": "2:1862",
+      "registry": "figma/pages/2-1862-modals-cards.json",
+      "codePaths": [
+        "scss/components/_card.scss",
+        "scss/components/_slot.scss",
+        "scss/components/_copy.scss"
+      ]
+    },
+    {
+      "id": "2:1959",
+      "name": "Depth",
+      "pageUrl": "https://www.figma.com/design/Vnc34wL28GUCKuCG7C3lEO/Design-system-Numera11y-v-1.3?node-id=2-1959",
+      "frameNodeId": "2:1959",
+      "registry": "figma/pages/2-1959-depth.json",
+      "codePaths": ["tokens/depth.css", "scss/tokens/_depth.scss", "scss/utilities/_shadow.scss"]
+    },
+    {
+      "id": "2:11020",
+      "name": "Input fields",
+      "pageUrl": "https://www.figma.com/design/Vnc34wL28GUCKuCG7C3lEO/Design-system-Numera11y-v-1.3?node-id=2-11020",
+      "frameNodeId": "2:11034",
+      "registry": "figma/pages/2-11020-input-fields.json",
+      "codePaths": ["scss/components/_input.scss", "scss/components/_label.scss", "scss/components/_textarea.scss"]
+    },
+    {
+      "id": "0:1",
+      "name": "Buttons",
+      "pageUrl": "https://www.figma.com/design/Vnc34wL28GUCKuCG7C3lEO/Design-system-Numera11y-v-1.3?node-id=0-1",
+      "frameNodeId": "1:272",
+      "registry": "figma/pages/0-1-buttons.json",
+      "codePaths": ["scss/components/_button.scss"]
+    },
+    {
+      "id": "1:2316",
+      "name": "Menu - Dropdown",
+      "pageUrl": "https://www.figma.com/design/Vnc34wL28GUCKuCG7C3lEO/Design-system-Numera11y-v-1.3?node-id=1-2316",
+      "frameNodeId": "1:2316",
+      "registry": "figma/pages/1-2316-menu-dropdown.json",
+      "codePaths": ["scss/components/_menu.scss", "scss/components/_dropdown.scss"]
+    },
+    {
+      "id": "2:2405",
+      "name": "Icons",
+      "pageUrl": "https://www.figma.com/design/Vnc34wL28GUCKuCG7C3lEO/Design-system-Numera11y-v-1.3?node-id=2-2405",
+      "frameNodeId": "2:2408",
+      "registry": "figma/pages/2-2405-icons.json",
+      "codePaths": [
+        "scss/components/_icon-slot.scss",
+        "docs-site/src/lib/icon.ts"
+      ]
+    },
+    {
+      "id": "1:2623",
+      "name": "Checkboxes - Radios - Switch",
+      "pageUrl": "https://www.figma.com/design/Vnc34wL28GUCKuCG7C3lEO/Design-system-Numera11y-v-1.3?node-id=1-2623",
+      "frameNodeId": "1:3099",
+      "registry": "figma/pages/1-2623-checkboxes-radios-switch.json",
+      "codePaths": [
+        "scss/components/_checkbox.scss",
+        "scss/components/_radio.scss",
+        "scss/components/_switch.scss"
+      ]
+    }
+  ],
+  "bundle": "dist/pimentcss.css",
+  "workflow": "Figma → tokens/*.css + scss/ (Sass) → npm run build:css → dist/pimentcss.css",
+  "sass": {
+    "entry": "scss/pimentcss.scss",
+    "core": "scss/core.scss",
+    "components": "scss/components.scss",
+    "docEntry": "docs-site/src/styles/doc.css",
+    "config": "scss/abstracts/_variables.scss",
+    "customExample": "scss/custom.example.scss"
+  }
+}

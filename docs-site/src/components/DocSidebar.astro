@@ -1,0 +1,47 @@
+---
+import { navConfig, hrefToSlug, slugToPath } from '../lib/docs';
+import { GITHUB_REPO } from '../lib/github';
+
+const pathname = Astro.url.pathname.replace(/\/$/, '') || '/docs';
+
+function isActive(href: string) {
+  const path = slugToPath(hrefToSlug(href));
+  return path === pathname;
+}
+---
+<nav aria-label="Documentation">
+  {
+    navConfig.sections.map((section) => (
+      <div class="pdoc-sidebar__section">
+        <p class="pdoc-sidebar__title">{section.title}</p>
+        <ul class="pdoc-sidebar__list">
+          {section.items.map((item) => {
+            const href = slugToPath(hrefToSlug(item.href));
+            return (
+              <li>
+                <a
+                  class:list={['pdoc-sidebar__link', { 'is-active': isActive(item.href) }]}
+                  href={href}
+                  data-keywords={item.keywords ?? ''}
+                >
+                  {item.label}
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    ))
+  }
+  <div class="pdoc-sidebar__footer">
+    <a
+      class="pdoc-sidebar__icon-link"
+      href={GITHUB_REPO}
+      rel="noopener noreferrer"
+      target="_blank"
+      aria-label="GitHub repository (opens in new tab)"
+    >
+      <i class="ph ph-github-logo" aria-hidden="true"></i>
+    </a>
+  </div>
+</nav>

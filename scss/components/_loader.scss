@@ -1,0 +1,77 @@
+/**
+ * Loader — PimentCSS v1
+ * 8 points en orbite — Primary / Secondary × 24–48px
+ */
+@use "sass:math";
+@use "../abstracts/variables" as v;
+
+@keyframes #{v.$prefix}-loader-pulse {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@mixin loader-size($size, $dot) {
+  width: $size;
+  height: $size;
+  --loader-orbit: #{math.div($size, 2) * v.$loader-orbit-ratio};
+  --loader-dot: #{$dot};
+
+  .#{v.class-seg()}loader__dot {
+    width: $dot;
+    height: $dot;
+    margin: calc(-0.5 * #{$dot});
+  }
+}
+
+.#{v.class-seg()}loader {
+  position: relative;
+  display: inline-block;
+  flex-shrink: 0;
+  color: var(--surface-action);
+
+  &--primary {
+    color: var(--surface-action);
+  }
+
+  &--secondary {
+    color: var(--neutral-400);
+  }
+
+  &--48 {
+    @include loader-size(v.$loader-size-48, v.$loader-dot-48);
+  }
+
+  &--40 {
+    @include loader-size(v.$loader-size-40, v.$loader-dot-40);
+  }
+
+  &--32 {
+    @include loader-size(v.$loader-size-32, v.$loader-dot-32);
+  }
+
+  &--24 {
+    @include loader-size(v.$loader-size-24, v.$loader-dot-24);
+  }
+}
+
+.#{v.class-seg()}loader__dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: v.$border-radius-round;
+  background: currentColor;
+  animation: #{v.$prefix}-loader-pulse 1.2s v.$motion-easing infinite;
+
+  @for $i from 1 through 8 {
+    &:nth-child(#{$i}) {
+      transform: rotate(#{($i - 1) * 45}deg) translateY(calc(-1 * var(--loader-orbit)));
+      animation-delay: #{($i - 1) * 0.15}s;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "fileKey": "Vnc34wL28GUCKuCG7C3lEO",
+  "fileName": "Design-system-Numera11y-v-1.3",
+  "pageId": "2:1453",
+  "pageUrl": "https://www.figma.com/design/Vnc34wL28GUCKuCG7C3lEO/Design-system-Numera11y-v-1.3?node-id=2-1453",
+  "name": "Snackbar",
+  "frameNodeId": "2:1488",
+  "status": "synced",
+  "syncedAt": "2026-05-21",
+  "variants": [
+    { "name": "Brand", "nodeId": "2:1493", "accent": "text-action", "progress": "surface-action" },
+    { "name": "Information", "nodeId": "2:1503", "accent": "text-information", "progress": "icon-information" },
+    { "name": "Success", "nodeId": "2:1513", "accent": "text-success", "progress": "icon-success" },
+    { "name": "Warning", "nodeId": "2:1523", "accent": "text-warning", "progress": "icon-warning" },
+    { "name": "Error", "nodeId": "2:1533", "accent": "text-error", "progress": "icon-error" }
+  ],
+  "structure": ["icon", "title", "description", "link", "close", "progress-bar-2px"],
+  "codePaths": ["scss/components/_snackbar.scss", "tokens/semantic.css"]
+}

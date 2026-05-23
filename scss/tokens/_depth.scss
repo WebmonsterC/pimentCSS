@@ -1,0 +1,33 @@
+@use "../abstracts/variables" as v;
+
+@mixin dark-shadow-tokens {
+  --shadow-color-elevation: oklch(0% 0 0);
+  --shadow-xs: 0 1px 3px oklch(0% 0 0 / 0.5), 0 1px 2px oklch(0% 0 0 / 0.35);
+  --shadow-sm: 0 3px 8px oklch(0% 0 0 / 0.55), 0 2px 4px oklch(0% 0 0 / 0.4);
+  --shadow-md: 0 8px 20px oklch(0% 0 0 / 0.6), 0 4px 10px oklch(0% 0 0 / 0.45);
+  --shadow-lg: 0 14px 32px oklch(0% 0 0 / 0.68), 0 6px 16px oklch(0% 0 0 / 0.5);
+  --shadow-xl: 0 22px 50px oklch(0% 0 0 / 0.78), 0 10px 24px oklch(0% 0 0 / 0.58);
+}
+
+:root {
+  --shadow-color-elevation: #{v.$shadow-color-elevation};
+  --shadow-color-inset-drop: #{v.$shadow-color-inset-drop};
+  --shadow-inset: #{v.$shadow-inset};
+  --shadow-xs: #{v.$shadow-xs};
+  --shadow-sm: #{v.$shadow-sm};
+  --shadow-md: #{v.$shadow-md};
+  --shadow-lg: #{v.$shadow-lg};
+  --shadow-xl: #{v.$shadow-xl};
+}
+
+@if v.$enable-dark-theme {
+  [data-theme="dark"] {
+    @include dark-shadow-tokens;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      @include dark-shadow-tokens;
+    }
+  }
+}

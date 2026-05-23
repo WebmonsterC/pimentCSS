@@ -1,0 +1,372 @@
+// =============================================================================
+// PimentCSS v1 — variables Sass personnalisables (!default)
+// Surchargez AVANT @use, ou via @use "…" with ( … ) — voir scss/custom.example.scss
+// =============================================================================
+
+@use "fonts.generated" as fg;
+
+// Optional prefix for utility / component classes (empty = .btn, .field, …)
+$prefix: "" !default;
+
+/// Segment before component name ("hm-" or "" when $prefix is empty)
+@function class-seg() {
+  @if $prefix == "" {
+    @return "";
+  }
+  @return "#{$prefix}-";
+}
+
+$enable-dark-theme: true !default;
+$enable-hex-fallback: true !default;
+
+$enable-local-fonts: fg.$fonts-local-available !default;
+$enable-google-fonts: true !default;
+$enable-fontshare-fonts: true !default;
+
+// --- Typography (Antilles pairing: Zodiak display + Plus Jakarta Sans UI) ---
+$font-family-heading: "Zodiak", "Georgia", "Times New Roman", serif !default;
+$font-family-body: "Plus Jakarta Sans", "Segoe UI", system-ui, sans-serif !default;
+
+$font-weight-regular: 400 !default;
+$font-weight-semi-bold: 600 !default;
+$font-weight-bold: 700 !default;
+
+$font-size-heading-h1: 3.75rem !default; /* 60px */
+$line-height-heading-h1: 4.5rem !default; /* 72px */
+$letter-spacing-heading-h1: -0.075rem !default; /* -1.2px */
+
+$font-size-heading-h2: 3rem !default; /* 48px */
+$line-height-heading-h2: 3.6rem !default; /* 57.6px */
+$letter-spacing-heading-h2: -0.06rem !default; /* -0.96px */
+
+$font-size-heading-h3: 2.5rem !default; /* 40px */
+$line-height-heading-h3: 3rem !default; /* 48px */
+$letter-spacing-heading-h3: -0.05rem !default; /* -0.8px */
+
+$font-size-heading-h4: 2rem !default; /* 32px */
+$line-height-heading-h4: 2.4rem !default; /* 38.4px */
+$letter-spacing-heading-h4: -0.04rem !default; /* -0.64px */
+
+$font-size-heading-h5: 1.5rem !default; /* 24px */
+$line-height-heading-h5: 1.8rem !default; /* 28.8px */
+$letter-spacing-heading-h5: -0.03rem !default; /* -0.48px */
+
+$font-size-heading-h6: 1.25rem !default; /* 20px */
+$line-height-heading-h6: 1.5rem !default; /* 24px */
+$letter-spacing-heading-h6: -0.025rem !default; /* -0.4px */
+
+$font-size-body-small: 0.75rem !default; /* 12px */
+$line-height-body-small: 1.3125rem !default; /* 21px */
+$letter-spacing-body-small: 0.015rem !default; /* 0.24px */
+
+$font-size-body-medium: 1rem !default; /* 16px */
+$line-height-body-medium: 1.6rem !default; /* 25.6px */
+$letter-spacing-body-medium: 0.02rem !default; /* 0.32px */
+
+$font-size-body-large: 1.25rem !default; /* 20px */
+$line-height-body-large: 2rem !default; /* 32px */
+$letter-spacing-body-large: 0.025rem !default; /* 0.4px */
+
+$copy-block-max-width: 33rem !default; /* 528px */
+$media-width-base: 15rem !default; /* 240px — ratios spec */
+
+$font-size-caption: 0.875rem !default;
+$line-height-caption: 1.53125rem !default;
+$letter-spacing-caption: 0.0175rem !default;
+
+// --- Espacement & layout ---
+$space-1: 0.25rem !default;
+$space-2: 0.5rem !default;
+$space-3: 1rem !default;
+$space-4: 1.5rem !default;
+$space-5: 2rem !default;
+$space-6: 3rem !default;
+$space-7: 4rem !default;
+
+$border-radius-4: 0.25rem !default;
+$border-radius-8: 0.5rem !default;
+$border-radius-16: 1rem !default;
+$border-radius-6: 0.375rem !default; /* 6px — focus dropdown spec */
+$border-width-1: 1px !default;
+$border-width-2: 2px !default;
+$border-width-4: 4px !default;
+
+// --- Depth / ombres  ---
+$shadow-color-elevation: oklch(40.3% 0.03 262) !default;
+$shadow-color-inset-drop: oklch(61% 0.03 262) !default;
+$shadow-inset: 0 1px 0 oklch(61% 0.03 262 / 0.15),
+  inset 0 2px 2px oklch(0% 0 0 / 0.1) !default;
+$shadow-xs: 0 1px 2px oklch(40.3% 0.03 262 / 0.14),
+  0 1px 1px oklch(40.3% 0.03 262 / 0.08) !default;
+$shadow-sm: 0 2px 6px oklch(40.3% 0.03 262 / 0.16),
+  0 1px 3px oklch(40.3% 0.03 262 / 0.12) !default;
+$shadow-md: 0 6px 16px oklch(40.3% 0.03 262 / 0.18),
+  0 2px 6px oklch(40.3% 0.03 262 / 0.12) !default;
+$shadow-lg: 0 12px 28px oklch(40.3% 0.03 262 / 0.22),
+  0 4px 12px oklch(40.3% 0.03 262 / 0.14) !default;
+$shadow-xl: 0 20px 48px oklch(40.3% 0.03 262 / 0.28),
+  0 8px 20px oklch(40.3% 0.03 262 / 0.18) !default;
+
+// --- Menu / Dropdown  ---
+$menu-width: 17.5rem !default; /* 280px */
+$menu-item-padding-x: 1rem !default; /* 16px */
+$menu-item-padding-y: 0.5rem !default; /* 8px */
+$menu-max-height: 21rem !default; /* ~336px */
+$menu-scrollbar-width: 6px !default;
+$menu-scrollbar-thumb-height: 3rem !default;
+
+// --- Checkbox / Radio / Switch  ---
+$control-size: 1.5rem !default;
+$switch-width: 3rem !default;
+$switch-height: 1.625rem !default;
+$border-radius-round: 128px !default;
+
+$container-max-width: 75rem !default;
+$grid-gutter: $space-4 !default;
+
+// --- Champs  ---
+$field-width: 17.5rem !default;
+$field-width-defined: 26.875rem !default;
+$field-padding-x: 0.75rem !default;
+$field-padding-y: 0.5rem !default;
+$field-gap: 0.5rem !default;
+$field-min-height: 2.75rem !default;
+$field-icon-size: 1.5rem !default;
+
+// --- Buttons ---
+$btn-min-height: 3.125rem !default;
+$btn-padding-y: 0.75rem !default;
+$btn-padding-x: 1.5rem !default;
+$btn-gap: 0.75rem !default;
+$btn-border-radius: $border-radius-8 !default;
+$btn-icon-size: 1.25rem !default;
+$btn-height-card: 2.75rem !default; /* 42px — bouton dans carte spec */
+
+// --- Alerts ---
+$alert-gap: 0.75rem !default; /* 12px */
+$alert-padding-y: 0.75rem !default; /* 12px */
+$alert-padding-x: 1rem !default; /* 16px */
+$alert-icon-size: 1.5rem !default; /* 24px */
+$alert-close-target: 2rem !default; /* 32px — icon 20px + padding */
+$alert-close-icon-size: 1.25rem !default; /* 20px */
+$alert-dialog-max-width: 28rem !default; /* 448px */
+$alert-dialog-gap: 1rem !default; /* 16px */
+$alert-dialog-z: 1100 !default;
+$alert-dialog-backdrop: rgb(22 26 38 / 0.55) !default;
+
+// --- Modals (general dialog) ---
+$modal-z: 1200 !default;
+$modal-backdrop: $alert-dialog-backdrop !default;
+$modal-gap: 1rem !default; /* 16px */
+$modal-padding: 1.5rem !default; /* 24px */
+$modal-max-width-sm: 24rem !default; /* 384px */
+$modal-max-width: 32rem !default; /* 512px */
+$modal-max-width-lg: 42rem !default; /* 672px */
+$modal-close-target: 2.75rem !default; /* 44px touch target */
+
+// --- Cartes  ---
+$card-padding: 1.5rem !default; /* 24px */
+$card-gap: 1.5rem !default; /* 24px — slots */
+$slot-gap: $card-gap !default;
+$slot-min-width: 8.6875rem !default; /* 139px — spec Slot */
+$card-copy-gap: 0.75rem !default; /* 12px */
+$card-width-copy: 25.9375rem !default; /* 415px */
+$card-width-newsletter: 32rem !default; /* 512px */
+$card-width-blank: 11.6875rem !default; /* 187px */
+$card-width-horizontal: 36rem !default; /* 576px — media + copy row */
+$card-horizontal-media-width: 11.25rem !default; /* 180px — portrait thumb (3:4) */
+
+// --- Navigation  ---
+$nav-item-padding: 0.5rem !default; /* 8px */
+$nav-item-gap: 0.75rem !default; /* 12px */
+$nav-list-gap: 0.5rem !default; /* 8px */
+$header-nav-gap: 2rem !default; /* 32px */
+$header-nav-actions-gap: 0.75rem !default; /* 12px */
+$header-nav-mobile-max: 48rem !default; /* burger + drawer below this width */
+
+// --- Anchor in-page nav  ---
+$anchor-item-gap: 0.75rem !default; /* 12px */
+$anchor-item-py: 0.5rem !default; /* 8px */
+$anchor-item-px-l1: 0.5rem !default; /* 8px */
+$anchor-item-px-l2: 1rem !default; /* 16px */
+$anchor-border-selected: 0.125rem !default; /* 2px */
+
+// --- Autocomplete  ---
+$autocomplete-width: 20.5rem !default; /* 328px */
+$autocomplete-field-width: 17.5rem !default; /* 280px */
+
+// --- Date picker  ---
+$date-picker-width: 15rem !default; /* 240px */
+$calendar-day-size: 1.5rem !default; /* 24px */
+$calendar-gap: 0.5rem !default; /* 8px */
+$calendar-padding: 0.75rem !default; /* 12px */
+$calendar-inner-gap: 0.75rem !default; /* 12px */
+$calendar-nav-icon: 1.25rem !default; /* 20px */
+$calendar-nav-gap: 0.25rem !default; /* 4px */
+$calendar-month-gap: 1rem !default; /* 16px */
+
+// --- Form  ---
+$form-padding: 1.5rem !default; /* 24px */
+$form-gap: 3rem !default; /* 48px */
+$form-body-gap: 1rem !default; /* 16px */
+$form-field-gap: 0.25rem !default; /* 4px */
+$form-max-width: 20.5rem !default; /* 328px */
+$form-field-width: 17.5rem !default; /* 280px — matches $field-width */
+
+// --- Keyline / HR  ---
+$keyline-max-width: 25.494375rem !default; /* ~408px — spec HR */
+
+// --- Tab  ---
+$tab-item-px: 1rem !default; /* 16px */
+$tab-item-py: 0.75rem !default; /* 12px */
+$tab-item-gap: 0.75rem !default; /* 12px */
+$tab-list-gap: 0.75rem !default; /* 12px */
+$tab-min-height: 3.125rem !default; /* 50px */
+$tab-icon-size: 1.25rem !default; /* 20px */
+$tab-indicator-width: 0.25rem !default; /* 4px */
+
+// --- Button group  ---
+$btn-group-item-px: 1rem !default; /* 16px */
+$btn-group-item-py: 0.5rem !default; /* 8px */
+$btn-group-item-gap: 0.5rem !default; /* 8px */
+$btn-group-icon-size: 1.25rem !default; /* 20px */
+
+// --- Pagination  ---
+$pagination-item-size: 2.75rem !default; /* 44px */
+$pagination-gap: 0.5rem !default; /* 8px */
+$pagination-pages-gap: 0.75rem !default; /* 12px */
+$pagination-jumper-width: 3rem !default; /* 48px */
+$pagination-results-select-width: 5rem !default; /* 80px */
+$pagination-icon-size: 1.5rem !default; /* 24px */
+
+// --- Carousel  ---
+$carousel-max-width: 40rem !default; /* 640px */
+$carousel-gap: 1rem !default; /* 16px */
+$carousel-arrow-size: 3rem !default; /* 48px */
+$carousel-arrow-padding: 0.75rem !default; /* 12px */
+$carousel-arrow-icon: 1.5rem !default; /* 24px */
+$carousel-scrollbar-height: 0.125rem !default; /* 2px */
+$carousel-scrollbar-height-hover: 0.25rem !default; /* 4px */
+$carousel-scrollbar-thumb-width: 37.5% !default;
+
+// --- Link & Breadcrumb  ---
+$link-gap: 0.75rem !default; /* 12px */
+$link-padding: 0.125rem !default; /* 2px */
+$link-icon-size: 1.25rem !default; /* 20px */
+$breadcrumb-gap: 0.25rem !default; /* 4px */
+
+// --- Table  ---
+$table-cell-padding-x: 1rem !default; /* 16px */
+$table-cell-padding-y: 0.75rem !default; /* 12px */
+$table-item-gap: 0.25rem !default; /* 4px */
+$table-item-py: 0.125rem !default; /* 2px */
+$table-icon-size: 1.25rem !default; /* 20px */
+$table-status-dot: 0.75rem !default; /* 12px */
+
+// --- Tags  ---
+$tag-gap: 0.25rem !default; /* 4px */
+$tag-padding-y: 0.25rem !default; /* 4px */
+$tag-padding-x: 0.5rem !default; /* 8px */
+$tag-padding-pl-interactive: 0.25rem !default; /* 4px */
+$tag-padding-pr-interactive: 0.375rem !default; /* 6px */
+$tag-icon-size: 1rem !default; /* 16px */
+$tag-focus-offset: 3px !default;
+
+// --- Loader  ---
+$loader-size-48: 3rem !default;
+$loader-size-40: 2.5rem !default;
+$loader-size-32: 2rem !default;
+$loader-size-24: 1.5rem !default;
+$loader-dot-48: 0.375rem !default; /* 6px */
+$loader-dot-40: 0.3125rem !default; /* 5px */
+$loader-dot-32: 0.25rem !default; /* 4px */
+$loader-dot-24: 0.1875rem !default; /* 3px */
+$loader-orbit-ratio: 0.375 !default; /* distance centre → point */
+
+// --- List  ---
+$list-gap: 1rem !default; /* 16px — heading → items */
+$list-items-gap: 0.5rem !default; /* 8px */
+$list-item-gap: 0.75rem !default; /* 12px */
+$list-content-gap: 0.25rem !default; /* 4px */
+$list-content-py: 0.25rem !default; /* 4px */
+$list-indicator-size: 1.5rem !default; /* 24px */
+$list-indicator-icon: 1rem !default; /* 16px */
+
+// --- Badge  ---
+$badge-copy-size: 1.5rem !default; /* 24px */
+$badge-dot-size: 0.5rem !default; /* 8px */
+
+// --- Tree  ---
+$tree-item-gap: 0.75rem !default; /* 12px */
+$tree-item-padding: 0.25rem !default; /* 4px */
+$tree-level-2-pl: 1rem !default; /* 16px */
+$tree-level-3-pl: 1rem !default; /* 16px — same as level-2; .tree__toggle-spacer covers the 24px chevron */
+$tree-level-3-py: 0.4375rem !default; /* 7px */
+$tree-toggle-padding: 0.25rem !default; /* 4px */
+$tree-toggle-icon: 1.5rem !default; /* 24px */
+$tree-icon-size: 1.25rem !default; /* 20px */
+$tree-content-gap: 0.25rem !default; /* 4px */
+
+// --- Progress  ---
+$progress-height-sm: 2px !default;
+$progress-height-md: 4px !default;
+$progress-width: 16rem !default; /* 256px */
+$progress-bar-max-width: 32rem !default; /* 512px */
+$progress-circle-sm: 4rem !default; /* 64px */
+$progress-circle-md: 8rem !default; /* 128px */
+$progress-circle-stroke-sm: 4px !default;
+$progress-circle-stroke-md: 6px !default;
+
+// --- Snackbar  ---
+$snackbar-max-width: 31.9375rem !default; /* 511px */
+$snackbar-padding-x: 1rem !default; /* 16px */
+$snackbar-padding-y: 1.25rem !default; /* 20px */
+$snackbar-gap: 1rem !default; /* 16px */
+$snackbar-text-gap: 0.25rem !default; /* 4px */
+$snackbar-icon-size: 1.5rem !default; /* 24px */
+$snackbar-link-icon-size: 1.25rem !default; /* 20px */
+$snackbar-close-target: 2rem !default; /* 32px — icon 16px + padding */
+$snackbar-close-icon-size: 1rem !default; /* 16px */
+$snackbar-viewport-z: 1300 !default;
+
+// --- Accessibility ---
+$focus-ring-width: 3px !default;
+$focus-ring-offset: 2px !default;
+$focus-ring-color: var(--primary-400) !default;
+$min-touch-target: 44px !default;
+$motion-duration-fast: 150ms !default;
+$motion-duration-base: 250ms !default;
+$motion-easing: cubic-bezier(0.2, 0, 0, 1) !default;
+
+// --- Semantic (palette references — overridable) ---
+$surface-page: var(--neutral-100) !default;
+$surface-action: var(--primary-600) !default;
+$surface-action-hover: var(--primary-700) !default;
+$surface-disabled: var(--neutral-100) !default;
+$surface-muted: var(--neutral-100) !default;
+$surface-elevated: var(--neutral-white) !default;
+$surface-primary: var(--neutral-white) !default;
+
+$text-body: var(--neutral-600) !default;
+$text-disabled: var(--neutral-450) !default;
+$text-filled: var(--neutral-900) !default;
+$text-heading: var(--neutral-900) !default;
+$text-headings: var(--neutral-800) !default;
+$text-on-action: var(--neutral-100) !default;
+$text-action: var(--primary-700) !default;
+$text-on-disabled: var(--neutral-700) !default;
+$text-muted: var(--neutral-450) !default;
+
+$border-primary: var(--neutral-200) !default;
+$border-action: var(--primary-default) !default;
+$border-focus: var(--primary-500) !default;
+$border-error: var(--error-500) !default;
+$border-success: var(--success-500) !default;
+$border-disabled: var(--neutral-300) !default;
+$border-action-hover: var(--primary-600) !default;
+
+$surface-action-hover-2: var(--primary-100) !default;
+$surface-disabled-selected: var(--neutral-600) !default;
+$surface-error: var(--error-100) !default;
+
+$border-error-input: var(--error-500) !default;

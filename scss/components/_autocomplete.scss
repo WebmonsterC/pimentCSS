@@ -1,0 +1,210 @@
+/**
+ * Autocomplete — PimentCSS v1
+ * Label + hint + champ avec clear + bouton recherche + liste (menu rail)
+ */
+@use "../abstracts/variables" as v;
+
+.#{v.class-seg()}autocomplete {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: v.$space-1;
+  width: 100%;
+  max-width: v.$autocomplete-width;
+  position: relative;
+}
+
+.#{v.class-seg()}autocomplete__hint {
+  margin: 0;
+  width: 100%;
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-body-medium);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-body-medium);
+  letter-spacing: var(--letter-spacing-body-medium);
+  color: var(--neutral-500);
+}
+
+.#{v.class-seg()}autocomplete__control {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  border: v.$border-width-1 solid var(--border-primary);
+  border-radius: v.$border-radius-4;
+  overflow: hidden;
+  transition: border-color v.$motion-duration-fast v.$motion-easing;
+}
+
+.#{v.class-seg()}autocomplete:hover:not(:has(:disabled)) .#{v.class-seg()}autocomplete__control,
+.#{v.class-seg()}autocomplete__control--hover {
+  border-color: var(--border-action-hover);
+}
+
+.#{v.class-seg()}autocomplete--open .#{v.class-seg()}autocomplete__control,
+.#{v.class-seg()}autocomplete__control:focus-within {
+  border-color: var(--border-action-hover);
+}
+
+.#{v.class-seg()}autocomplete--open .#{v.class-seg()}autocomplete__control::after,
+.#{v.class-seg()}autocomplete__control:focus-within::after {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border: v.$border-width-2 solid var(--border-focus);
+  border-radius: v.$border-radius-6;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.#{v.class-seg()}autocomplete__field {
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
+  gap: v.$field-gap;
+  min-width: 0;
+  max-width: v.$autocomplete-field-width;
+  min-height: v.$btn-height-card;
+  padding: v.$field-padding-y v.$field-padding-x;
+  background: var(--surface-primary);
+  border-right: v.$border-width-1 solid var(--border-primary);
+}
+
+.#{v.class-seg()}autocomplete__input {
+  flex: 1 1 0;
+  min-width: 0;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-body-medium);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-body-medium);
+  letter-spacing: var(--letter-spacing-body-medium);
+  color: var(--text-filled);
+
+  &::-webkit-search-cancel-button,
+  &::-webkit-search-decoration {
+    appearance: none;
+    display: none;
+  }
+
+  &::placeholder {
+    color: var(--text-disabled);
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+/* Shown only after a list selection (see autocomplete--has-value + JS) */
+.#{v.class-seg()}autocomplete__clear {
+  display: none;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: v.$field-icon-size;
+  height: v.$field-icon-size;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--text-body);
+  cursor: pointer;
+
+  &:hover {
+    color: var(--text-action);
+  }
+
+  &:focus-visible {
+    outline: v.$border-width-2 solid var(--border-focus);
+    outline-offset: 2px;
+    border-radius: v.$border-radius-4;
+  }
+}
+
+.#{v.class-seg()}autocomplete--has-value .#{v.class-seg()}autocomplete__clear {
+  display: inline-flex;
+}
+
+.#{v.class-seg()}autocomplete__clear svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.#{v.class-seg()}autocomplete__panel .#{v.class-seg()}menu__item-label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.125rem;
+  text-align: left;
+}
+
+.#{v.class-seg()}autocomplete__panel .#{v.class-seg()}menu__item-title {
+  font-size: var(--font-size-body-medium);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-body-medium);
+}
+
+.#{v.class-seg()}autocomplete__panel .#{v.class-seg()}menu__item-desc {
+  font-size: var(--font-size-body-small);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-body-small);
+  color: var(--text-muted);
+}
+
+.#{v.class-seg()}autocomplete__panel .#{v.class-seg()}menu__item--selected .#{v.class-seg()}menu__item-desc,
+.#{v.class-seg()}autocomplete__panel .#{v.class-seg()}menu__item[aria-selected="true"] .#{v.class-seg()}menu__item-desc {
+  color: inherit;
+  opacity: 0.9;
+}
+
+.#{v.class-seg()}autocomplete__search {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  min-height: v.$btn-height-card;
+  padding: v.$field-padding-y v.$field-padding-x;
+  border: 0;
+  background: var(--surface-action);
+  color: var(--text-on-action);
+  cursor: pointer;
+  transition: background-color v.$motion-duration-fast v.$motion-easing;
+
+  &:hover {
+    background: var(--surface-action-hover);
+  }
+
+  &:focus-visible {
+    outline: v.$border-width-2 solid var(--border-focus);
+    outline-offset: -2px;
+  }
+}
+
+.#{v.class-seg()}autocomplete__search svg {
+  width: v.$field-icon-size;
+  height: v.$field-icon-size;
+  display: block;
+}
+
+.#{v.class-seg()}autocomplete__panel {
+  position: absolute;
+  top: calc(100% + v.$space-1);
+  left: 0;
+  right: 0;
+  z-index: 20;
+  display: none;
+}
+
+.#{v.class-seg()}autocomplete--open .#{v.class-seg()}autocomplete__panel {
+  display: block;
+}
+
+.#{v.class-seg()}autocomplete__panel .#{v.class-seg()}menu {
+  max-width: none;
+  width: 100%;
+  box-shadow: var(--shadow-md);
+}

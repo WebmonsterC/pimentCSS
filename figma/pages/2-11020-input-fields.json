@@ -1,0 +1,19 @@
+{
+  "fileKey": "Vnc34wL28GUCKuCG7C3lEO",
+  "fileName": "Design-system-Numera11y-v-1.3",
+  "pageId": "2:11020",
+  "pageUrl": "https://www.figma.com/design/Vnc34wL28GUCKuCG7C3lEO/Design-system-Numera11y-v-1.3?node-id=2-11020",
+  "name": "Input fields",
+  "frameNodeId": "2:11034",
+  "status": "synced",
+  "syncedAt": "2026-05-21",
+  "components": [
+    { "name": "Label", "nodeId": "2:11038", "variants": ["None", "Required", "Optional"], "css": ["scss/components/_label.scss", "components/label.css"] },
+    { "name": "Password toggle", "nodeId": "2:11053", "css": "scss/components/_input.scss" },
+    { "name": "Field", "nodeId": "2:11059", "variants": ["Default", "Active", "Focus", "Error", "Success", "Disabled"], "css": "scss/components/_input.scss" },
+    { "name": "Input", "nodeId": "2:11127", "css": "scss/components/_input.scss" },
+    { "name": "Textarea", "nodeId": "2:11132", "css": ["scss/components/_textarea.scss", "components/textarea.css"] },
+    { "name": "Defined field", "nodeId": "2:11161", "variants": ["Default", "Focus", "Hover", "Error", "Success", "Disabled"], "css": "scss/components/_input.scss" },
+    { "name": "Defined input", "nodeId": "2:11264", "css": "scss/components/_input.scss" }
+  ]
+}

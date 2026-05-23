@@ -1,0 +1,29 @@
+@use "../abstracts/variables" as v;
+
+$spacers: (
+  0: 0,
+  1: v.$space-1,
+  2: v.$space-2,
+  3: v.$space-3,
+  4: v.$space-4,
+  5: v.$space-5,
+  6: v.$space-6,
+);
+
+@each $key, $value in $spacers {
+  .#{v.class-seg()}m-#{$key} {
+    margin: $value !important;
+  }
+  .#{v.class-seg()}mt-#{$key} {
+    margin-top: $value !important;
+  }
+  .#{v.class-seg()}mb-#{$key} {
+    margin-bottom: $value !important;
+  }
+  .#{v.class-seg()}p-#{$key} {
+    padding: $value !important;
+  }
+  .#{v.class-seg()}gap-#{$key} {
+    gap: $value !important;
+  }
+}

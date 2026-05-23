@@ -1,0 +1,15 @@
+// PimentCSS — tokens, layout, utilitaires (sans composants UI)
+@forward "abstracts/variables";
+
+@use "tokens/colors";
+@use "tokens/typography";
+@use "tokens/layout";
+@use "tokens/depth";
+@use "tokens/semantic";
+@use "tokens/a11y";
+
+@use "layout/container";
+@use "layout/grid";
+@use "utilities/spacing";
+@use "utilities/display";
+@use "utilities/shadow";

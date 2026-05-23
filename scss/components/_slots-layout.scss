@@ -1,0 +1,38 @@
+/**
+ * Slots layouts — (Column / Row)
+ */
+@use "../abstracts/variables" as v;
+
+.#{v.class-seg()}slots-layout {
+  display: flex;
+  gap: v.$slot-gap;
+}
+
+/* « Column »: slots side by side (1–6 columns) */
+.#{v.class-seg()}slots-layout--column {
+  flex-flow: row nowrap;
+  align-items: flex-start;
+}
+
+.#{v.class-seg()}slots-layout--column > .#{v.class-seg()}slot,
+.#{v.class-seg()}slots-layout--column > * {
+  flex-shrink: 0;
+}
+
+/* « Row »: stacked slots (1–6 rows) */
+.#{v.class-seg()}slots-layout--row {
+  flex-flow: column nowrap;
+  align-items: stretch;
+  width: v.$slot-min-width;
+  max-width: 100%;
+}
+
+.#{v.class-seg()}slots-layout--row > .#{v.class-seg()}slot,
+.#{v.class-seg()}slots-layout--row > * {
+  width: 100%;
+}
+
+/* Variante pleine largeur (cartes, conteneurs) */
+.#{v.class-seg()}slots-layout--row.#{v.class-seg()}slots-layout--fluid {
+  width: 100%;
+}

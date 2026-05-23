@@ -1,0 +1,184 @@
+/**
+ * Menu — PimentCSS v1
+ * Items + liste scrollable + variantes caret (None | Dropdown | Left)
+ */
+
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+// --- Item (ligne de menu) ---
+.#{v.class-seg()}menu__item {
+  display: flex;
+  align-items: center;
+  gap: v.$field-gap;
+  width: 100%;
+  min-height: v.$field-min-height;
+  padding: v.$menu-item-padding-y v.$menu-item-padding-x;
+  border: 0;
+  border-bottom: v.$border-width-1 solid var(--border-primary);
+  background: var(--surface-primary);
+  color: var(--text-body);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-body-medium);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-body-medium);
+  letter-spacing: var(--letter-spacing-body-medium);
+  text-align: left;
+  cursor: pointer;
+  transition: background-color v.$motion-duration-fast v.$motion-easing,
+    border-color v.$motion-duration-fast v.$motion-easing,
+    color v.$motion-duration-fast v.$motion-easing;
+
+  &:last-child {
+    border-bottom: 0;
+  }
+
+  &:hover:not(:disabled):not(.#{v.class-seg()}menu__item--selected),
+  &.#{v.class-seg()}menu__item--hover:not(.#{v.class-seg()}menu__item--selected) {
+    background: var(--surface-action-hover-2);
+    border-bottom-color: var(--border-action-hover);
+  }
+
+  &:focus-visible {
+    @include m.focus-ring;
+    z-index: 1;
+  }
+
+  &--selected,
+  &[aria-selected="true"] {
+    background: var(--surface-action);
+    color: var(--text-on-action);
+    border-bottom-color: transparent;
+
+    &:hover:not(:disabled),
+    &.#{v.class-seg()}menu__item--hover {
+      background: var(--surface-action-hover);
+    }
+  }
+
+  &:disabled,
+  &.#{v.class-seg()}menu__item--disabled {
+    background: var(--surface-disabled);
+    color: var(--text-on-disabled);
+    border-bottom-color: var(--border-disabled);
+    cursor: not-allowed;
+    pointer-events: none;
+
+    &.#{v.class-seg()}menu__item--selected,
+    &[aria-selected="true"] {
+      background: var(--surface-disabled-selected);
+      color: var(--text-on-action);
+    }
+  }
+}
+
+.#{v.class-seg()}menu__item-icon {
+  flex-shrink: 0;
+  width: v.$field-icon-size;
+  height: v.$field-icon-size;
+  color: inherit;
+}
+
+.#{v.class-seg()}menu__item-icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.#{v.class-seg()}menu__item-label {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+// --- Liste ---
+.#{v.class-seg()}menu {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  max-width: v.$menu-width;
+  border: v.$border-width-1 solid var(--border-primary);
+  border-radius: v.$border-radius-4;
+  background: var(--surface-primary);
+  overflow: hidden;
+  position: relative;
+}
+
+.#{v.class-seg()}menu__list {
+  flex: 1 1 0;
+  min-width: 0;
+  max-height: v.$menu-max-height;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.#{v.class-seg()}menu__list::-webkit-scrollbar {
+  width: v.$menu-scrollbar-width;
+}
+
+.#{v.class-seg()}menu__list::-webkit-scrollbar-thumb {
+  background: var(--border-disabled);
+  border-radius: 50px;
+  min-height: v.$menu-scrollbar-thumb-height;
+}
+
+// Caret (Dropdown variant — centered)
+.#{v.class-seg()}menu--caret::before {
+  content: "";
+  position: absolute;
+  top: -9px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 9px solid var(--border-primary);
+  pointer-events: none;
+}
+
+.#{v.class-seg()}menu--caret::after {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-bottom: 8px solid var(--surface-primary);
+  pointer-events: none;
+}
+
+// Caret aligned left
+.#{v.class-seg()}menu--caret-left::before {
+  left: 1.1rem;
+  transform: none;
+}
+
+.#{v.class-seg()}menu--caret-left::after {
+  left: calc(1.1rem + 1px);
+  transform: none;
+}
+
+// Dedicated scroll bar (spec mockup with separate rail)
+.#{v.class-seg()}menu--rail {
+  .#{v.class-seg()}menu__list {
+    overflow: hidden;
+  }
+
+  .#{v.class-seg()}menu__rail {
+    flex-shrink: 0;
+    display: flex;
+    padding: v.$space-2;
+    background: var(--surface-primary);
+  }
+
+  .#{v.class-seg()}menu__rail-thumb {
+    width: v.$menu-scrollbar-width;
+    height: v.$menu-scrollbar-thumb-height;
+    border-radius: 50px;
+    background: var(--border-disabled);
+  }
+}

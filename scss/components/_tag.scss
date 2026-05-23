@@ -1,0 +1,148 @@
+/**
+ * Tags — PimentCSS v1
+ */
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+@mixin tag-text {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-body-medium);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-body-medium);
+  letter-spacing: var(--letter-spacing-body-medium);
+  white-space: nowrap;
+}
+
+.#{v.class-seg()}tag {
+  display: inline-flex;
+  align-items: center;
+  gap: v.$tag-gap;
+  max-width: 100%;
+  padding: v.$tag-padding-y v.$tag-padding-x;
+  border: v.$border-width-1 solid transparent;
+  border-radius: v.$border-radius-4;
+  @include tag-text;
+  vertical-align: middle;
+}
+
+.#{v.class-seg()}tag__icon {
+  flex-shrink: 0;
+  width: v.$tag-icon-size;
+  height: v.$tag-icon-size;
+  color: currentColor;
+}
+
+.#{v.class-seg()}tag__label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* --- Static tag (optional check icon) --- */
+.#{v.class-seg()}tag--neutral {
+  background: var(--surface-primary);
+  border-color: var(--border-primary);
+  color: var(--text-action);
+}
+
+.#{v.class-seg()}tag--information {
+  background: var(--surface-information);
+  border-color: var(--border-information);
+  color: var(--text-on-information);
+}
+
+.#{v.class-seg()}tag--success {
+  background: var(--surface-success);
+  border-color: var(--border-success);
+  color: var(--text-on-success);
+}
+
+.#{v.class-seg()}tag--warning {
+  background: var(--surface-warning);
+  border-color: var(--border-warning);
+  color: var(--text-on-warning);
+}
+
+.#{v.class-seg()}tag--error {
+  background: var(--surface-error);
+  border-color: var(--border-error-soft);
+  color: var(--text-on-error);
+}
+
+.#{v.class-seg()}tag--disabled {
+  background: var(--surface-disabled);
+  border-color: var(--border-disabled);
+  color: var(--text-on-disabled);
+}
+
+/* --- Interactive tag (bouton) --- */
+button.#{v.class-seg()}tag--interactive,
+.#{v.class-seg()}tag--interactive {
+  padding: v.$tag-padding-y v.$tag-padding-pr-interactive v.$tag-padding-y v.$tag-padding-pl-interactive;
+  border-style: dashed;
+  border-color: var(--border-action);
+  background: var(--surface-primary);
+  color: var(--text-action);
+  cursor: pointer;
+  transition: background-color v.$motion-duration-fast v.$motion-easing,
+    border-color v.$motion-duration-fast v.$motion-easing,
+    color v.$motion-duration-fast v.$motion-easing;
+
+  &:hover:not(:disabled):not(.#{v.class-seg()}tag--interactive-selected),
+  &.#{v.class-seg()}tag--hover:not(.#{v.class-seg()}tag--interactive-selected) {
+    background: var(--surface-action-hover-2);
+    border-color: var(--border-action-hover);
+    color: var(--border-active);
+  }
+
+  &.#{v.class-seg()}tag--focus {
+    outline: v.$border-width-1 solid var(--border-focus);
+    outline-offset: v.$tag-focus-offset;
+    border-radius: v.$border-radius-6;
+  }
+
+  &:focus-visible {
+    outline: v.$border-width-1 solid var(--border-focus);
+    outline-offset: v.$tag-focus-offset;
+    border-radius: v.$border-radius-6;
+  }
+
+  &:disabled,
+  &.#{v.class-seg()}tag--disabled {
+    border-style: solid;
+    background: var(--surface-disabled);
+    border-color: var(--border-disabled);
+    color: var(--text-on-disabled);
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+
+.#{v.class-seg()}tag--interactive-selected {
+  border-style: solid;
+  background: var(--surface-action);
+  color: var(--text-on-action);
+
+  .#{v.class-seg()}tag__icon--add {
+    display: none;
+  }
+
+  &:hover:not(:disabled),
+  &.#{v.class-seg()}tag--hover {
+    background: var(--surface-action-hover);
+    border-color: var(--border-action-hover);
+    color: var(--text-on-action);
+  }
+
+  &:disabled,
+  &.#{v.class-seg()}tag--disabled {
+    background: var(--surface-disabled-selected);
+    border-color: var(--border-disabled);
+    color: var(--text-on-action);
+  }
+}
+
+button.#{v.class-seg()}tag--interactive {
+  font: inherit;
+  text-align: inherit;
+  appearance: none;
+}

@@ -1,0 +1,151 @@
+/**
+ * Cards — PimentCSS v1
+ */
+@use "../abstracts/variables" as v;
+
+.#{v.class-seg()}card {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface-primary);
+  border: v.$border-width-1 solid var(--border-primary);
+  border-radius: v.$border-radius-8;
+  padding: v.$card-padding;
+
+  /* Avoid stacking slot gap + heading margins (common in doc/CMS prose) */
+  :is(h1, h2, h3, h4, h5, h6) {
+    margin: 0;
+  }
+}
+
+.#{v.class-seg()}card--elevated {
+  background: var(--surface-elevated);
+  border-color: var(--border-default);
+  box-shadow: var(--shadow-sm);
+}
+
+.#{v.class-seg()}card--copy {
+  max-width: v.$card-width-copy;
+}
+
+.#{v.class-seg()}card--newsletter {
+  max-width: v.$card-width-newsletter;
+}
+
+.#{v.class-seg()}card--blank {
+  max-width: v.$card-width-blank;
+}
+
+.#{v.class-seg()}card--horizontal {
+  max-width: v.$card-width-horizontal;
+}
+
+.#{v.class-seg()}card__slots {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 0;
+  align-items: stretch;
+  width: 100%;
+}
+
+.#{v.class-seg()}card__slots > * + * {
+  margin-block-start: v.$slot-gap;
+}
+
+/* Tighter rhythm between media and copy; keep $slot-gap before actions */
+.#{v.class-seg()}card__slots > .#{v.class-seg()}card__media + .#{v.class-seg()}copy-block,
+.#{v.class-seg()}card__slots > .#{v.class-seg()}card__media + .#{v.class-seg()}card__content {
+  margin-block-start: v.$card-copy-gap;
+}
+
+.#{v.class-seg()}card .#{v.class-seg()}copy-block__text {
+  font-size: var(--font-size-body-small);
+  line-height: var(--line-height-body-small);
+  letter-spacing: var(--letter-spacing-body-small);
+}
+
+.#{v.class-seg()}card__media {
+  width: 100%;
+  max-width: none;
+  border-radius: v.$border-radius-8;
+
+  /* Standalone .media caps at 15rem; cards use full slot width */
+  &.#{v.class-seg()}media {
+    max-width: none;
+  }
+}
+
+.#{v.class-seg()}card__content {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: v.$slot-gap;
+  align-items: stretch;
+  min-width: 0;
+}
+
+.#{v.class-seg()}card--horizontal .#{v.class-seg()}card__slots {
+  flex-flow: row nowrap;
+  align-items: stretch;
+  gap: v.$slot-gap;
+}
+
+.#{v.class-seg()}card--horizontal .#{v.class-seg()}card__slots > * + * {
+  margin-block-start: 0;
+  margin-inline-start: 0;
+}
+
+.#{v.class-seg()}card--horizontal .#{v.class-seg()}card__media {
+  flex: 0 0 auto;
+  width: v.$card-horizontal-media-width;
+  max-width: 40%;
+  align-self: stretch;
+}
+
+.#{v.class-seg()}card--horizontal .#{v.class-seg()}card__media.#{v.class-seg()}media--3-4 {
+  width: v.$card-horizontal-media-width;
+  max-width: v.$card-horizontal-media-width;
+}
+
+.#{v.class-seg()}card--horizontal .#{v.class-seg()}card__content {
+  flex: 1 1 auto;
+  justify-content: center;
+}
+
+.#{v.class-seg()}card .#{v.class-seg()}btn {
+  align-self: flex-start;
+  min-height: v.$btn-height-card;
+  padding: v.$field-padding-y v.$space-4;
+  gap: v.$field-gap;
+}
+
+.#{v.class-seg()}card .#{v.class-seg()}btn__icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.#{v.class-seg()}card__header,
+.#{v.class-seg()}card__body,
+.#{v.class-seg()}card__footer {
+  padding: v.$space-4;
+}
+
+.#{v.class-seg()}card--elevated .#{v.class-seg()}card__header,
+.#{v.class-seg()}card--elevated .#{v.class-seg()}card__body,
+.#{v.class-seg()}card--elevated .#{v.class-seg()}card__footer {
+  padding: v.$space-4;
+}
+
+.#{v.class-seg()}card--elevated .#{v.class-seg()}card__header {
+  border-bottom: v.$border-width-1 solid var(--border-default);
+  font-weight: var(--font-weight-semi-bold);
+  color: var(--text-heading);
+}
+
+.#{v.class-seg()}card--elevated .#{v.class-seg()}card__footer {
+  border-top: v.$border-width-1 solid var(--border-default);
+  background: var(--surface-muted);
+}
+
+.#{v.class-seg()}card--elevated {
+  padding: 0;
+  overflow: hidden;
+}

@@ -1,0 +1,59 @@
+{
+  "fileKey": "Vnc34wL28GUCKuCG7C3lEO",
+  "fileName": "Design-system-Numera11y-v-1.3",
+  "pageId": "2:561",
+  "pageUrl": "https://www.figma.com/design/Vnc34wL28GUCKuCG7C3lEO/Design-system-Numera11y-v-1.3?node-id=2-561",
+  "name": "Tree",
+  "frameNodeId": "2:1013",
+  "status": "synced",
+  "syncedAt": "2026-05-21",
+  "components": [
+    {
+      "name": "Indicator",
+      "nodeId": "2:1017",
+      "variants": [
+        { "name": "Default / Closed", "nodeId": "2:1018" },
+        { "name": "Default / Open", "nodeId": "2:1020" },
+        { "name": "Hover / Closed", "nodeId": "2:1022" },
+        { "name": "Hover / Open", "nodeId": "2:1024" }
+      ],
+      "css": "scss/components/_tree.scss",
+      "class": "tree__toggle"
+    },
+    {
+      "name": "Tree item",
+      "nodeId": "2:1035",
+      "levels": ["01", "02", "03"],
+      "states": ["Default", "Hover", "Focus"],
+      "types": ["Unselected", "Selected"],
+      "css": "scss/components/_tree.scss",
+      "classes": [
+        "tree__row",
+        "tree__row--level-2",
+        "tree__row--level-3",
+        "tree__row--selected"
+      ]
+    },
+    {
+      "name": "Tree component",
+      "nodeId": "2:1163",
+      "css": "scss/components/_tree.scss",
+      "class": "tree"
+    }
+  ],
+  "specs": {
+    "itemGap": "12px",
+    "itemPadding": "4px",
+    "level2PaddingLeft": "16px",
+    "level3PaddingLeft": "72px",
+    "level3PaddingY": "7px",
+    "togglePadding": "4px",
+    "toggleIcon": "24px",
+    "contentIcon": "20px",
+    "contentGap": "4px",
+    "selectedColor": "text-action",
+    "selectedHoverColor": "primary-600",
+    "focusRing": "2px border-focus, inset -2px, radius 4px"
+  },
+  "codePaths": ["scss/components/_tree.scss"]
+}

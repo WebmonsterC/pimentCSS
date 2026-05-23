@@ -1,0 +1,546 @@
+{
+  "version": 1,
+  "generated": "2026-05-23T18:04:23.329Z",
+  "entries": [
+    {
+      "id": "a11y",
+      "title": "Accessibility guide",
+      "url": "/docs/a11y",
+      "section": "Accessibility",
+      "breadcrumb": [
+        "Accessibility",
+        "Accessibility guide"
+      ],
+      "lead": "Focus rings, touch targets, semantic contrast pairs, and reduced motion.",
+      "keywords": "a11y wcag focus contrast"
+    },
+    {
+      "id": "alerts",
+      "title": "Alerts",
+      "url": "/docs/alerts",
+      "section": "Feedback",
+      "breadcrumb": [
+        "Feedback",
+        "Alerts"
+      ],
+      "lead": "Inline alerts, dismiss controls, and dialog-style confirmations.",
+      "keywords": "alert dialog dismiss feedback status"
+    },
+    {
+      "id": "components",
+      "title": "Alerts",
+      "url": "/docs/components",
+      "section": "Feedback",
+      "breadcrumb": [
+        "Feedback",
+        "Alerts"
+      ],
+      "lead": "Redirect: use alerts.html (legacy slug /components).",
+      "keywords": ""
+    },
+    {
+      "id": "autocomplete",
+      "title": "Autocomplete",
+      "url": "/docs/autocomplete",
+      "section": "Forms",
+      "breadcrumb": [
+        "Forms",
+        "Autocomplete"
+      ],
+      "lead": "Suggest list, keyboard navigation, and combobox patterns.",
+      "keywords": "suggest search combobox"
+    },
+    {
+      "id": "badge",
+      "title": "Badges",
+      "url": "/docs/badge",
+      "section": "Content",
+      "breadcrumb": [
+        "Content",
+        "Badges"
+      ],
+      "lead": "Dot badges, counts, and status labels on inline content.",
+      "keywords": "badge pill label"
+    },
+    {
+      "id": "button-group",
+      "title": "Button group",
+      "url": "/docs/button-group",
+      "section": "Actions",
+      "breadcrumb": [
+        "Actions",
+        "Button group"
+      ],
+      "lead": "Segmented single-select and optional multi-toggle toolbars.",
+      "keywords": "button group segmented"
+    },
+    {
+      "id": "buttons",
+      "title": "Buttons",
+      "url": "/docs/buttons",
+      "section": "Actions",
+      "breadcrumb": [
+        "Actions",
+        "Buttons"
+      ],
+      "lead": "Primary, outline, and transparent variants with icon slots and touch targets.",
+      "keywords": "button btn primary"
+    },
+    {
+      "id": "cards",
+      "title": "Cards",
+      "url": "/docs/cards",
+      "section": "Feedback",
+      "breadcrumb": [
+        "Feedback",
+        "Cards"
+      ],
+      "lead": "Card patterns for Copy, Newsletter signup, Blank slots, media ratios, and elevated panels.",
+      "keywords": "card copy newsletter blank slot media ratio"
+    },
+    {
+      "id": "carousel",
+      "title": "Carousel",
+      "url": "/docs/carousel",
+      "section": "Navigation",
+      "breadcrumb": [
+        "Navigation",
+        "Carousel"
+      ],
+      "lead": "Scrollable track, arrows, and scrollbar affordances.",
+      "keywords": "slider carousel"
+    },
+    {
+      "id": "checkboxes-radios-switch",
+      "title": "Checkboxes, radios & switches",
+      "url": "/docs/checkboxes-radios-switch",
+      "section": "Forms",
+      "breadcrumb": [
+        "Forms",
+        "Checkboxes, radios & switches"
+      ],
+      "lead": "Selection controls with accessible labels and group semantics.",
+      "keywords": "checkbox radio switch selection"
+    },
+    {
+      "id": "colors",
+      "title": "Colors",
+      "url": "/docs/colors",
+      "section": "Foundations",
+      "breadcrumb": [
+        "Foundations",
+        "Colors"
+      ],
+      "lead": "OKLCH palettes with hex fallback, semantic variables, and swatch classes.",
+      "keywords": "palette oklch tokens"
+    },
+    {
+      "id": "pattern-contact-form",
+      "title": "Contact form",
+      "url": "/docs/pattern-contact-form",
+      "section": "Patterns",
+      "breadcrumb": [
+        "Patterns",
+        "Contact form"
+      ],
+      "lead": "Contact form recipe with fields, consent, and submit actions.",
+      "keywords": "pattern form contact"
+    },
+    {
+      "id": "customization",
+      "title": "Customization",
+      "url": "/docs/customization",
+      "section": "Getting started",
+      "breadcrumb": [
+        "Getting started",
+        "Customization"
+      ],
+      "lead": "Override Sass variables and CSS tokens to match your brand.",
+      "keywords": "theme variables sass"
+    },
+    {
+      "id": "date-picker",
+      "title": "Date picker",
+      "url": "/docs/date-picker",
+      "section": "Forms",
+      "breadcrumb": [
+        "Forms",
+        "Date picker"
+      ],
+      "lead": "Calendar panel, month navigation, and field-group layout.",
+      "keywords": "calendar date"
+    },
+    {
+      "id": "depth",
+      "title": "Depth & shadows",
+      "url": "/docs/depth",
+      "section": "Foundations",
+      "breadcrumb": [
+        "Foundations",
+        "Depth & shadows"
+      ],
+      "lead": "Elevation shadows and z-index tokens for cards, overlays, and modals.",
+      "keywords": "elevation shadow z-index"
+    },
+    {
+      "id": "keyline",
+      "title": "Dividers",
+      "url": "/docs/keyline",
+      "section": "Content",
+      "breadcrumb": [
+        "Content",
+        "Dividers"
+      ],
+      "lead": "Horizontal rules and vertical keylines for section separation.",
+      "keywords": "divider hr keyline"
+    },
+    {
+      "id": "form",
+      "title": "Form",
+      "url": "/docs/form",
+      "section": "Forms",
+      "breadcrumb": [
+        "Forms",
+        "Form"
+      ],
+      "lead": "Vertical form layout with fields, actions, and validation messaging.",
+      "keywords": "form contact"
+    },
+    {
+      "id": "icons",
+      "title": "Icons",
+      "url": "/docs/icons",
+      "section": "Foundations",
+      "breadcrumb": [
+        "Foundations",
+        "Icons"
+      ],
+      "lead": "Dimensioned icon slots for any SVG or icon font. Phosphor is used in docs as a reference example only.",
+      "keywords": "icon svg phosphor slot aria"
+    },
+    {
+      "id": "anchor-inpage-nav",
+      "title": "In-page anchors",
+      "url": "/docs/anchor-inpage-nav",
+      "section": "Navigation",
+      "breadcrumb": [
+        "Navigation",
+        "In-page anchors"
+      ],
+      "lead": "In-page anchor list with scroll-spy style active states.",
+      "keywords": "anchor scroll spy"
+    },
+    {
+      "id": "input-fields",
+      "title": "Input fields",
+      "url": "/docs/input-fields",
+      "section": "Forms",
+      "breadcrumb": [
+        "Forms",
+        "Input fields"
+      ],
+      "lead": "Labels, hints, validation states, and prefix icons for text inputs.",
+      "keywords": "input label field textarea"
+    },
+    {
+      "id": "installation",
+      "title": "Installation",
+      "url": "/docs/installation",
+      "section": "Getting started",
+      "breadcrumb": [
+        "Getting started",
+        "Installation"
+      ],
+      "lead": "Add PimentCSS via npm, CDN, or Sass compilation.",
+      "keywords": "npm cdn sass"
+    },
+    {
+      "id": "intro",
+      "title": "Introduction",
+      "url": "/docs",
+      "section": "Getting started",
+      "breadcrumb": [
+        "Getting started",
+        "Introduction"
+      ],
+      "lead": "OKLCH tokens, live component preview, npm or CDN quick start, and paths to customize or verify accessibility.",
+      "keywords": "home intro"
+    },
+    {
+      "id": "layout",
+      "title": "Layout",
+      "url": "/docs/layout",
+      "section": "Foundations",
+      "breadcrumb": [
+        "Foundations",
+        "Layout"
+      ],
+      "lead": "Container, 12-column grid, spacing utilities, and RGAA-friendly layout patterns for light and dark mode.",
+      "keywords": "grid container spacing"
+    },
+    {
+      "id": "link-breadcrumb",
+      "title": "Links & breadcrumb",
+      "url": "/docs/link-breadcrumb",
+      "section": "Actions",
+      "breadcrumb": [
+        "Actions",
+        "Links & breadcrumb"
+      ],
+      "lead": "Inline links, external trail icons, and breadcrumb navigation.",
+      "keywords": "link breadcrumb"
+    },
+    {
+      "id": "list",
+      "title": "Lists",
+      "url": "/docs/list",
+      "section": "Content",
+      "breadcrumb": [
+        "Content",
+        "Lists"
+      ],
+      "lead": "Stacked list rows with indicators and optional actions.",
+      "keywords": "list ul ol"
+    },
+    {
+      "id": "loader",
+      "title": "Loader",
+      "url": "/docs/loader",
+      "section": "Feedback",
+      "breadcrumb": [
+        "Feedback",
+        "Loader"
+      ],
+      "lead": "Spinners and in-context loading states.",
+      "keywords": "spinner loading"
+    },
+    {
+      "id": "menu-dropdown",
+      "title": "Menu & dropdown",
+      "url": "/docs/menu-dropdown",
+      "section": "Navigation",
+      "breadcrumb": [
+        "Navigation",
+        "Menu & dropdown"
+      ],
+      "lead": "Menu lists, dropdown panels, and keyboard-friendly disclosure.",
+      "keywords": "dropdown menu popover"
+    },
+    {
+      "id": "modals",
+      "title": "Modals",
+      "url": "/docs/modals",
+      "section": "Feedback",
+      "breadcrumb": [
+        "Feedback",
+        "Modals"
+      ],
+      "lead": "Modal overlay, focus trap, and action footers.",
+      "keywords": "modal dialog overlay focus trap aria-modal"
+    },
+    {
+      "id": "modals-cards",
+      "title": "Modals & cards (moved)",
+      "url": "/docs/modals-cards",
+      "section": "Feedback",
+      "breadcrumb": [
+        "Feedback",
+        "Modals & cards"
+      ],
+      "lead": "This page was split into Modals and Cards. Use the links below.",
+      "keywords": ""
+    },
+    {
+      "id": "navigation",
+      "title": "Navigation",
+      "url": "/docs/navigation",
+      "section": "Navigation",
+      "breadcrumb": [
+        "Navigation",
+        "Navigation"
+      ],
+      "lead": "Header nav items, active state, and responsive shell patterns.",
+      "keywords": "nav navbar menu"
+    },
+    {
+      "id": "patterns",
+      "title": "Overview",
+      "url": "/docs/patterns",
+      "section": "Patterns",
+      "breadcrumb": [
+        "Patterns",
+        "Overview"
+      ],
+      "lead": "Short recipes that combine forms, feedback, navigation, and content components into real pages.",
+      "keywords": "patterns compose page recipe"
+    },
+    {
+      "id": "pagination",
+      "title": "Pagination",
+      "url": "/docs/pagination",
+      "section": "Navigation",
+      "breadcrumb": [
+        "Navigation",
+        "Pagination"
+      ],
+      "lead": "Page controls, ellipsis, and compact table footers.",
+      "keywords": "pager pages"
+    },
+    {
+      "id": "placeholder",
+      "title": "Placeholder",
+      "url": "/docs/placeholder",
+      "section": "Content",
+      "breadcrumb": [
+        "Content",
+        "Placeholder"
+      ],
+      "lead": "Copy blocks, media ratio placeholders, and skeleton patterns.",
+      "keywords": "skeleton loading"
+    },
+    {
+      "id": "progress",
+      "title": "Progress",
+      "url": "/docs/progress",
+      "section": "Feedback",
+      "breadcrumb": [
+        "Feedback",
+        "Progress"
+      ],
+      "lead": "Linear bars, labeled progress, and circular indicators.",
+      "keywords": "progress bar loader"
+    },
+    {
+      "id": "slots-layouts",
+      "title": "Slots & layouts",
+      "url": "/docs/slots-layouts",
+      "section": "Patterns",
+      "breadcrumb": [
+        "Patterns",
+        "Slots & layouts"
+      ],
+      "lead": "Slot placeholders and column/row layout grids for wireframes.",
+      "keywords": "slot layout template wireframe"
+    },
+    {
+      "id": "snackbar",
+      "title": "Snackbar",
+      "url": "/docs/snackbar",
+      "section": "Feedback",
+      "breadcrumb": [
+        "Feedback",
+        "Snackbar"
+      ],
+      "lead": "Transient snackbars with actions, auto-dismiss, and progress.",
+      "keywords": "toast notification"
+    },
+    {
+      "id": "pattern-table-pagination",
+      "title": "Table + pagination",
+      "url": "/docs/pattern-table-pagination",
+      "section": "Patterns",
+      "breadcrumb": [
+        "Patterns",
+        "Table + pagination"
+      ],
+      "lead": "Data table with selection and pagination controls.",
+      "keywords": "pattern table pagination data"
+    },
+    {
+      "id": "table",
+      "title": "Tables",
+      "url": "/docs/table",
+      "section": "Content",
+      "breadcrumb": [
+        "Content",
+        "Tables"
+      ],
+      "lead": "Semantic row tables with a horizontal scroll region, plus column stacks and mobile-friendly card patterns.",
+      "keywords": "table data grid"
+    },
+    {
+      "id": "tabs",
+      "title": "Tabs",
+      "url": "/docs/tabs",
+      "section": "Navigation",
+      "breadcrumb": [
+        "Navigation",
+        "Tabs"
+      ],
+      "lead": "Tablist, panels, and arrow-key navigation between tabs.",
+      "keywords": "tabs tablist"
+    },
+    {
+      "id": "tags",
+      "title": "Tags",
+      "url": "/docs/tags",
+      "section": "Content",
+      "breadcrumb": [
+        "Content",
+        "Tags"
+      ],
+      "lead": "Removable tags, filter chips, and pressed toggle states.",
+      "keywords": "tag chip"
+    },
+    {
+      "id": "theme-toggle",
+      "title": "Theme toggle",
+      "url": "/docs/theme-toggle",
+      "section": "Foundations",
+      "breadcrumb": [
+        "Foundations",
+        "Theme toggle"
+      ],
+      "lead": "Light / dark mode control for headers, menus, and settings panels.",
+      "keywords": "dark light mode color scheme"
+    },
+    {
+      "id": "pattern-toolbar-modal",
+      "title": "Toolbar + modal",
+      "url": "/docs/pattern-toolbar-modal",
+      "section": "Patterns",
+      "breadcrumb": [
+        "Patterns",
+        "Toolbar + modal"
+      ],
+      "lead": "Toolbar with status alert, button group, and modal task flow.",
+      "keywords": "pattern toolbar modal alert"
+    },
+    {
+      "id": "tree",
+      "title": "Tree",
+      "url": "/docs/tree",
+      "section": "Content",
+      "breadcrumb": [
+        "Content",
+        "Tree"
+      ],
+      "lead": "Expandable tree groups with toggle buttons and nested items.",
+      "keywords": "tree hierarchy"
+    },
+    {
+      "id": "typography",
+      "title": "Typography",
+      "url": "/docs/typography",
+      "section": "Foundations",
+      "breadcrumb": [
+        "Foundations",
+        "Typography"
+      ],
+      "lead": "Heading scale, body utilities, and font loading for Zodiak and Plus Jakarta Sans.",
+      "keywords": "font text heading"
+    },
+    {
+      "id": "whats-new",
+      "title": "What's new",
+      "url": "/docs/whats-new",
+      "section": "Getting started",
+      "breadcrumb": [
+        "Getting started",
+        "What's new"
+      ],
+      "lead": "Release highlights for PimentCSS v1.0: tokens, components, patterns, documentation, and migration from Piment-Css.",
+      "keywords": "changelog release v1 whats new"
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+.#{v.class-seg()}label {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: v.$btn-gap;
+  position: relative;
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-caption);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-caption);
+  letter-spacing: var(--letter-spacing-caption);
+  color: var(--text-headings);
+}
+
+.#{v.class-seg()}label__text {
+  flex-shrink: 0;
+}
+
+.#{v.class-seg()}label__required {
+  position: absolute;
+  left: -0.5rem;
+  top: 0;
+  color: var(--error-500);
+  font-weight: var(--font-weight-bold);
+  line-height: 1;
+}
+
+.#{v.class-seg()}label__optional {
+  font-weight: var(--font-weight-regular);
+  color: var(--text-disabled);
+}
+
+.#{v.class-seg()}label__tooltip {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 1.5625rem;
+  height: 1.5625rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: help;
+  color: var(--information-500);
+
+  svg,
+  img {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  &.#{v.class-seg()}focus-visible:focus-visible {
+    @include m.focus-ring;
+    border-radius: 50%;
+  }
+}

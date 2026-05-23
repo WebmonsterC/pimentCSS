@@ -1,0 +1,169 @@
+/**
+ * Tree — PimentCSS v1
+ */
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+.#{v.class-seg()}tree {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  max-width: 9.375rem; /* 150px — composant spec */
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.#{v.class-seg()}tree__group {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  &[hidden] {
+    display: none !important;
+  }
+}
+
+.#{v.class-seg()}tree__row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: v.$tree-item-gap;
+  padding: v.$tree-item-padding;
+  border-radius: v.$border-radius-4;
+
+  &:focus-within {
+    outline: 2px solid var(--border-focus);
+    outline-offset: -2px;
+  }
+}
+
+.#{v.class-seg()}tree__row--level-2 {
+  padding-inline: v.$tree-level-2-pl v.$tree-item-padding;
+}
+
+.#{v.class-seg()}tree__row--level-3 {
+  gap: v.$tree-item-gap;
+  padding-block: v.$tree-level-3-py;
+  padding-inline: v.$tree-level-3-pl v.$tree-item-padding;
+}
+
+/* Expand/collapse button (Indicator spec) */
+.#{v.class-seg()}tree__toggle {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: v.$tree-toggle-icon;
+  height: v.$tree-toggle-icon;
+  min-width: v.$tree-toggle-icon;
+  min-height: v.$tree-toggle-icon;
+  padding: 0;
+  border: 0;
+  border-radius: v.$border-radius-round;
+  background: var(--surface-primary);
+  color: var(--text-action);
+  cursor: pointer;
+  transition: background-color v.$motion-duration-fast v.$motion-easing;
+
+  &:hover,
+  &.#{v.class-seg()}tree__toggle--hover {
+    background: var(--surface-action-hover-2);
+  }
+
+  &:focus-visible,
+  &.#{v.class-seg()}tree__toggle--focus {
+    @include m.focus-ring;
+    z-index: 1;
+  }
+}
+
+.#{v.class-seg()}tree__toggle-icon {
+  display: block;
+  width: v.$tree-toggle-icon;
+  height: v.$tree-toggle-icon;
+  transition: transform v.$motion-duration-fast v.$motion-easing;
+}
+
+.#{v.class-seg()}tree__toggle--open .#{v.class-seg()}tree__toggle-icon {
+  transform: rotate(90deg);
+}
+
+.#{v.class-seg()}tree__toggle-spacer {
+  flex-shrink: 0;
+  width: v.$tree-toggle-icon;
+  height: v.$tree-toggle-icon;
+  min-width: v.$tree-toggle-icon;
+}
+
+/* Label link + icon */
+.#{v.class-seg()}tree__content {
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
+  justify-content: flex-start;
+  gap: v.$tree-content-gap;
+  min-width: 0;
+  min-height: v.$tree-icon-size;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--text-body);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-body-medium);
+  font-weight: var(--font-weight-regular);
+  line-height: 1;
+  letter-spacing: var(--letter-spacing-body-medium);
+  text-align: left;
+  cursor: pointer;
+  transition: color v.$motion-duration-fast v.$motion-easing;
+
+  &:hover,
+  &.#{v.class-seg()}tree__content--hover {
+    color: var(--text-body);
+  }
+
+  &:focus-visible,
+  &.#{v.class-seg()}tree__content--focus {
+    @include m.focus-ring;
+    border-radius: v.$border-radius-4;
+  }
+}
+
+.#{v.class-seg()}tree__icon {
+  display: flex;
+  flex: 0 0 v.$tree-icon-size;
+  align-items: center;
+  justify-content: center;
+  width: v.$tree-icon-size;
+  height: v.$tree-icon-size;
+  line-height: 0;
+  color: inherit;
+
+  .ph {
+    font-size: 1rem;
+  }
+}
+
+.#{v.class-seg()}tree__label {
+  flex: 1 1 auto;
+  min-width: 0;
+  line-height: v.$tree-icon-size;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.#{v.class-seg()}tree__row--selected .#{v.class-seg()}tree__content,
+.#{v.class-seg()}tree__content[aria-current="true"] {
+  color: var(--text-action);
+
+  &:hover,
+  &.#{v.class-seg()}tree__content--hover {
+    color: var(--border-active);
+  }
+}

@@ -1,0 +1,12 @@
+@use "../abstracts/variables" as v;
+
+.#{v.class-seg()}container {
+  width: 100%;
+  max-width: v.$container-max-width;
+  margin-inline: auto;
+  padding-inline: v.$grid-gutter;
+}
+
+.#{v.class-seg()}container--fluid {
+  max-width: none;
+}

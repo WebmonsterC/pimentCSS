@@ -1,0 +1,15 @@
+@use "sass:map";
+@use "sass:meta";
+
+/// Returns a palette step (e.g. primary, 500)
+@function palette($palettes, $name, $step) {
+  @return map.get(map.get($palettes, $name), $step);
+}
+
+/// CSS class prefix (e.g. "" → .btn, "hm" → .btn)
+@function class-prefix($prefix, $name) {
+  @if $prefix == "" {
+    @return ".#{$name}";
+  }
+  @return ".#{$prefix}-#{$name}";
+}

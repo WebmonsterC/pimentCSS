@@ -1,0 +1,45 @@
+{
+  "fileKey": "Vnc34wL28GUCKuCG7C3lEO",
+  "fileName": "Design-system-Numera11y-v-1.3",
+  "pageId": "2:526",
+  "pageUrl": "https://www.figma.com/design/Vnc34wL28GUCKuCG7C3lEO/Design-system-Numera11y-v-1.3?node-id=2-526",
+  "name": "Badge",
+  "frameNodeId": "2:526",
+  "status": "synced",
+  "syncedAt": "2026-05-21",
+  "types": [
+    {
+      "name": "Copy",
+      "size": "24×24px",
+      "nodeIds": {
+        "default": "2:531",
+        "information": "2:533",
+        "warning": "2:535",
+        "error": "2:537",
+        "success": "2:539"
+      },
+      "classes": [
+        "badge",
+        "badge--copy",
+        "badge--default",
+        "badge--information",
+        "badge--warning",
+        "badge--error",
+        "badge--success"
+      ]
+    },
+    {
+      "name": "Dot",
+      "size": "8×8px",
+      "nodeIds": {
+        "default": "2:541",
+        "information": "2:542",
+        "warning": "2:543",
+        "error": "2:544",
+        "success": "2:545"
+      },
+      "classes": ["badge", "badge--dot"]
+    }
+  ],
+  "codePaths": ["scss/components/_badge.scss", "components/badge.css"]
+}

@@ -1,0 +1,213 @@
+/**
+ * Table — PimentCSS v1
+ */
+@use "../abstracts/variables" as v;
+
+@mixin table-item-text {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-body-medium);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-body-medium);
+  letter-spacing: var(--letter-spacing-body-medium);
+  color: var(--text-body);
+  white-space: nowrap;
+}
+
+.#{v.class-seg()}table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-family: var(--font-family-body);
+}
+
+/**
+ * Scroll container for row tables on narrow viewports (phone / tablet).
+ * Keeps semantic <table>; overflow stays inside this region (not the page).
+ */
+.#{v.class-seg()}table-scroll {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+}
+
+.#{v.class-seg()}table-scroll:focus-visible {
+  outline: v.$border-width-2 solid var(--border-focus);
+  outline-offset: 2px;
+}
+
+.#{v.class-seg()}table-scroll .#{v.class-seg()}table {
+  width: max-content;
+  min-width: 100%;
+}
+
+.#{v.class-seg()}table-scroll .#{v.class-seg()}table__text--wrap {
+  white-space: normal;
+}
+
+/* --- Cellules --- */
+.#{v.class-seg()}table__cell {
+  padding: v.$table-cell-padding-y v.$table-cell-padding-x;
+  vertical-align: middle;
+  text-align: left;
+  background: var(--surface-primary);
+}
+
+.#{v.class-seg()}table__cell--border-bottom {
+  border-bottom: v.$border-width-1 solid var(--border-primary);
+}
+
+.#{v.class-seg()}table__cell--border-full {
+  border: v.$border-width-1 solid var(--border-primary);
+  border-top: 0;
+}
+
+.#{v.class-seg()}table__cell--heading {
+  background: var(--surface-disabled);
+}
+
+/* --- Lignes --- */
+.#{v.class-seg()}table__row--hover,
+.#{v.class-seg()}table tbody tr:hover {
+  background: var(--surface-action-hover-2);
+}
+
+.#{v.class-seg()}table__row--selected,
+.#{v.class-seg()}table tbody tr.#{v.class-seg()}table__row--selected {
+  background: var(--surface-action);
+
+  .#{v.class-seg()}table__cell {
+    background: var(--surface-action);
+  }
+
+  .#{v.class-seg()}table__text,
+  .#{v.class-seg()}table__text--heading,
+  .#{v.class-seg()}table__text--underline,
+  .#{v.class-seg()}table__status-label {
+    color: var(--text-on-action);
+  }
+
+  .#{v.class-seg()}table__status-dot {
+    background: var(--text-on-action);
+  }
+
+  .#{v.class-seg()}checkbox__control {
+    border-color: var(--text-on-action);
+    background: transparent;
+  }
+
+}
+
+/* --- Items (contenu cellule) --- */
+.#{v.class-seg()}table__item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: v.$table-item-gap;
+  padding-block: v.$table-item-py;
+  vertical-align: middle;
+}
+
+.#{v.class-seg()}table__text {
+  @include table-item-text;
+}
+
+.#{v.class-seg()}table__text--heading {
+  font-weight: var(--font-weight-semi-bold);
+}
+
+.#{v.class-seg()}table__text--underline {
+  text-decoration: underline;
+  text-underline-position: from-font;
+}
+
+.#{v.class-seg()}table__text--wrap {
+  white-space: normal;
+}
+
+.#{v.class-seg()}table__icon {
+  flex-shrink: 0;
+  width: v.$table-icon-size;
+  height: v.$table-icon-size;
+  color: currentColor;
+}
+
+.#{v.class-seg()}table__icons {
+  display: inline-flex;
+  align-items: center;
+  gap: v.$table-item-gap;
+}
+
+.#{v.class-seg()}table__status {
+  display: inline-flex;
+  align-items: center;
+  gap: v.$table-item-gap;
+}
+
+.#{v.class-seg()}table__status-dot {
+  flex-shrink: 0;
+  width: v.$table-status-dot;
+  height: v.$table-status-dot;
+  border-radius: v.$border-radius-round;
+  background: var(--icon-information);
+}
+
+.#{v.class-seg()}table__status-label {
+  @include table-item-text;
+}
+
+/* Checkbox compact dans cellule (16px, lisible avec le composant Checkbox) */
+.#{v.class-seg()}table__cell .#{v.class-seg()}checkbox {
+  gap: v.$table-item-gap;
+}
+
+.#{v.class-seg()}table__cell .#{v.class-seg()}checkbox__control {
+  width: 1.25rem;
+  height: 1.25rem;
+  min-width: 1.25rem;
+  min-height: 1.25rem;
+  border-width: v.$border-width-2;
+  border-radius: v.$border-radius-4;
+}
+
+.#{v.class-seg()}table__cell .#{v.class-seg()}checkbox__control .#{v.class-seg()}checkbox__icon,
+.#{v.class-seg()}table__cell .#{v.class-seg()}checkbox__control .#{v.class-seg()}checkbox__icon.ph {
+  width: 1rem;
+  height: 1rem;
+  font-size: 1rem;
+}
+
+.#{v.class-seg()}table__cell .#{v.class-seg()}checkbox__input {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.#{v.class-seg()}table__row--selected .#{v.class-seg()}checkbox__input:checked + .#{v.class-seg()}checkbox__control,
+.#{v.class-seg()}table tbody tr.#{v.class-seg()}table__row--selected .#{v.class-seg()}checkbox__input:checked + .#{v.class-seg()}checkbox__control {
+  background: var(--surface-primary);
+  border-color: var(--text-on-action);
+
+  .#{v.class-seg()}checkbox__icon,
+  .#{v.class-seg()}checkbox__icon.ph {
+    color: var(--surface-action);
+  }
+}
+
+/* --- Colonne (stack vertical de cellules) --- */
+.#{v.class-seg()}table__column {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: fit-content;
+  min-width: 6.6875rem; /* 107px — spec */
+}
+
+.#{v.class-seg()}table__column .#{v.class-seg()}table__cell {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+}

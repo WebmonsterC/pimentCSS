@@ -1,0 +1,225 @@
+/**
+ * Pagination — PimentCSS v1
+ */
+@use "../abstracts/variables" as v;
+@use "../abstracts/icon-glyphs" as ig;
+
+.#{v.class-seg()}pagination {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: v.$pagination-gap;
+}
+
+.#{v.class-seg()}pagination__group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: v.$pagination-gap;
+}
+
+.#{v.class-seg()}pagination__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: v.$pagination-gap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  > li {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  > li + li {
+    margin-top: 0;
+  }
+}
+
+/* --- Item 44×44 --- */
+.#{v.class-seg()}pagination__item {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: v.$pagination-item-size;
+  height: v.$pagination-item-size;
+  padding: 0;
+  border: v.$border-width-1 solid transparent;
+  border-radius: v.$border-radius-4;
+  background: var(--surface-primary);
+  color: var(--text-action);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-body-medium);
+  font-weight: var(--font-weight-semi-bold);
+  line-height: var(--line-height-body-medium);
+  letter-spacing: var(--letter-spacing-body-medium);
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color v.$motion-duration-fast v.$motion-easing,
+    border-color v.$motion-duration-fast v.$motion-easing,
+    color v.$motion-duration-fast v.$motion-easing;
+
+  &:hover:not(:disabled):not([aria-disabled="true"]):not(.#{v.class-seg()}pagination__item--selected):not([aria-current="page"]),
+  &.#{v.class-seg()}pagination__item--hover:not(.#{v.class-seg()}pagination__item--selected):not([aria-current="page"]) {
+    background: var(--surface-action-hover-2);
+    border-color: var(--border-action-hover);
+    color: var(--text-action);
+  }
+
+  &:focus-visible {
+    outline: v.$border-width-2 solid var(--border-focus);
+    outline-offset: 2px;
+  }
+
+  &--selected,
+  &[aria-current="page"] {
+    background: var(--surface-action);
+    border-color: transparent;
+    color: var(--text-on-action);
+
+    &:hover:not(:disabled):not([aria-disabled="true"]),
+    &.#{v.class-seg()}pagination__item--hover {
+      background: var(--surface-action-hover);
+      border-color: var(--border-action-hover);
+      color: var(--text-on-action);
+    }
+  }
+
+  &:disabled,
+  &[aria-disabled="true"],
+  &.#{v.class-seg()}pagination__item--disabled {
+    background: var(--surface-disabled);
+    border-color: transparent;
+    color: var(--text-on-disabled);
+    cursor: not-allowed;
+  }
+}
+
+.#{v.class-seg()}pagination__item-icon {
+  display: block;
+  flex-shrink: 0;
+  width: v.$pagination-icon-size;
+  height: v.$pagination-icon-size;
+  color: currentColor;
+
+}
+
+.#{v.class-seg()}pagination__item--prev .#{v.class-seg()}pagination__item-icon {
+  transform: scaleX(-1);
+}
+
+.#{v.class-seg()}pagination__item--next .#{v.class-seg()}pagination__item-icon {
+  transform: none;
+}
+
+/* --- Jumper (type Default) --- */
+.#{v.class-seg()}pagination__jumper {
+  display: flex;
+  align-items: center;
+  gap: v.$pagination-pages-gap;
+}
+
+.#{v.class-seg()}pagination__jumper-field {
+  width: v.$pagination-jumper-width;
+  min-height: v.$pagination-item-size;
+  padding: v.$field-padding-y 0.75rem;
+  border: v.$border-width-1 solid var(--border-primary);
+  border-radius: v.$border-radius-4;
+  background: var(--surface-primary);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-body-medium);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-body-medium);
+  letter-spacing: var(--letter-spacing-body-medium);
+  color: var(--text-filled);
+  text-align: center;
+
+  &::placeholder {
+    color: var(--text-disabled);
+  }
+
+  &:focus {
+    outline: v.$border-width-2 solid var(--border-focus);
+    outline-offset: 2px;
+    border-color: var(--border-primary);
+  }
+}
+
+.#{v.class-seg()}pagination__jumper-suffix {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-body-medium);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-body-medium);
+  letter-spacing: var(--letter-spacing-body-medium);
+  color: var(--text-body);
+  white-space: nowrap;
+}
+
+/* --- Results per page (optionnel) --- */
+.#{v.class-seg()}pagination__results {
+  display: flex;
+  align-items: center;
+  gap: v.$pagination-pages-gap;
+}
+
+.#{v.class-seg()}pagination__results-label {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-body-medium);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-body-medium);
+  letter-spacing: var(--letter-spacing-body-medium);
+  color: var(--text-body);
+  white-space: nowrap;
+}
+
+.#{v.class-seg()}pagination__results-select-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: 0.35rem;
+    width: 1rem;
+    height: 1rem;
+    pointer-events: none;
+    @include ig.mask-chevron-down(16px);
+    color: var(--text-body);
+  }
+}
+
+.#{v.class-seg()}pagination__results-select {
+  width: v.$pagination-results-select-width;
+  min-height: v.$pagination-item-size;
+  padding: v.$field-padding-y 1.5rem v.$field-padding-y 0.75rem;
+  border: v.$border-width-1 solid var(--border-primary);
+  border-radius: v.$border-radius-4;
+  background-color: var(--surface-primary);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-body-medium);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-body-medium);
+  letter-spacing: var(--letter-spacing-body-medium);
+  color: var(--text-filled);
+  text-align: center;
+  cursor: pointer;
+  appearance: none;
+  color-scheme: light dark;
+
+  option {
+    color: var(--text-filled);
+    background-color: var(--surface-primary);
+  }
+
+  &:focus {
+    outline: v.$border-width-2 solid var(--border-focus);
+    outline-offset: 2px;
+  }
+}

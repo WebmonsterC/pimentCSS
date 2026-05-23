@@ -1,0 +1,119 @@
+/**
+ * Anchor — In-page nav — PimentCSS v1
+ */
+@use "../abstracts/variables" as v;
+
+$anchor-l2-offset: v.$anchor-item-px-l2 - v.$anchor-item-px-l1;
+
+.#{v.class-seg()}anchor-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: max-content;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.#{v.class-seg()}anchor-item {
+  position: relative;
+  z-index: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: v.$anchor-item-gap;
+  width: max-content;
+  min-height: 2.75rem;
+  padding: v.$anchor-item-py v.$anchor-item-px-l1;
+  border: 0;
+  border-left: v.$border-width-1 solid var(--border-primary);
+  border-radius: 0;
+  background: transparent;
+  color: var(--text-body);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-body-medium);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-body-medium);
+  letter-spacing: var(--letter-spacing-body-medium);
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition:
+    border-color v.$motion-duration-fast v.$motion-easing,
+    color v.$motion-duration-fast v.$motion-easing;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: transparent;
+    transition: background-color v.$motion-duration-fast v.$motion-easing;
+  }
+
+  &:hover:not(:disabled):not([aria-disabled="true"]),
+  &.#{v.class-seg()}anchor-item--hover {
+    border-left-color: var(--border-action-hover);
+    color: var(--text-action);
+
+    &::before {
+      background: var(--surface-action-hover-2);
+    }
+  }
+
+  &:focus-visible {
+    outline: v.$border-width-2 solid var(--border-focus);
+    outline-offset: 2px;
+    z-index: 1;
+  }
+
+  &--level-2 {
+    margin-inline-start: $anchor-l2-offset;
+    padding-inline: v.$anchor-item-px-l1;
+  }
+
+  &--selected,
+  &[aria-current="page"],
+  &[aria-current="true"] {
+    border-left-width: v.$anchor-border-selected;
+    color: var(--text-action);
+    font-weight: var(--font-weight-semi-bold);
+
+    &:hover:not(:disabled):not([aria-disabled="true"]),
+    &.#{v.class-seg()}anchor-item--hover {
+      color: var(--text-action);
+    }
+  }
+}
+
+.#{v.class-seg()}anchor-item__icon {
+  flex-shrink: 0;
+  width: v.$link-icon-size;
+  height: v.$link-icon-size;
+  color: currentColor;
+}
+
+.#{v.class-seg()}anchor-item__label {
+  flex: 0 0 auto;
+}
+
+/**
+ * Optional: fixed-width sidebar TOC (ellipsis). Default nav grows to fit labels.
+ */
+.#{v.class-seg()}anchor-nav--constrained {
+  width: 100%;
+  max-width: 8.75rem; /* ~110px — Figma spec when space is limited */
+
+  .#{v.class-seg()}anchor-item {
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .#{v.class-seg()}anchor-item__label {
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

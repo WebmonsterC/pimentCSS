@@ -1,0 +1,32 @@
+/**
+ * Utilitaires d'ombre — ombres 2:1959
+ */
+@use "../abstracts/variables" as v;
+
+.#{v.class-seg()}shadow-inset {
+  box-shadow: var(--shadow-inset);
+}
+
+.#{v.class-seg()}shadow-xs {
+  box-shadow: var(--shadow-xs);
+}
+
+.#{v.class-seg()}shadow-sm {
+  box-shadow: var(--shadow-sm);
+}
+
+.#{v.class-seg()}shadow-md {
+  box-shadow: var(--shadow-md);
+}
+
+.#{v.class-seg()}shadow-lg {
+  box-shadow: var(--shadow-lg);
+}
+
+.#{v.class-seg()}shadow-xl {
+  box-shadow: var(--shadow-xl);
+}
+
+.#{v.class-seg()}shadow-none {
+  box-shadow: none !important;
+}

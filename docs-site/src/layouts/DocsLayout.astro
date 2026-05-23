@@ -1,0 +1,161 @@
+---
+import '../styles/doc.css';
+import '@phosphor-icons/web/regular';
+import DocSidebar from '../components/DocSidebar.astro';
+import DocSearch from '../components/DocSearch.astro';
+import PimentLogo from '../components/PimentLogo.astro';
+import { navConfig } from '../lib/docs';
+import { GITHUB_LICENSE, GITHUB_REPO } from '../lib/github';
+import { THEME_BOOTSTRAP_SCRIPT } from '../lib/theme';
+import { ICON } from '../lib/icon';
+import { themeToggleIconSun, themeToggleIconMoon } from '../lib/theme-toggle-icons';
+
+interface Props {
+  title: string;
+  lead: string;
+  breadcrumb: string[];
+}
+
+const { title, lead, breadcrumb } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={lead} />
+    <title>PimentCSS: {title}</title>
+    <script is:inline set:html={THEME_BOOTSTRAP_SCRIPT} />
+    <link rel="stylesheet" href="/pimentcss.min.css" />
+    <link rel="stylesheet" href="/palettes.css" />
+    <link rel="icon" href="/logo.svg" type="image/svg+xml" />
+  </head>
+  <body class="pdoc pdoc--docs-ux">
+    <script is:inline>
+      document.body.classList.toggle('pdoc--dark', document.documentElement.dataset.theme === 'dark');
+    </script>
+    <a class="pdoc-skip-link" href="#pdoc-main">Skip to main content</a>
+    <header class="pdoc-header">
+      <button
+        type="button"
+        class="pdoc-menu-toggle"
+        id="pdoc-menu-toggle"
+        aria-expanded="false"
+        aria-controls="pdoc-sidebar"
+        aria-label="Open navigation menu"
+      >
+        <span class="pdoc-sr-only">Menu</span>
+        <Fragment set:html={ICON.menu()} />
+      </button>
+      <a class="pdoc-header__brand" href="/">
+        <PimentLogo />
+        <span class="pdoc-header__brand-text">PimentCSS</span>
+      </a>
+      <a
+        class="pdoc-header__version"
+        href="/docs/whats-new"
+        title="What's new in v{navConfig.version}"
+        >v{navConfig.version}<span class="pdoc-sr-only">, what's new</span></a
+      >
+      <div class="pdoc-header__search-wrap">
+        <DocSearch inputId="pdoc-search" listboxId="pdoc-search-listbox" />
+      </div>
+      <div class="pdoc-header__actions">
+        <div
+          class="theme-toggle theme-toggle--compact"
+          role="group"
+          aria-label="Color mode"
+          data-theme-toggle
+        >
+          <button
+            type="button"
+            class="theme-toggle__option"
+            data-theme-value="light"
+            aria-pressed="true"
+            aria-label="Light mode"
+          >
+            <Fragment set:html={themeToggleIconSun()} />
+          </button>
+          <button
+            type="button"
+            class="theme-toggle__option"
+            data-theme-value="dark"
+            aria-pressed="false"
+            aria-label="Dark mode"
+          >
+            <Fragment set:html={themeToggleIconMoon()} />
+          </button>
+        </div>
+        <a class="pdoc-header__link" href="/">Home</a>
+        <a
+          class="pdoc-header__icon-link"
+          href={GITHUB_REPO}
+          rel="noopener noreferrer"
+          target="_blank"
+          aria-label="GitHub repository (opens in new tab)"
+        >
+          <i class="ph ph-github-logo" aria-hidden="true"></i>
+        </a>
+      </div>
+    </header>
+    <div class="pdoc-overlay" id="pdoc-overlay"></div>
+    <div class="pdoc-layout pdoc-layout--toc">
+      <aside class="pdoc-sidebar" id="pdoc-sidebar" aria-label="Navigation">
+        <div class="pdoc-sidebar__search-mobile">
+          <DocSearch
+            inputId="pdoc-search-mobile"
+            listboxId="pdoc-search-listbox-mobile"
+            placeholder="Search…"
+            inputClass="pdoc-search--sidebar"
+          />
+        </div>
+        <DocSidebar />
+      </aside>
+      <main class="pdoc-main" id="pdoc-main" tabindex="-1">
+        <div class="pdoc-main__inner">
+          <nav class="pdoc-breadcrumb-nav" aria-label="Breadcrumb">
+          <ol class="pdoc-breadcrumb">
+            {
+              breadcrumb.map((c, i) => (
+                <li {...(i === breadcrumb.length - 1 ? { 'aria-current': 'page' } : {})}>{c}</li>
+              ))
+            }
+          </ol>
+          </nav>
+          <header class="pdoc-page-header">
+            <h1 class="pdoc-page-title">{title}</h1>
+            <p class="pdoc-lead">{lead}</p>
+          </header>
+          <article class="pdoc-prose">
+            <slot />
+          </article>
+          <footer class="pdoc-footer">
+            <p>
+              PimentCSS v{navConfig.version} · <a href="/">Home</a> · <a href="/docs/whats-new">What's new</a> · <a href="https://www.webmonster.tech" rel="noopener noreferrer" target="_blank"
+                >Webmonster.tech<span class="pdoc-sr-only"> (opens in new tab)</span></a
+              >
+              ·
+              <a href="https://www.numera11y.fr" rel="noopener noreferrer" target="_blank"
+                >numera11y<span class="pdoc-sr-only"> (opens in new tab)</span></a
+              >
+              ·
+              <a href={GITHUB_LICENSE} rel="noopener noreferrer" target="_blank"
+                >MIT<span class="pdoc-sr-only"> (opens in new tab)</span></a
+              >
+              · Powered by
+              <a href="https://astro.build/" rel="noopener noreferrer" target="_blank"
+                >Astro<span class="pdoc-sr-only"> (opens in new tab)</span></a
+              >
+            </p>
+          </footer>
+        </div>
+      </main>
+      <aside class="pdoc-toc" aria-label="On this page">
+        <p class="pdoc-toc__title">On this page</p>
+        <ul class="pdoc-toc__list" id="pdoc-toc-list"></ul>
+      </aside>
+    </div>
+    <script src="../scripts/doc-client.ts"></script>
+  </body>
+</html>

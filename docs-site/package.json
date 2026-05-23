@@ -1,0 +1,19 @@
+{
+  "name": "pimentcss-docs",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@phosphor-icons/web": "^2.1.2",
+    "astro": "^5.7.0",
+    "fuse.js": "^7.3.0"
+  },
+  "devDependencies": {
+    "linkedom": "^0.18.12"
+  }
+}

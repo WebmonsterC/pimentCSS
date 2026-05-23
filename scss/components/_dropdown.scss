@@ -1,0 +1,95 @@
+/**
+ * Dropdown — PimentCSS v1
+ * Label + hint + field trigger + menu panel
+ */
+
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+.#{v.class-seg()}dropdown {
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-1;
+  width: 100%;
+  max-width: v.$menu-width;
+  position: relative;
+}
+
+.#{v.class-seg()}dropdown__hint {
+  margin: 0;
+  font-size: var(--font-size-caption);
+  line-height: var(--line-height-caption);
+  letter-spacing: var(--letter-spacing-caption);
+  color: var(--text-body);
+}
+
+.#{v.class-seg()}dropdown__trigger {
+  position: relative;
+  width: 100%;
+  cursor: pointer;
+  text-align: left;
+}
+
+.#{v.class-seg()}dropdown__value {
+  flex: 1 1 0;
+  min-width: 0;
+  color: var(--text-body);
+}
+
+.#{v.class-seg()}dropdown__value--filled {
+  color: var(--text-filled);
+}
+
+.#{v.class-seg()}dropdown__chevron {
+  flex-shrink: 0;
+  width: v.$field-icon-size;
+  height: v.$field-icon-size;
+  color: var(--text-body);
+  transition: transform v.$motion-duration-fast v.$motion-easing;
+}
+
+.#{v.class-seg()}dropdown__chevron svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+// Open / selected
+.#{v.class-seg()}dropdown--open .#{v.class-seg()}dropdown__trigger,
+.#{v.class-seg()}dropdown__trigger[aria-expanded="true"] {
+  border-color: var(--border-action-hover);
+}
+
+.#{v.class-seg()}dropdown--open .#{v.class-seg()}dropdown__trigger::after,
+.#{v.class-seg()}dropdown__trigger[aria-expanded="true"]::after {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border: v.$border-width-2 solid var(--border-focus);
+  border-radius: v.$border-radius-6;
+  pointer-events: none;
+}
+
+.#{v.class-seg()}dropdown--open .#{v.class-seg()}dropdown__chevron,
+.#{v.class-seg()}dropdown__trigger[aria-expanded="true"] .#{v.class-seg()}dropdown__chevron {
+  transform: rotate(180deg);
+}
+
+.#{v.class-seg()}dropdown__panel {
+  position: absolute;
+  top: calc(100% + v.$space-1);
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: none;
+}
+
+.#{v.class-seg()}dropdown--open .#{v.class-seg()}dropdown__panel,
+.#{v.class-seg()}dropdown__trigger[aria-expanded="true"] + .#{v.class-seg()}dropdown__panel {
+  display: block;
+}
+
+.#{v.class-seg()}dropdown__panel .#{v.class-seg()}menu {
+  max-width: none;
+  box-shadow: var(--shadow-md);
+}

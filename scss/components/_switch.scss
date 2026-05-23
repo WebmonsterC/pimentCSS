@@ -1,0 +1,126 @@
+/**
+ * Switch — PimentCSS v1
+ * Types: Active (on) | Inactive (off)
+ * États: Default | Focus | Hover | Disabled
+ */
+
+@use "../abstracts/variables" as v;
+
+$switch-width: 3rem; /* 48px */
+$switch-height: 1.625rem; /* 26px */
+$switch-knob-width: 1.5rem; /* 24px */
+$switch-knob-height: 1.25rem; /* 20px */
+$switch-padding: 2px;
+
+.#{v.class-seg()}switch {
+  display: inline-flex;
+  align-items: center;
+  gap: v.$btn-gap;
+  min-height: v.$min-touch-target;
+  cursor: pointer;
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-body-medium);
+  line-height: var(--line-height-body-medium);
+  letter-spacing: var(--letter-spacing-body-medium);
+  color: var(--text-body);
+}
+
+.#{v.class-seg()}switch__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.#{v.class-seg()}switch__control {
+  position: relative;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  width: $switch-width;
+  height: $switch-height;
+  padding: $switch-padding;
+  border: v.$border-width-1 solid var(--border-action);
+  border-radius: var(--border-radius-round);
+  background: var(--surface-primary);
+  transition: background-color v.$motion-duration-fast v.$motion-easing,
+    border-color v.$motion-duration-fast v.$motion-easing;
+}
+
+.#{v.class-seg()}switch__knob {
+  width: $switch-knob-width;
+  height: $switch-knob-height;
+  border-radius: var(--border-radius-round);
+  background: var(--surface-action);
+  box-shadow: 0 1px 2px oklch(0% 0 0 / 0.12);
+  transition: transform v.$motion-duration-fast v.$motion-easing,
+    background-color v.$motion-duration-fast v.$motion-easing;
+}
+
+// On (active)
+.#{v.class-seg()}switch__input:checked + .#{v.class-seg()}switch__control {
+  background: var(--surface-action);
+  border-color: var(--border-action);
+  justify-content: flex-end;
+
+  .#{v.class-seg()}switch__knob {
+    background: var(--surface-primary);
+  }
+}
+
+// Hover off
+.#{v.class-seg()}switch:hover:not(:has(:disabled)) .#{v.class-seg()}switch__input:not(:checked) + .#{v.class-seg()}switch__control,
+.#{v.class-seg()}switch__control--hover:not(.#{v.class-seg()}switch__control--on) {
+  background: var(--surface-action-hover-2);
+  border-color: var(--border-action-hover);
+}
+
+// Hover on
+.#{v.class-seg()}switch:hover:not(:has(:disabled)) .#{v.class-seg()}switch__input:checked + .#{v.class-seg()}switch__control,
+.#{v.class-seg()}switch__control--hover.#{v.class-seg()}switch__control--on {
+  background: var(--surface-action-hover);
+  border-color: var(--border-action-hover);
+}
+
+// Focus
+.#{v.class-seg()}switch__input:focus-visible + .#{v.class-seg()}switch__control::after,
+.#{v.class-seg()}switch__control--focus::after {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border: v.$border-width-2 solid var(--border-focus);
+  border-radius: var(--border-radius-round);
+  pointer-events: none;
+}
+
+// Disabled
+.#{v.class-seg()}switch__input:disabled + .#{v.class-seg()}switch__control,
+.#{v.class-seg()}switch__control--disabled {
+  background: var(--surface-disabled);
+  border-color: var(--border-disabled);
+  cursor: not-allowed;
+
+  .#{v.class-seg()}switch__knob {
+    background: var(--border-disabled);
+  }
+}
+
+.#{v.class-seg()}switch:has(:disabled) {
+  cursor: not-allowed;
+  color: var(--text-on-disabled);
+}
+
+.#{v.class-seg()}switch__control--on {
+  background: var(--surface-action);
+  border-color: var(--border-action);
+  justify-content: flex-end;
+
+  .#{v.class-seg()}switch__knob {
+    background: var(--surface-primary);
+  }
+}

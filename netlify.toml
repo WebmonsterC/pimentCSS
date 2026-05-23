@@ -1,0 +1,16 @@
+# Déploiement Netlify — https://piment.webmonster.tech (docs: /docs)
+[build]
+  command = "npm run build:docs:astro"
+  publish = "dist-docs"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/pimentcss.min.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

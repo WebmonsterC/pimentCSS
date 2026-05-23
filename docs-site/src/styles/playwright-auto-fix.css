@@ -1,0 +1,39 @@
+/**
+ * Correctifs générés par Playwright auto-fix (tests UX).
+ * Ne pas éditer manuellement les blocs marqués AUTO-FIX.
+ */
+
+/* AUTO-FIX:touch-target */
+label.checkbox,
+label.radio,
+label.switch {
+  min-height: var(--min-touch-target, 44px);
+  align-items: center;
+}
+
+/* AUTO-FIX:horizontal-overflow */
+.ds-page,
+.pdoc-layout {
+  max-width: 100%;
+  overflow-x: clip;
+}
+.ds-body,
+.pdoc-main,
+.pdoc-main__inner,
+main {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+.pdoc-main table,
+main table,
+.ds-body table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.ds-matrix,
+.palettes-grid {
+  max-width: 100%;
+}

@@ -1,0 +1,49 @@
+---
+import { ICON } from '../lib/icon';
+
+interface Props {
+  inputId: string;
+  listboxId: string;
+  placeholder?: string;
+  wrapClass?: string;
+  inputClass?: string;
+}
+
+const {
+  inputId,
+  listboxId,
+  placeholder = 'Search docs…',
+  wrapClass = '',
+  inputClass = '',
+} = Astro.props;
+const statusId = `${inputId}-status`;
+---
+
+<div class:list={['pdoc-doc-search', wrapClass]} data-pdoc-doc-search>
+  <label class="pdoc-sr-only" for={inputId}>Search documentation</label>
+  <div class="pdoc-search-field pdoc-doc-search__field">
+    <Fragment set:html={ICON.docSearch()} />
+    <input
+      type="text"
+      class:list={['pdoc-search', 'pdoc-doc-search__input', inputClass]}
+      id={inputId}
+      placeholder={placeholder}
+      autocomplete="off"
+      spellcheck="false"
+      role="combobox"
+      aria-expanded="false"
+      aria-controls={listboxId}
+      aria-autocomplete="list"
+      aria-describedby={statusId}
+      data-pdoc-doc-search-input
+    />
+  </div>
+  <p class="pdoc-sr-only" id={statusId} aria-live="polite" aria-atomic="true" data-pdoc-doc-search-status></p>
+  <div
+    class="pdoc-doc-search__panel"
+    id={listboxId}
+    role="listbox"
+    hidden
+    data-pdoc-doc-search-panel
+  ></div>
+</div>

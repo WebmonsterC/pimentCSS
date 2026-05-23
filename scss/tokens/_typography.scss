@@ -1,0 +1,136 @@
+@use "sass:meta";
+@use "../abstracts/variables" as v;
+
+@if v.$enable-local-fonts {
+  @include meta.load-css("fonts-local.generated");
+} @else {
+  @if v.$enable-fontshare-fonts {
+    @import url("https://api.fontshare.com/v2/css?f[]=zodiak@700&display=swap");
+  }
+
+  @if v.$enable-google-fonts {
+    @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap");
+  }
+}
+
+:root {
+  --font-family-heading: #{v.$font-family-heading};
+  --font-family-body: #{v.$font-family-body};
+  --font-weight-regular: #{v.$font-weight-regular};
+  --font-weight-semi-bold: #{v.$font-weight-semi-bold};
+  --font-weight-bold: #{v.$font-weight-bold};
+
+  --font-size-heading-h1: #{v.$font-size-heading-h1};
+  --line-height-heading-h1: #{v.$line-height-heading-h1};
+  --letter-spacing-heading-h1: #{v.$letter-spacing-heading-h1};
+  --font-size-heading-h2: #{v.$font-size-heading-h2};
+  --line-height-heading-h2: #{v.$line-height-heading-h2};
+  --letter-spacing-heading-h2: #{v.$letter-spacing-heading-h2};
+  --font-size-heading-h3: #{v.$font-size-heading-h3};
+  --line-height-heading-h3: #{v.$line-height-heading-h3};
+  --letter-spacing-heading-h3: #{v.$letter-spacing-heading-h3};
+  --font-size-heading-h4: #{v.$font-size-heading-h4};
+  --line-height-heading-h4: #{v.$line-height-heading-h4};
+  --letter-spacing-heading-h4: #{v.$letter-spacing-heading-h4};
+  --font-size-heading-h5: #{v.$font-size-heading-h5};
+  --line-height-heading-h5: #{v.$line-height-heading-h5};
+  --letter-spacing-heading-h5: #{v.$letter-spacing-heading-h5};
+  --font-size-heading-h6: #{v.$font-size-heading-h6};
+  --line-height-heading-h6: #{v.$line-height-heading-h6};
+  --letter-spacing-heading-h6: #{v.$letter-spacing-heading-h6};
+
+  --font-size-body-small: #{v.$font-size-body-small};
+  --line-height-body-small: #{v.$line-height-body-small};
+  --letter-spacing-body-small: #{v.$letter-spacing-body-small};
+  --font-size-body-medium: #{v.$font-size-body-medium};
+  --line-height-body-medium: #{v.$line-height-body-medium};
+  --letter-spacing-body-medium: #{v.$letter-spacing-body-medium};
+  --font-size-body-large: #{v.$font-size-body-large};
+  --line-height-body-large: #{v.$line-height-body-large};
+  --letter-spacing-body-large: #{v.$letter-spacing-body-large};
+
+  --font-size-caption: #{v.$font-size-caption};
+  --line-height-caption: #{v.$line-height-caption};
+  --letter-spacing-caption: #{v.$letter-spacing-caption};
+}
+
+@mixin heading-base {
+  margin: 0;
+  font-family: var(--font-family-heading);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-headings);
+}
+
+.#{v.class-seg()}heading-h1 {
+  @include heading-base;
+  font-size: var(--font-size-heading-h1);
+  line-height: var(--line-height-heading-h1);
+  letter-spacing: var(--letter-spacing-heading-h1);
+}
+
+.#{v.class-seg()}heading-h2 {
+  @include heading-base;
+  font-size: var(--font-size-heading-h2);
+  line-height: var(--line-height-heading-h2);
+  letter-spacing: var(--letter-spacing-heading-h2);
+}
+
+.#{v.class-seg()}heading-h3 {
+  @include heading-base;
+  font-size: var(--font-size-heading-h3);
+  line-height: var(--line-height-heading-h3);
+  letter-spacing: var(--letter-spacing-heading-h3);
+}
+
+.#{v.class-seg()}heading-h4 {
+  @include heading-base;
+  font-size: var(--font-size-heading-h4);
+  line-height: var(--line-height-heading-h4);
+  letter-spacing: var(--letter-spacing-heading-h4);
+}
+
+.#{v.class-seg()}heading-h5 {
+  @include heading-base;
+  font-size: var(--font-size-heading-h5);
+  line-height: var(--line-height-heading-h5);
+  letter-spacing: var(--letter-spacing-heading-h5);
+}
+
+.#{v.class-seg()}heading-h6 {
+  @include heading-base;
+  font-size: var(--font-size-heading-h6);
+  line-height: var(--line-height-heading-h6);
+  letter-spacing: var(--letter-spacing-heading-h6);
+}
+
+@mixin body-base {
+  margin: 0;
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-regular);
+  color: var(--text-body);
+}
+
+.#{v.class-seg()}body-small {
+  @include body-base;
+  font-size: var(--font-size-body-small);
+  line-height: var(--line-height-body-small);
+  letter-spacing: var(--letter-spacing-body-small);
+}
+
+.#{v.class-seg()}body-medium {
+  @include body-base;
+  font-size: var(--font-size-body-medium);
+  line-height: var(--line-height-body-medium);
+  letter-spacing: var(--letter-spacing-body-medium);
+}
+
+.#{v.class-seg()}body-large {
+  @include body-base;
+  font-size: var(--font-size-body-large);
+  line-height: var(--line-height-body-large);
+  letter-spacing: var(--letter-spacing-body-large);
+}
+
+.#{v.class-seg()}body-medium--semibold {
+  font-weight: var(--font-weight-semi-bold);
+}

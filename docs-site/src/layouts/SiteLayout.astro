@@ -1,0 +1,180 @@
+---
+import '../styles/site.css';
+import '@phosphor-icons/web/regular';
+import PimentLogo from '../components/PimentLogo.astro';
+import { navConfig } from '../lib/docs';
+import { GITHUB_REPO } from '../lib/github';
+import { THEME_BOOTSTRAP_SCRIPT } from '../lib/theme';
+import { themeToggleIconSun, themeToggleIconMoon } from '../lib/theme-toggle-icons';
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+const year = new Date().getFullYear();
+
+const navLinks = [
+  { href: '#mission', label: 'Mission' },
+  { href: '#territories', label: 'Territories' },
+  { href: '#system', label: 'System' },
+  { href: '#philosophy', label: 'Philosophy' },
+  { href: '#team', label: 'Team' },
+];
+
+const githubUrl = GITHUB_REPO;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <script is:inline set:html={THEME_BOOTSTRAP_SCRIPT} />
+    <link rel="stylesheet" href="/pimentcss.min.css" />
+    <link rel="stylesheet" href="/palettes.css" />
+    <link rel="icon" href="/logo.svg" type="image/svg+xml" />
+  </head>
+  <body class="psite">
+    <script is:inline>
+      document.body.classList.toggle('psite--dark', document.documentElement.dataset.theme === 'dark');
+    </script>
+    <a class="psite-skip" href="#psite-main">Skip to main content</a>
+    <header class="psite-header">
+      <a class="psite-header__brand" href="/">
+        <PimentLogo class="psite-header__logo" width={48} height={26} />
+        <span class="psite-header__name">PimentCSS</span>
+      </a>
+      <nav class="psite-nav psite-nav--desktop" aria-label="Primary">
+        {navLinks.map((item) => (
+          <a href={item.href}>{item.label}</a>
+        ))}
+        <a
+          class="psite-nav__icon-link"
+          href={githubUrl}
+          rel="noopener noreferrer"
+          target="_blank"
+          aria-label="GitHub repository (opens in new tab)"
+        >
+          <i class="ph ph-github-logo" aria-hidden="true"></i>
+        </a>
+      </nav>
+      <div class="psite-header__actions">
+        <div class="theme-toggle theme-toggle--compact" role="group" aria-label="Color mode" data-theme-toggle>
+          <button
+            type="button"
+            class="theme-toggle__option is-active"
+            data-theme-value="light"
+            aria-pressed="true"
+            aria-label="Light mode"
+          >
+            <Fragment set:html={themeToggleIconSun()} />
+          </button>
+          <button
+            type="button"
+            class="theme-toggle__option"
+            data-theme-value="dark"
+            aria-pressed="false"
+            aria-label="Dark mode"
+          >
+            <Fragment set:html={themeToggleIconMoon()} />
+          </button>
+        </div>
+        <a class="btn btn--outline psite-header__cta" href="/docs">Documentation</a>
+        <button
+          type="button"
+          class="psite-menu-toggle"
+          data-psite-menu-toggle
+          aria-expanded="false"
+          aria-controls="psite-menu"
+          aria-label="Open menu"
+        >
+          <i class="ph ph-list" aria-hidden="true"></i>
+        </button>
+      </div>
+    </header>
+
+    <div class="psite-menu" id="psite-menu" aria-hidden="true">
+      <div class="psite-menu__backdrop" data-psite-menu-close tabindex="-1" aria-hidden="true"></div>
+      <div
+        class="psite-menu__panel"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Site navigation"
+      >
+        <div class="psite-menu__top">
+          <a class="psite-menu__brand" href="/" data-psite-menu-close>
+            <PimentLogo class="psite-header__logo" width={48} height={26} />
+            <span>PimentCSS</span>
+          </a>
+          <button type="button" class="psite-menu__close" data-psite-menu-close aria-label="Close menu">
+            <i class="ph ph-x" aria-hidden="true"></i>
+          </button>
+        </div>
+        <nav class="psite-menu__nav" aria-label="Primary">
+          {navLinks.map((item) => (
+            <a href={item.href} data-psite-menu-close>
+              {item.label}
+            </a>
+          ))}
+          <a
+            class="psite-menu__icon-link"
+            href={githubUrl}
+            rel="noopener noreferrer"
+            target="_blank"
+            aria-label="GitHub repository (opens in new tab)"
+          >
+            <i class="ph ph-github-logo" aria-hidden="true"></i>
+          </a>
+        </nav>
+        <div class="psite-menu__footer">
+          <div class="theme-toggle" role="group" aria-label="Color mode" data-theme-toggle>
+            <button
+              type="button"
+              class="theme-toggle__option is-active"
+              data-theme-value="light"
+              aria-pressed="true"
+              aria-label="Light mode"
+            >
+              <Fragment set:html={themeToggleIconSun()} />
+            </button>
+            <button
+              type="button"
+              class="theme-toggle__option"
+              data-theme-value="dark"
+              aria-pressed="false"
+              aria-label="Dark mode"
+            >
+              <Fragment set:html={themeToggleIconMoon()} />
+            </button>
+          </div>
+          <a class="btn btn--primary" href="/docs" data-psite-menu-close>Documentation</a>
+        </div>
+      </div>
+    </div>
+
+    <main id="psite-main">
+      <slot />
+    </main>
+    <footer class="psite-footer">
+      <div class="psite-footer__inner">
+        <PimentLogo class="psite-footer__logo" width={56} height={30} />
+        <p>
+          PimentCSS v{navConfig.version} · MIT ·
+          <a href="https://www.webmonster.tech" rel="noopener noreferrer" target="_blank"
+            >Webmonster.tech<span class="sr-only"> (opens in new tab)</span></a
+          >
+          ·
+          <a href="https://www.numera11y.fr" rel="noopener noreferrer" target="_blank"
+            >numera11y<span class="sr-only"> (opens in new tab)</span></a
+          >
+        </p>
+        <p class="psite-footer__copy">© {year} PimentCSS contributors · Born in the Caribbean, built for the open web</p>
+      </div>
+    </footer>
+    <script src="../scripts/site-client.ts"></script>
+  </body>
+</html>

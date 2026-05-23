@@ -1,0 +1,312 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import HeroMosaic from '../components/HeroMosaic.astro';
+import { navConfig } from '../lib/docs';
+import { GITHUB_REPO, GITHUB_UPSTREAM_PIMENT_CSS } from '../lib/github';
+
+const title = 'PimentCSS — The accessible, Caribbean-spiced design system';
+const description =
+  'An open design system for the web: WCAG-minded components, OKLCH palettes from Martinique to Guyane, and semantic tokens for light and dark.';
+
+type PaletteSwatch = { name: string; note: string } & (
+  | { token: string; step: string }
+  | { swatch: string }
+);
+
+const paletteStory: PaletteSwatch[] = [
+  { name: 'Lagoon', token: 'information', step: '400', note: 'Lagoon cyan, Martinique & Guadeloupe shores' },
+  { name: 'Mango', token: 'accent', step: '400', note: 'Sun-warmed fruit, market stalls at dusk' },
+  { name: 'Canopy', token: 'success', step: '400', note: 'Amazonian forest, Guyane green' },
+  { name: 'Papaya', swatch: 'var(--psite-papaya)', note: 'Ripe papaya, chili heat, Indian Ocean trade routes' },
+  { name: 'Hibiscus', token: 'error', step: '400', note: 'Ceramic fire, ancestral warmth' },
+];
+
+function paletteSwatchBg(entry: PaletteSwatch) {
+  return 'swatch' in entry ? entry.swatch : `var(--${entry.token}-${entry.step})`;
+}
+
+const pillars = [
+  {
+    title: 'Accessibility first',
+    body: 'WCAG 2.2 AA contrast pairs, visible focus, 44px touch targets, and an explicit a11y guide. The calm alternative to systems that treat inclusion as an afterthought.',
+    href: '/docs/a11y',
+    accent: 'primary',
+  },
+  {
+    title: 'Caribbean color science',
+    body: 'OKLCH palettes with hex fallback: lagoon cyan, mango golds, canopy greens. Semantic surfaces so light and dark modes stay readable without rework.',
+    href: '/docs/colors',
+    accent: 'accent',
+  },
+  {
+    title: 'Copy-paste components',
+    body: 'Buttons, forms, navigation, data tables, modals, and feedback patterns. BEM-style classes, no mandatory prefix, every class verified in the published bundle.',
+    href: '/docs/buttons',
+    accent: 'success',
+  },
+  {
+    title: 'Patterns for real products',
+    body: 'Composition recipes: contact forms, toolbar + modal, table + pagination. Progressive disclosure in the docs, not a wall of identical cards.',
+    href: '/docs/patterns',
+    accent: 'information',
+  },
+  {
+    title: 'Sass or plain CSS',
+    body: 'npm, CDN, full bundle, or partial imports. Customize tokens with @use … with () before you ship your brand.',
+    href: '/docs/customization',
+    accent: 'warning',
+  },
+  {
+    title: 'Documentation you can trust',
+    body: 'Live previews, axe-tested demos, package-manager tabs, and stable heading anchors. Code is the source of truth.',
+    href: '/docs',
+    accent: 'error',
+  },
+];
+
+const territories = [
+  {
+    id: 'caribbean',
+    title: 'Caribbean',
+    places: 'Martinique · Guadeloupe · Guyane',
+    text: 'Lagoon primaries and mango accents echo the Antilles: creole markets, Atlantic light, and interfaces that feel alive without sacrificing clarity.',
+  },
+  {
+    id: 'amazonian',
+    title: 'Amazonian',
+    places: 'Forest · river · canopy',
+    text: 'Deep greens and layered shadows reference Guyane and the Amazon basin: density, rhythm, and respect for the land in every elevation token.',
+  },
+  {
+    id: 'amerindian',
+    title: 'Amerindian',
+    places: 'Pattern · earth · craft',
+    text: 'Geometry and restraint: ornament lives in color relationships and typography, not noisy decoration. Structure before spectacle.',
+  },
+  {
+    id: 'afro-indian',
+    title: 'Afro-Indian crossings',
+    places: 'Spice routes · rhythm · warmth',
+    text: 'Papaya warmth, indigo nights, hibiscus accents: palettes shaped by African and Indian diasporas across the Caribbean and Indian Ocean.',
+  },
+];
+
+const systemLayers = [
+  { title: 'Getting started', desc: 'Install, customize, what is new', href: '/docs/installation', count: '4 guides' },
+  { title: 'Foundations', desc: 'Color, type, layout, depth, icons', href: '/docs/colors', count: '6 topics' },
+  { title: 'Forms', desc: 'Fields, selection, date, autocomplete', href: '/docs/form', count: '7 topics' },
+  { title: 'Navigation', desc: 'Tabs, menus, pagination, anchors', href: '/docs/navigation', count: '8 topics' },
+  { title: 'Feedback', desc: 'Alerts, loaders, snackbars, progress', href: '/docs/alerts', count: '6 topics' },
+  { title: 'Patterns', desc: 'Recipes for full-page composition', href: '/docs/patterns', count: '3 recipes' },
+];
+
+const principles = [
+  { k: 'Code is truth', v: 'Documented classes exist in dist/pimentcss.css.' },
+  { k: 'Semantic tokens', v: 'Prefer --surface-* and --text-* over raw palette steps.' },
+  { k: 'Explicit a11y', v: 'RGAA / WCAG AA pairs, focus rings, reduced motion.' },
+  { k: 'Light / dark parity', v: 'Examples stay readable in both themes.' },
+  { k: 'Progressive disclosure', v: 'Short sections, copyable snippets, stable ids.' },
+  { k: 'Icon agnosticism', v: 'Sized slots only; bring your own SVG set.' },
+];
+---
+
+<SiteLayout title={title} description={description}>
+  <section class="psite-hero" aria-labelledby="psite-hero-title">
+    <div class="psite-hero__backdrop" aria-hidden="true"></div>
+    <div class="psite-hero__inner">
+      <div class="psite-hero__copy">
+        <p class="psite-hero__eyebrow">
+          <span class="psite-hero__pepper" aria-hidden="true"></span>
+          Open design system · v{navConfig.version}
+        </p>
+        <h1 id="psite-hero-title">The accessible alternative, spiced with Caribbean color</h1>
+        <p class="psite-hero__lead">
+          PimentCSS is not another corporate gray kit. It is a web design system born between Martinique,
+          Guadeloupe, and Guyane: semantic tokens, OKLCH palettes, and components tested for WCAG 2.2 AA.
+          Calm interfaces. Bold color. Inclusion by design.
+        </p>
+        <div class="psite-hero__cta">
+          <a class="btn btn--primary" href="/docs">Explore documentation</a>
+          <a class="btn btn--outline" href="/docs/installation">Install via npm</a>
+        </div>
+        <dl class="psite-hero__stats">
+          <div>
+            <dt>40+</dt>
+            <dd>Documented topics</dd>
+          </div>
+          <div>
+            <dt>WCAG 2.2</dt>
+            <dd>AA target</dd>
+          </div>
+          <div>
+            <dt>OKLCH</dt>
+            <dd>Perceptual palettes</dd>
+          </div>
+          <div>
+            <dt>MIT</dt>
+            <dd>Open source</dd>
+          </div>
+        </dl>
+      </div>
+      <div class="psite-hero__mosaic" aria-hidden="true">
+        <HeroMosaic />
+      </div>
+    </div>
+  </section>
+
+  <section class="psite-mission" id="mission" aria-labelledby="mission-title">
+    <div class="psite-mission__inner">
+      <h2 id="mission-title">Our mission</h2>
+      <blockquote class="psite-mission__quote">
+        <p>
+          Material, Fluent, Carbon, and Polaris optimize for platform scale. PimentCSS optimizes for
+          <strong>accessible craft</strong>: interfaces that welcome everyone, colored by the Caribbean and
+          shaped by creole, Amazonian, Amerindian, African, and Indian influences without pastiche.
+        </p>
+      </blockquote>
+      <p class="psite-mission__sub">
+        Built by <a href="https://www.webmonster.tech" rel="noopener noreferrer" target="_blank"
+          >Webmonster<span class="sr-only"> (opens in new tab)</span></a
+        >
+        and <a href="https://www.numera11y.fr" rel="noopener noreferrer" target="_blank"
+          >numera11y<span class="sr-only"> (opens in new tab)</span></a
+        >, extending the open <a href={GITHUB_UPSTREAM_PIMENT_CSS} rel="noopener noreferrer" target="_blank"
+          >Piment-Css<span class="sr-only"> (opens in new tab)</span></a
+        >
+        lineage published as <a href={GITHUB_REPO} rel="noopener noreferrer" target="_blank"
+          >PimentCSS<span class="sr-only"> (opens in new tab)</span></a
+        >. For teams who need an alternative that puts accessibility and cultural color on equal footing with velocity.
+      </p>
+    </div>
+  </section>
+
+  <section class="psite-section" id="design-system" aria-labelledby="pillars-title">
+    <div class="psite-section__head">
+      <h2 id="pillars-title">What you get</h2>
+      <p class="psite-section__lead">
+        Everything expected from a mature design system: foundations, components, patterns, and rigorous docs.
+        Nothing you do not need: no mandatory React layer, no vendor lock-in, no decorative chrome that hides weak contrast.
+      </p>
+    </div>
+    <div class="psite-pillars">
+      {pillars.map((p) => (
+        <a class={`psite-pillar psite-pillar--${p.accent}`} href={p.href}>
+          <h3>{p.title}</h3>
+          <p>{p.body}</p>
+          <span class="psite-pillar__link">Read more</span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="psite-territories" id="territories" aria-labelledby="territories-title">
+    <div class="psite-territories__head">
+      <h2 id="territories-title">A design language from many shores</h2>
+      <p class="psite-section__lead">
+        Color is narrative. PimentCSS encodes Caribbean, Amazonian, Amerindian, African, and Indian presence in
+        token names and OKLCH steps, not in clip-art tropes. The result is contemporary, respectful, and unmistakably warm.
+      </p>
+    </div>
+    <div class="psite-territories__grid">
+      {territories.map((t) => (
+        <article class="psite-territory" id={t.id}>
+          <p class="psite-territory__places">{t.places}</p>
+          <h3>{t.title}</h3>
+          <p>{t.text}</p>
+        </article>
+      ))}
+    </div>
+    <div class="psite-palette" aria-label="Signature palette preview">
+      <p class="psite-palette__label">Signature palette (OKLCH)</p>
+      <ul class="psite-palette__strip">
+        {paletteStory.map((p) => (
+          <li>
+            <span
+              class="psite-palette__chip"
+              style={`background: ${paletteSwatchBg(p)}`}
+            ></span>
+            <span class="psite-palette__meta">
+              <strong>{p.name}</strong>
+              <span>{p.note}</span>
+            </span>
+          </li>
+        ))}
+      </ul>
+      <a class="btn btn--outline" href="/docs/colors">Full color documentation</a>
+    </div>
+  </section>
+
+  <section class="psite-system" id="system" aria-labelledby="system-title">
+    <div class="psite-system__head">
+      <h2 id="system-title">The system at a glance</h2>
+      <p class="psite-section__lead">
+        Browse foundations, wire forms, ship navigation, and compose full pages with patterns. Each page includes live demos and copy-ready markup.
+      </p>
+    </div>
+    <div class="psite-system__grid">
+      {systemLayers.map((layer) => (
+        <a class="psite-system__card" href={layer.href}>
+          <span class="psite-system__count">{layer.count}</span>
+          <h3>{layer.title}</h3>
+          <p>{layer.desc}</p>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="psite-section psite-section--muted" id="philosophy" aria-labelledby="philosophy-title">
+    <div class="psite-section__inner">
+      <h2 id="philosophy-title">Principles</h2>
+      <p class="psite-section__lead">
+        Clear, precise, trustworthy. Spice lives in color and contrast discipline, not in visual noise.
+      </p>
+      <ul class="psite-principles">
+        {principles.map((pr) => (
+          <li>
+            <strong>{pr.k}</strong>
+            <span>{pr.v}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="psite-section" id="team" aria-labelledby="team-title">
+    <h2 id="team-title">Team</h2>
+    <p class="psite-section__lead">
+      Designers and engineers across the Caribbean diaspora and accessibility practice, maintaining PimentCSS for the open web.
+    </p>
+    <div class="psite-team">
+      <article class="psite-team__person">
+        <p class="psite-team__name">Cédric Martial</p>
+        <p class="psite-team__role">Design system</p>
+      </article>
+      <article class="psite-team__person">
+        <p class="psite-team__name">Ronny Laposte</p>
+        <p class="psite-team__role">Technical contributor</p>
+      </article>
+      <article class="psite-team__person">
+        <p class="psite-team__name">Sébastien Jacobin</p>
+        <p class="psite-team__role">Engineer and developer</p>
+      </article>
+      <article class="psite-team__person">
+        <p class="psite-team__name">Xavier Simacourbe</p>
+        <p class="psite-team__role">Technical designer</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="psite-docs-cta" id="documentation" aria-labelledby="docs-cta-title">
+    <div class="psite-docs-cta__panel">
+      <h2 id="docs-cta-title">Start building with Piment</h2>
+      <p>
+        Install from npm, skim What's new in v1, customize Sass tokens, and ship your first screen with patterns
+        tested in light and dark. The documentation is in English, with live previews and axe audits on component demos.
+      </p>
+      <div class="psite-docs-cta__actions">
+        <a class="btn btn--primary" href="/docs">Open documentation</a>
+        <a class="btn btn--transparent" href="/docs/whats-new">What's new in v1</a>
+      </div>
+    </div>
+  </section>
+</SiteLayout>

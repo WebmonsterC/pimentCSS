@@ -1,0 +1,19 @@
+@use "../abstracts/variables" as v;
+
+:root {
+  --space-1: #{v.$space-1};
+  --space-2: #{v.$space-2};
+  --space-3: #{v.$space-3};
+  --space-4: #{v.$space-4};
+  --space-5: #{v.$space-5};
+  --space-6: #{v.$space-6};
+  --space-7: #{v.$space-7};
+  --border-radius-4: #{v.$border-radius-4};
+  --border-radius-8: #{v.$border-radius-8};
+  --border-radius-16: #{v.$border-radius-16};
+  --border-radius-6: #{v.$border-radius-6};
+  --border-width-1: #{v.$border-width-1};
+  --border-width-2: #{v.$border-width-2};
+  --border-radius-round: #{v.$border-radius-round};
+  --border-primary: #{v.$border-primary};
+}

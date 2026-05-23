@@ -1,0 +1,106 @@
+/**
+ * Form — PimentCSS v1
+ * Bloc formulaire : titre h4 + champs + actions
+ */
+@use "../abstracts/variables" as v;
+
+.#{v.class-seg()}form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: v.$form-gap;
+  width: 100%;
+  max-width: v.$form-max-width;
+  padding: v.$form-padding;
+  background: var(--surface-primary);
+  border-radius: v.$border-radius-8;
+  box-sizing: border-box;
+}
+
+.#{v.class-seg()}form__title {
+  width: 100%;
+  margin: 0;
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-heading-h4);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-heading-h4);
+  letter-spacing: var(--letter-spacing-heading-h4);
+  color: var(--text-headings);
+}
+
+.#{v.class-seg()}form__body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: v.$form-body-gap;
+  width: 100%;
+}
+
+.#{v.class-seg()}form__field {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: v.$form-field-gap;
+  width: 100%;
+  max-width: v.$form-field-width;
+}
+
+.#{v.class-seg()}form__field .#{v.class-seg()}label {
+  width: 100%;
+}
+
+.#{v.class-seg()}form__field .#{v.class-seg()}field {
+  max-width: 100%;
+  width: 100%;
+}
+
+.#{v.class-seg()}form__field .#{v.class-seg()}textarea {
+  max-width: 100%;
+  width: 100%;
+}
+
+.#{v.class-seg()}form__checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: v.$btn-gap;
+  width: 100%;
+  max-width: none;
+}
+
+.#{v.class-seg()}form__fieldset {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: v.$form-field-gap;
+  width: 100%;
+  max-width: v.$form-field-width;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.#{v.class-seg()}form__fieldset legend {
+  margin-bottom: v.$space-1;
+  padding: 0;
+}
+
+.#{v.class-seg()}form__radio {
+  width: 100%;
+  max-width: none;
+}
+
+.#{v.class-seg()}form__field .#{v.class-seg()}input__hint {
+  width: 100%;
+  margin: 0;
+}
+
+.#{v.class-seg()}form__actions {
+  display: flex;
+  flex-direction: column;
+  gap: v.$form-body-gap;
+  width: 100%;
+}
+
+.#{v.class-seg()}form__actions .#{v.class-seg()}btn {
+  width: 100%;
+}

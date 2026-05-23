@@ -1,0 +1,21 @@
+@use "../abstracts/mixins" as *;
+@use "../abstracts/palettes.generated" as pal;
+
+:root {
+  @include emit-palettes(pal.$palettes-oklch);
+
+  /* Semantic color aliases */
+  --color-blue-900: var(--primary-900);
+  --color-yellow-100: var(--accent-100);
+  --color-yellow-900: var(--accent-900);
+  --color-grey-100: var(--neutral-100);
+  --color-grey-900: var(--neutral-900);
+  --color-azure-100: var(--information-100);
+  --color-azure-900: var(--information-900);
+}
+
+@supports not (color: oklch(0% 0 0)) {
+  :root {
+    @include emit-palettes(pal.$palettes-hex);
+  }
+}

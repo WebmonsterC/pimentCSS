@@ -1,0 +1,32 @@
+/**
+ * Keyline (HR) — PimentCSS v1
+ * Horizontal divider — border-primary 1 / 2 / 4 px
+ */
+@use "../abstracts/variables" as v;
+
+.#{v.class-seg()}keyline,
+.#{v.class-seg()}hr,
+hr.#{v.class-seg()}hr {
+  display: block;
+  width: 100%;
+  max-width: v.$keyline-max-width;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-top: v.$border-width-1 solid var(--border-primary);
+  background: transparent;
+}
+
+/* Higher specificity than hr.hr / .hr base (border-top shorthand) */
+.#{v.class-seg()}keyline.#{v.class-seg()}keyline--2,
+.#{v.class-seg()}hr.#{v.class-seg()}hr--2,
+hr.#{v.class-seg()}hr.#{v.class-seg()}hr--2 {
+  border-top-width: v.$border-width-2;
+}
+
+.#{v.class-seg()}keyline.#{v.class-seg()}keyline--4,
+.#{v.class-seg()}hr.#{v.class-seg()}hr--4,
+hr.#{v.class-seg()}hr.#{v.class-seg()}hr--4 {
+  border-top-width: v.$border-width-4;
+}

@@ -1,0 +1,26 @@
+{
+  "fileKey": "Vnc34wL28GUCKuCG7C3lEO",
+  "fileName": "Design-system-Numera11y-v-1.3",
+  "pageId": "2:2097",
+  "pageUrl": "https://www.figma.com/design/Vnc34wL28GUCKuCG7C3lEO/Design-system-Numera11y-v-1.3?node-id=2-2097",
+  "name": "Colors",
+  "frameNodeId": "2:2100",
+  "status": "synced",
+  "palettes": [
+    { "name": "Primary", "alias": "Blue", "nodeId": "2:2101" },
+    { "name": "Accent", "alias": "Yellow", "nodeId": "2:2139" },
+    { "name": "Neutral", "alias": "Grey", "nodeId": "2:2177" },
+    { "name": "Information", "alias": "Azure", "nodeId": "2:2219" },
+    { "name": "Success", "alias": "Green", "nodeId": "2:2257" },
+    { "name": "Warning", "alias": "Orange", "nodeId": "2:2299" },
+    { "name": "Error", "alias": "Red", "nodeId": "2:2337" },
+    { "name": "Shades", "nodeId": "2:2379" }
+  ],
+  "codePaths": [
+    "tokens/colors.css",
+    "styles/palettes.css",
+    "scss/abstracts/_palettes.generated.scss",
+    "docs/index.html"
+  ],
+  "format": "oklch-canonical-hex-fallback"
+}

@@ -1,0 +1,85 @@
+/**
+ * Badge — PimentCSS v1
+ * Types : Copy (compteur 24px) · Dot (indicateur 8px)
+ */
+@use "../abstracts/variables" as v;
+
+.#{v.class-seg()}badge {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: v.$border-radius-round;
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-semi-bold);
+  vertical-align: middle;
+}
+
+/* Copy type — 24px circle, numeric label */
+.#{v.class-seg()}badge--copy {
+  width: v.$badge-copy-size;
+  height: v.$badge-copy-size;
+  min-width: v.$badge-copy-size;
+  min-height: v.$badge-copy-size;
+  padding: 0;
+  font-size: var(--font-size-body-small);
+  line-height: var(--line-height-body-small);
+  letter-spacing: var(--letter-spacing-body-small);
+  text-align: center;
+}
+
+.#{v.class-seg()}badge--copy.#{v.class-seg()}badge--default {
+  background: var(--surface-action);
+  color: var(--text-on-action);
+}
+
+.#{v.class-seg()}badge--copy.#{v.class-seg()}badge--information {
+  background: var(--information-700);
+  color: var(--information-100);
+}
+
+.#{v.class-seg()}badge--copy.#{v.class-seg()}badge--warning {
+  background: var(--warning-800);
+  color: var(--warning-100);
+}
+
+.#{v.class-seg()}badge--copy.#{v.class-seg()}badge--error {
+  background: var(--error-700);
+  color: var(--error-100);
+}
+
+.#{v.class-seg()}badge--copy.#{v.class-seg()}badge--success {
+  background: var(--success-700);
+  color: var(--success-100);
+}
+
+/* Type Dot — pastille 8px */
+.#{v.class-seg()}badge--dot {
+  width: v.$badge-dot-size;
+  height: v.$badge-dot-size;
+  min-width: v.$badge-dot-size;
+  min-height: v.$badge-dot-size;
+  padding: 0;
+  font-size: 0;
+  line-height: 0;
+}
+
+.#{v.class-seg()}badge--dot.#{v.class-seg()}badge--default {
+  background: var(--surface-action);
+}
+
+.#{v.class-seg()}badge--dot.#{v.class-seg()}badge--information {
+  background: var(--icon-information);
+}
+
+.#{v.class-seg()}badge--dot.#{v.class-seg()}badge--warning {
+  background: var(--icon-warning);
+}
+
+.#{v.class-seg()}badge--dot.#{v.class-seg()}badge--error {
+  background: var(--icon-error);
+}
+
+.#{v.class-seg()}badge--dot.#{v.class-seg()}badge--success {
+  background: var(--icon-success);
+}

@@ -1,0 +1,31 @@
+@use "sass:math";
+@use "../abstracts/variables" as v;
+
+.#{v.class-seg()}row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-inline: calc(v.$grid-gutter * -0.5);
+}
+
+.#{v.class-seg()}row > * {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  padding-inline: calc(v.$grid-gutter * 0.5);
+}
+
+@for $i from 1 through 12 {
+  .#{v.class-seg()}col-#{$i} {
+    flex: 0 0 auto;
+    width: math.percentage(math.div($i, 12));
+  }
+}
+
+@media (min-width: 48rem) {
+  @for $i from 1 through 12 {
+    .#{v.class-seg()}col-md-#{$i} {
+      flex: 0 0 auto;
+      width: math.percentage(math.div($i, 12));
+    }
+  }
+}

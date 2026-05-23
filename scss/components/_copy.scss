@@ -1,0 +1,27 @@
+/**
+ * Copy block — spec Placeholder 2:1770
+ */
+@use "../abstracts/variables" as v;
+
+.#{v.class-seg()}copy-block {
+  display: flex;
+  flex-direction: column;
+  gap: v.$card-copy-gap;
+  width: 100%;
+  max-width: v.$copy-block-max-width;
+}
+
+.#{v.class-seg()}copy-block--center {
+  align-items: center;
+  text-align: center;
+}
+
+.#{v.class-seg()}copy-block__text {
+  margin: 0;
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-body-medium);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-body-medium);
+  letter-spacing: var(--letter-spacing-body-medium);
+  color: var(--text-body);
+}

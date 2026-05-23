@@ -1,0 +1,64 @@
+{
+  "fileKey": "Vnc34wL28GUCKuCG7C3lEO",
+  "fileName": "Design-system-Numera11y-v-1.3",
+  "pageId": "2:1739",
+  "pageUrl": "https://www.figma.com/design/Vnc34wL28GUCKuCG7C3lEO/Design-system-Numera11y-v-1.3?node-id=2-1739",
+  "name": "Placeholder",
+  "frameNodeId": "2:1746",
+  "status": "synced",
+  "syncedAt": "2026-05-21",
+  "sections": [
+    {
+      "name": "Copy",
+      "nodeId": "2:1750",
+      "variants": [
+        { "name": "h6", "nodeId": "2:1751", "fontSize": "20px" },
+        { "name": "h5", "nodeId": "2:1753", "fontSize": "24px" },
+        { "name": "h4", "nodeId": "2:1755", "fontSize": "32px" },
+        { "name": "h3", "nodeId": "2:1757", "fontSize": "40px" },
+        { "name": "h2", "nodeId": "2:1759", "fontSize": "48px" },
+        { "name": "h1", "nodeId": "2:1761", "fontSize": "60px" },
+        { "name": "Body-small", "nodeId": "2:1763", "fontSize": "12px" },
+        { "name": "Body-medium", "nodeId": "2:1765", "fontSize": "16px" },
+        { "name": "Body-large", "nodeId": "2:1767", "fontSize": "20px" }
+      ],
+      "classes": [
+        "heading-h1",
+        "heading-h2",
+        "heading-h3",
+        "heading-h4",
+        "heading-h5",
+        "heading-h6",
+        "body-small",
+        "body-medium",
+        "body-large"
+      ]
+    },
+    {
+      "name": "Copy block",
+      "nodeId": "2:1770",
+      "variants": [
+        { "name": "Left", "nodeId": "2:1771" },
+        { "name": "Center", "nodeId": "2:1774" }
+      ],
+      "classes": ["copy-block", "copy-block--center"]
+    },
+    {
+      "name": "Image",
+      "nodeId": "2:1778",
+      "variants": [
+        { "name": "1:1", "nodeId": "2:1779", "size": "240×240" },
+        { "name": "8:5", "nodeId": "2:1780", "size": "240×150" },
+        { "name": "3:4", "nodeId": "2:1781", "size": "180×240" },
+        { "name": "3:2", "nodeId": "2:1782", "size": "240×160" }
+      ],
+      "classes": ["media", "media--1-1", "media--8-5", "media--3-4", "media--3-2"]
+    }
+  ],
+  "codePaths": [
+    "tokens/typography.css",
+    "scss/tokens/_typography.scss",
+    "scss/components/_copy.scss",
+    "scss/components/_media.scss"
+  ]
+}

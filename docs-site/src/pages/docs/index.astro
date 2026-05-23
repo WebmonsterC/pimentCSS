@@ -1,0 +1,12 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+import { getPageMeta } from '../../lib/docs';
+import { STATIC_CONTENT } from '../../lib/static-content';
+
+const meta = getPageMeta(null);
+const body = STATIC_CONTENT.intro;
+---
+
+<DocsLayout title={meta.title} lead={meta.lead} breadcrumb={meta.breadcrumb}>
+  <Fragment set:html={body} />
+</DocsLayout>

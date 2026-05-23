@@ -1,0 +1,248 @@
+/**
+ * Navigation — PimentCSS v1
+ * Nav items (in-page / header) + Header navigation
+ */
+@use "../abstracts/variables" as v;
+
+/* --- Item de navigation (anchor / in-page) --- */
+.#{v.class-seg()}nav-item {
+  display: inline-flex;
+  align-items: center;
+  gap: v.$nav-item-gap;
+  padding: v.$nav-item-padding;
+  border: 0;
+  border-radius: v.$border-radius-4;
+  background: transparent;
+  color: var(--text-body);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-body-medium);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-body-medium);
+  letter-spacing: var(--letter-spacing-body-medium);
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color v.$motion-duration-fast v.$motion-easing;
+
+  &:hover:not(:disabled):not([aria-disabled="true"]),
+  &.#{v.class-seg()}nav-item--hover {
+    color: var(--primary-600);
+  }
+
+  &:focus-visible {
+    outline: v.$border-width-2 solid var(--border-focus);
+    outline-offset: 2px;
+  }
+
+  &--selected,
+  &[aria-current="page"],
+  &[aria-current="true"] {
+    color: var(--text-action);
+  }
+}
+
+.#{v.class-seg()}nav-item__icon {
+  flex-shrink: 0;
+  width: v.$link-icon-size;
+  height: v.$link-icon-size;
+  color: currentColor;
+}
+
+/* Liste horizontale (header) */
+.#{v.class-seg()}nav__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: v.$nav-list-gap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  /* Neutralise les marges prose (li + li) et aligne chaque lien sur la ligne flex */
+  > li {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+}
+
+.#{v.class-seg()}header-nav .#{v.class-seg()}nav__list {
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: v.$nav-item-gap;
+}
+
+/* Side / in-page navigation (anchor) */
+.#{v.class-seg()}inpage-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+}
+
+.#{v.class-seg()}inpage-nav .#{v.class-seg()}nav-item {
+  width: 100%;
+  justify-content: flex-start;
+}
+
+/* --- Header navigation --- */
+.#{v.class-seg()}header-nav {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  column-gap: v.$header-nav-gap;
+  width: 100%;
+  min-height: v.$btn-min-height;
+  padding: 0;
+}
+
+.#{v.class-seg()}header-nav__logo {
+  grid-column: 1;
+  justify-self: start;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.555625rem; /* ~25px */
+  height: 2rem; /* 32px */
+  color: var(--text-action);
+  text-decoration: none;
+}
+
+.#{v.class-seg()}header-nav__logo svg,
+.#{v.class-seg()}header-nav__logo .ph {
+  display: block;
+  flex-shrink: 0;
+  width: v.$link-icon-size;
+  height: v.$link-icon-size;
+}
+
+/* Desktop: panel children join the grid (logo | nav | actions) */
+.#{v.class-seg()}header-nav__panel {
+  display: contents;
+}
+
+.#{v.class-seg()}header-nav__nav {
+  grid-column: 2;
+  justify-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+}
+
+.#{v.class-seg()}header-nav__actions {
+  grid-column: 3;
+  justify-self: end;
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: v.$header-nav-actions-gap;
+}
+
+.#{v.class-seg()}header-nav__toggle {
+  display: none;
+  grid-column: 3;
+  justify-self: end;
+  align-items: center;
+  justify-content: center;
+  width: v.$btn-min-height;
+  min-width: v.$btn-min-height;
+  height: v.$btn-min-height;
+  padding: 0;
+  border: 0;
+  border-radius: v.$border-radius-4;
+  background: transparent;
+  color: var(--text-action);
+  cursor: pointer;
+  transition: background-color v.$motion-duration-fast v.$motion-easing;
+
+  &:hover {
+    background: var(--surface-action-hover-2);
+  }
+
+  &:focus-visible {
+    outline: v.$border-width-2 solid var(--border-focus);
+    outline-offset: 2px;
+  }
+
+  .ph {
+    font-size: v.$link-icon-size;
+  }
+}
+
+@mixin header-nav-mobile-layout {
+  grid-template-columns: auto 1fr auto;
+  column-gap: v.$nav-item-gap;
+
+  .#{v.class-seg()}header-nav__panel {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    flex-direction: column;
+    align-items: stretch;
+    gap: v.$space-3;
+    padding: v.$space-4;
+    background: var(--surface-page);
+    border: 1px solid var(--border-default);
+    border-top: 0;
+    border-radius: 0 0 v.$border-radius-8 v.$border-radius-8;
+    box-shadow: var(--shadow-sm);
+  }
+
+  &.#{v.class-seg()}header-nav--open .#{v.class-seg()}header-nav__panel {
+    display: flex;
+  }
+
+  .#{v.class-seg()}header-nav__nav {
+    grid-column: auto;
+    justify-self: stretch;
+    width: 100%;
+  }
+
+  .#{v.class-seg()}nav__list {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 0;
+  }
+
+  .#{v.class-seg()}nav-item {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .#{v.class-seg()}header-nav__actions {
+    grid-column: auto;
+    justify-self: stretch;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: v.$space-2;
+  }
+
+  .#{v.class-seg()}header-nav__actions .#{v.class-seg()}btn {
+    width: 100%;
+  }
+
+  .#{v.class-seg()}header-nav__toggle {
+    display: inline-flex;
+  }
+}
+
+@media (max-width: v.$header-nav-mobile-max) {
+  .#{v.class-seg()}header-nav {
+    @include header-nav-mobile-layout;
+  }
+}
+
+/* Doc / embedded preview: force drawer layout without viewport breakpoint */
+.#{v.class-seg()}header-nav--compact {
+  @include header-nav-mobile-layout;
+}

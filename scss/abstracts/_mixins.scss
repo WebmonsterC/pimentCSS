@@ -1,0 +1,57 @@
+@use "sass:map";
+@use "variables" as v;
+
+/// Émet les variables CSS d'une palette (--primary-500, --primary-default, …)
+@mixin emit-palette($prefix, $steps) {
+  @each $step, $value in $steps {
+    --#{$prefix}-#{"" + $step}: #{$value};
+  }
+  @if map.has-key($steps, 500) {
+    --#{$prefix}-default: var(--#{$prefix}-500);
+  }
+}
+
+/// Émet toutes les palettes d'une map Sass
+@mixin emit-palettes($palettes) {
+  @each $name, $steps in $palettes {
+    @include emit-palette($name, $steps);
+  }
+}
+
+/// WCAG focus ring (reusable on buttons, links, fields)
+@mixin focus-ring {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-ring-offset);
+}
+
+/// Cible tactile minimale 44×44 px
+@mixin touch-target($min: var(--min-touch-target)) {
+  min-width: $min;
+  min-height: $min;
+}
+
+/// Button variant (semantic colors)
+@mixin btn-variant($bg, $color, $bg-hover: null, $bg-active: null, $border: transparent) {
+  background: $bg;
+  color: $color;
+  border-color: $border;
+
+  &:hover,
+  &.#{v.class-seg()}btn--hover {
+    @if $bg-hover {
+      background: $bg-hover;
+    }
+  }
+
+  &:active,
+  &.#{v.class-seg()}btn--active {
+    @if $bg-active {
+      background: $bg-active;
+    }
+  }
+
+  &:focus-visible,
+  &.#{v.class-seg()}btn--focus {
+    @include focus-ring;
+  }
+}

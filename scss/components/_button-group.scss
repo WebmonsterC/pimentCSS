@@ -1,0 +1,101 @@
+/**
+ * Button group — PimentCSS v1
+ */
+@use "../abstracts/variables" as v;
+
+.#{v.class-seg()}btn-group {
+  display: inline-flex;
+  align-items: stretch;
+  max-width: 100%;
+  border: v.$border-width-1 solid var(--border-action);
+  border-radius: v.$border-radius-4;
+  overflow: hidden;
+}
+
+.#{v.class-seg()}btn-group__item {
+  display: inline-flex;
+  flex: 0 1 auto;
+  align-items: center;
+  justify-content: center;
+  gap: v.$btn-group-item-gap;
+  min-height: v.$btn-height-card;
+  padding: v.$btn-group-item-py v.$btn-group-item-px;
+  border: 0;
+  border-right: v.$border-width-1 solid var(--border-action);
+  border-radius: 0;
+  background: var(--surface-primary);
+  color: var(--text-action);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-body-medium);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-body-medium);
+  letter-spacing: var(--letter-spacing-body-medium);
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background-color v.$motion-duration-fast v.$motion-easing,
+    border-color v.$motion-duration-fast v.$motion-easing,
+    color v.$motion-duration-fast v.$motion-easing;
+
+  &:last-child {
+    border-right: 0;
+  }
+
+  &:hover:not(:disabled):not([aria-disabled="true"]):not(.#{v.class-seg()}btn-group__item--selected):not([aria-pressed="true"]):not([aria-checked="true"]),
+  &.#{v.class-seg()}btn-group__item--hover:not(.#{v.class-seg()}btn-group__item--selected) {
+    background: var(--surface-action-hover-2);
+    border-right-color: var(--border-action-hover);
+    color: var(--primary-600);
+  }
+
+  &:focus-visible {
+    outline: v.$border-width-2 solid var(--border-focus);
+    outline-offset: -2px;
+    z-index: 1;
+  }
+
+  &--selected,
+  &[aria-pressed="true"],
+  &[aria-checked="true"] {
+    background: var(--surface-action);
+    color: var(--text-on-action);
+
+    .#{v.class-seg()}btn-group__icon {
+      color: currentColor;
+    }
+
+    &:hover:not(:disabled):not([aria-disabled="true"]),
+    &.#{v.class-seg()}btn-group__item--hover {
+      background: var(--surface-action-hover);
+      border-right-color: var(--border-action-hover);
+      color: var(--text-on-action);
+    }
+  }
+
+  &:disabled,
+  &[aria-disabled="true"],
+  &.#{v.class-seg()}btn-group__item--disabled {
+    background: var(--surface-disabled);
+    border-right-color: var(--border-disabled);
+    color: var(--text-disabled);
+    cursor: not-allowed;
+  }
+}
+
+.#{v.class-seg()}btn-group__icon {
+  flex-shrink: 0;
+  width: v.$btn-group-icon-size;
+  height: v.$btn-group-icon-size;
+  color: currentColor;
+}
+
+.#{v.class-seg()}btn-group__label {
+  flex-shrink: 0;
+}
+
+/* Icon-only */
+.#{v.class-seg()}btn-group--icon .#{v.class-seg()}btn-group__item {
+  min-width: v.$btn-height-card;
+  padding-left: v.$btn-group-item-px;
+  padding-right: v.$btn-group-item-px;
+}

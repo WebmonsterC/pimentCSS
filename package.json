@@ -1,0 +1,93 @@
+{
+  "name": "pimentcss",
+  "version": "1.0.0",
+  "description": "PimentCSS v1 — accessible design system (Webmonster × numera11y), evolution of Piment-Css",
+  "homepage": "https://piment.webmonster.tech",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WebmonsterC/pimentCSS.git"
+  },
+  "bugs": {
+    "url": "https://github.com/WebmonsterC/pimentCSS/issues"
+  },
+  "license": "MIT",
+  "style": "dist/pimentcss.min.css",
+  "sass": "scss/pimentcss.scss",
+  "main": "dist/pimentcss.min.css",
+  "files": [
+    "dist/pimentcss.css",
+    "dist/pimentcss.min.css",
+    "scss",
+    "tokens",
+    "styles/palettes.css",
+    "styles/fonts.local.css",
+    "README.md",
+    "LICENSE"
+  ],
+  "exports": {
+    ".": {
+      "style": "./dist/pimentcss.min.css",
+      "sass": "./scss/pimentcss.scss",
+      "default": "./dist/pimentcss.min.css"
+    },
+    "./core": {
+      "sass": "./scss/core.scss"
+    },
+    "./components": {
+      "sass": "./scss/components.scss"
+    },
+    "./tokens/*": "./tokens/*",
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build:fonts": "node scripts/convert-fonts.mjs && node scripts/generate-font-face.mjs",
+    "build:css": "node scripts/build-css.mjs",
+    "build:docs": "node scripts/sync-pages-metadata-en.mjs && node scripts/generate-colors-doc.mjs && node scripts/generate-doc-search-index.mjs && node scripts/sync-docs-public.mjs",
+    "sync:doc-metadata": "node scripts/sync-pages-metadata-en.mjs",
+    "build:docs:astro": "npm run build:docs && npm run --prefix docs-site build",
+    "build:css:min": "node scripts/build-css.mjs",
+    "generate:palettes": "node scripts/generate-palette-scss.mjs && node scripts/generate-palette-css.mjs && node scripts/generate-colors-doc.mjs",
+    "watch:css": "npx sass scss/pimentcss.scss dist/pimentcss.css --watch",
+    "prepublishOnly": "npm run build:css",
+    "docs": "npm run build:css && node scripts/sync-docs-public.mjs && npm run --prefix docs-site dev -- --host",
+    "docs:preview": "npm run build:docs:astro && npm run --prefix docs-site preview -- --host --port 5173",
+    "test:doc-classes": "node scripts/verify-doc-classes.mjs",
+    "test:doc-impeccable": "node scripts/impeccable-doc-lint.mjs",
+    "test:doc-code": "node scripts/test-doc-code-format.mjs",
+    "impeccable:context": "node .agents/skills/impeccable/scripts/load-context.mjs",
+    "test:e2e": "playwright test",
+    "test:e2e:heal": "node scripts/playwright-heal.mjs",
+    "test:e2e:ux": "playwright test tests/ux",
+    "test:e2e:a11y": "playwright test --project=a11y",
+    "test:e2e:mobile": "playwright test --project=mobile",
+    "test:e2e:tablet": "playwright test --project=tablet",
+    "test:e2e:desktop": "playwright test --project=desktop",
+    "test:e2e:ui": "playwright test --ui",
+    "test:e2e:headed": "playwright test --headed",
+    "test:e2e:report": "playwright show-report"
+  },
+  "keywords": [
+    "pimentcss",
+    "design-system",
+    "a11y",
+    "webmonster",
+    "oklch",
+    "css-framework"
+  ],
+  "peerDependencies": {
+    "sass": "^1.69.0"
+  },
+  "peerDependenciesMeta": {
+    "sass": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.11.3",
+    "@playwright/test": "^1.60.0",
+    "@types/node": "^25.9.1",
+    "sass": "^1.99.0",
+    "tsx": "^4.22.3",
+    "ttf2woff2": "^5.0.0"
+  }
+}

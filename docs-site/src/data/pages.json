@@ -1,0 +1,559 @@
+{
+  "index.html": {
+    "title": "Introduction",
+    "breadcrumb": [
+      "Getting started",
+      "Introduction"
+    ],
+    "lead": "OKLCH tokens, live component preview, npm or CDN quick start, and paths to customize or verify accessibility.",
+    "static": "intro",
+    "componentSelector": ".pdoc-intro-showcase .btn--primary"
+  },
+  "whats-new.html": {
+    "title": "What's new",
+    "breadcrumb": [
+      "Getting started",
+      "What's new"
+    ],
+    "lead": "Release highlights for PimentCSS v1.0: tokens, components, patterns, documentation, and migration from Piment-Css.",
+    "static": "whats-new"
+  },
+  "installation.html": {
+    "title": "Installation",
+    "breadcrumb": [
+      "Getting started",
+      "Installation"
+    ],
+    "lead": "Add PimentCSS via npm, CDN, or Sass compilation.",
+    "static": "installation"
+  },
+  "customization.html": {
+    "title": "Customization",
+    "breadcrumb": [
+      "Getting started",
+      "Customization"
+    ],
+    "lead": "Override Sass variables and CSS tokens to match your brand.",
+    "static": "customization"
+  },
+  "colors.html": {
+    "title": "Colors",
+    "breadcrumb": [
+      "Foundations",
+      "Colors"
+    ],
+    "lead": "OKLCH palettes with hex fallback, semantic variables, and swatch classes.",
+    "componentSelector": ".palette"
+  },
+  "typography.html": {
+    "title": "Typography",
+    "breadcrumb": [
+      "Foundations",
+      "Typography"
+    ],
+    "lead": "Heading scale, body utilities, and font loading for Zodiak and Plus Jakarta Sans.",
+    "static": "typography"
+  },
+  "layout.html": {
+    "title": "Layout",
+    "breadcrumb": [
+      "Foundations",
+      "Layout"
+    ],
+    "lead": "Container, 12-column grid, spacing utilities, and RGAA-friendly layout patterns for light and dark mode.",
+    "static": "layout"
+  },
+  "buttons.html": {
+    "title": "Buttons",
+    "breadcrumb": [
+      "Actions",
+      "Buttons"
+    ],
+    "lead": "Primary, outline, and transparent variants with icon slots and touch targets.",
+    "scss": "components/_button.scss",
+    "componentSelector": ".btn--primary",
+    "api": [
+      {
+        "className": ".btn",
+        "description": "Base class — flex, typography, transitions, and touch min-height."
+      },
+      {
+        "className": ".btn--primary",
+        "description": "Primary action (background --surface-action)."
+      },
+      {
+        "className": ".btn--outline",
+        "description": "Outline --border-action on primary surface."
+      },
+      {
+        "className": ".btn--transparent",
+        "description": "Transparent background, --text-action text."
+      },
+      {
+        "className": ".btn--hover",
+        "description": "Forced hover state (demo / docs)."
+      },
+      {
+        "className": ".btn--focus",
+        "description": "Forced focus state (demo / docs)."
+      },
+      {
+        "className": ".btn--disabled",
+        "description": "Disabled styling (prefer [disabled])."
+      },
+      {
+        "className": ".btn--icon-only",
+        "description": "Square button for icon-only actions."
+      },
+      {
+        "className": ".btn__icon",
+        "description": "Inner icon element."
+      },
+      {
+        "className": ".focus-visible",
+        "description": "WCAG 3px focus ring."
+      }
+    ],
+    "a11y": [
+      "Use <button type=\"button\"> or an <code>&lt;a&gt;</code> with an explicit role.",
+      "Disabled state: disabled attribute or aria-disabled=\"true\".",
+      "Visible focus uses .focus-visible and --focus-ring (3px)."
+    ]
+  },
+  "input-fields.html": {
+    "title": "Input fields",
+    "breadcrumb": [
+      "Forms",
+      "Input fields"
+    ],
+    "lead": "Labels, hints, validation states, and prefix icons for text inputs.",
+    "scss": "components/_input.scss",
+    "componentSelector": ".field__input"
+  },
+  "a11y.html": {
+    "title": "Accessibility guide",
+    "breadcrumb": [
+      "Accessibility",
+      "Accessibility guide"
+    ],
+    "lead": "Focus rings, touch targets, semantic contrast pairs, and reduced motion.",
+    "scss": "tokens/_a11y.scss",
+    "componentSelector": ".pdoc-a11y-focus-lab .btn--primary"
+  },
+  "theme-toggle.html": {
+    "title": "Theme toggle",
+    "breadcrumb": [
+      "Foundations",
+      "Theme toggle"
+    ],
+    "lead": "Light / dark mode control for headers, menus, and settings panels.",
+    "componentSelector": ".theme-toggle"
+  },
+  "icons.html": {
+    "title": "Icons",
+    "breadcrumb": [
+      "Foundations",
+      "Icons"
+    ],
+    "lead": "Dimensioned icon slots for any SVG or icon font. Phosphor is used in docs as a reference example only.",
+    "static": "icons",
+    "componentSelector": ".pdoc-icons-lab .btn--primary"
+  },
+  "depth.html": {
+    "title": "Depth & shadows",
+    "lead": "Elevation shadows and z-index tokens for cards, overlays, and modals.",
+    "breadcrumb": [
+      "Foundations",
+      "Depth & shadows"
+    ],
+    "componentSelector": ".btn--primary"
+  },
+  "checkboxes-radios-switch.html": {
+    "title": "Checkboxes, radios & switches",
+    "lead": "Selection controls with accessible labels and group semantics.",
+    "breadcrumb": [
+      "Forms",
+      "Checkboxes, radios & switches"
+    ],
+    "scss": "components/_checkbox.scss, components/_radio.scss, components/_switch.scss",
+    "componentSelector": ".checkbox, .radio, .switch",
+    "a11y": [
+      "Wrap each control in <code>&lt;label&gt;</code> with a native <code>&lt;input&gt;</code> first.",
+      "Group radios with <code>&lt;fieldset&gt;</code> + <code>&lt;legend&gt;</code>.",
+      "Switches use <code>role=\"switch\"</code> and <code>aria-checked</code> synced on change.",
+      "Checkbox error: <code>.checkbox--error</code> + <code>aria-invalid=\"true\"</code>."
+    ]
+  },
+  "form.html": {
+    "title": "Form",
+    "lead": "Vertical form layout with fields, actions, and validation messaging.",
+    "breadcrumb": [
+      "Forms",
+      "Form"
+    ],
+    "scss": "components/_form.scss",
+    "componentSelector": ".form",
+    "a11y": [
+      "Every control has a visible label linked with <code>for</code> / <code>id</code>.",
+      "Use <code>aria-invalid</code> and hint text for validation errors.",
+      "Submit uses <code>type=\"submit\"</code> on a <code>.btn--primary</code>."
+    ]
+  },
+  "date-picker.html": {
+    "title": "Date picker",
+    "lead": "Calendar panel, month navigation, and field-group layout.",
+    "breadcrumb": [
+      "Forms",
+      "Date picker"
+    ],
+    "componentSelector": ".btn--primary"
+  },
+  "autocomplete.html": {
+    "title": "Autocomplete",
+    "lead": "Suggest list, keyboard navigation, and combobox patterns.",
+    "breadcrumb": [
+      "Forms",
+      "Autocomplete"
+    ],
+    "componentSelector": ".btn--primary"
+  },
+  "button-group.html": {
+    "title": "Button group",
+    "lead": "Segmented single-select and optional multi-toggle toolbars.",
+    "breadcrumb": [
+      "Actions",
+      "Button group"
+    ],
+    "componentSelector": ".btn-group__item",
+    "scss": "components/_button-group.scss"
+  },
+  "link-breadcrumb.html": {
+    "title": "Links & breadcrumb",
+    "lead": "Inline links, external trail icons, and breadcrumb navigation.",
+    "breadcrumb": [
+      "Actions",
+      "Links & breadcrumb"
+    ],
+    "componentSelector": ".link",
+    "scss": "components/_link.scss"
+  },
+  "navigation.html": {
+    "title": "Navigation",
+    "lead": "Header nav items, active state, and responsive shell patterns.",
+    "breadcrumb": [
+      "Navigation",
+      "Navigation"
+    ],
+    "componentSelector": ".nav-item",
+    "scss": "components/_navigation.scss"
+  },
+  "menu-dropdown.html": {
+    "title": "Menu & dropdown",
+    "lead": "Menu lists, dropdown panels, and keyboard-friendly disclosure.",
+    "breadcrumb": [
+      "Navigation",
+      "Menu & dropdown"
+    ],
+    "componentSelector": ".menu__item",
+    "scss": "components/_menu.scss"
+  },
+  "tabs.html": {
+    "title": "Tabs",
+    "lead": "Tablist, panels, and arrow-key navigation between tabs.",
+    "breadcrumb": [
+      "Navigation",
+      "Tabs"
+    ],
+    "componentSelector": ".tab",
+    "scss": "components/_tab.scss"
+  },
+  "pagination.html": {
+    "title": "Pagination",
+    "lead": "Page controls, ellipsis, and compact table footers.",
+    "breadcrumb": [
+      "Navigation",
+      "Pagination"
+    ],
+    "componentSelector": ".pagination__item",
+    "scss": "components/_pagination.scss"
+  },
+  "anchor-inpage-nav.html": {
+    "title": "In-page anchors",
+    "lead": "In-page anchor list with scroll-spy style active states.",
+    "breadcrumb": [
+      "Navigation",
+      "In-page anchors"
+    ],
+    "componentSelector": ".anchor-item",
+    "scss": "components/_anchor-nav.scss"
+  },
+  "carousel.html": {
+    "title": "Carousel",
+    "lead": "Scrollable track, arrows, and scrollbar affordances.",
+    "breadcrumb": [
+      "Navigation",
+      "Carousel"
+    ],
+    "componentSelector": ".carousel__arrow",
+    "scss": "components/_carousel.scss"
+  },
+  "table.html": {
+    "title": "Tables",
+    "lead": "Semantic row tables with a horizontal scroll region, plus column stacks and mobile-friendly card patterns.",
+    "breadcrumb": [
+      "Content",
+      "Tables"
+    ],
+    "componentSelector": ".pdoc-table-responsive",
+    "scss": "components/_table.scss"
+  },
+  "list.html": {
+    "title": "Lists",
+    "lead": "Stacked list rows with indicators and optional actions.",
+    "breadcrumb": [
+      "Content",
+      "Lists"
+    ],
+    "componentSelector": ".list",
+    "scss": "components/_list.scss",
+    "a11y": [
+      "Use <code>&lt;ol class=\"list__items\"&gt;</code> for ordered steps; <code>&lt;ul&gt;</code> when order is not meaningful.",
+      "Mark decorative <code>.list__indicator</code> with <code>aria-hidden=\"true\"</code> when the list order already conveys sequence.",
+      "Keep heading hierarchy: section <code>.list__heading</code>, then <code>&lt;h3 class=\"list__title\"&gt;</code> per row."
+    ]
+  },
+  "tree.html": {
+    "title": "Tree",
+    "lead": "Expandable tree groups with toggle buttons and nested items.",
+    "breadcrumb": [
+      "Content",
+      "Tree"
+    ],
+    "componentSelector": ".tree",
+    "scss": "components/_tree.scss",
+    "a11y": [
+      "Use <code>role=\"tree\"</code> on the root, <code>role=\"treeitem\"</code> on each <code>&lt;li&gt;</code>, and <code>role=\"group\"</code> on child <code>.tree__group</code> lists.",
+      "Sync <code>aria-expanded</code> on toggles; hide collapsed groups with the <code>hidden</code> attribute.",
+      "Link toggles to groups via <code>aria-controls</code> and stable <code>id</code> on <code>.tree__group</code>."
+    ]
+  },
+  "badge.html": {
+    "title": "Badges",
+    "lead": "Dot badges, counts, and status labels on inline content.",
+    "breadcrumb": [
+      "Content",
+      "Badges"
+    ],
+    "componentSelector": ".badge",
+    "scss": "components/_badge.scss",
+    "a11y": [
+      "Copy badges expose meaning through visible text; pair icon-only controls with an accessible name that includes the count.",
+      "Dot badges need <code>role=\"img\"</code> and a concise <code>aria-label</code>; add visible status text nearby when color carries meaning.",
+      "Prefer updating a parent <code>aria-live</code> region when counts change, not the badge element alone."
+    ]
+  },
+  "tags.html": {
+    "title": "Tags",
+    "lead": "Removable tags, filter chips, and pressed toggle states.",
+    "breadcrumb": [
+      "Content",
+      "Tags"
+    ],
+    "componentSelector": ".tag",
+    "scss": "components/_tag.scss",
+    "a11y": [
+      "Static tags use <code>&lt;span&gt;</code>; interactive filters use <code>&lt;button&gt;</code> with <code>aria-pressed</code>.",
+      "Group related filter chips with <code>role=\"group\"</code> and an accessible name.",
+      "Mark decorative icons <code>aria-hidden=\"true\"</code>; state must not rely on color alone."
+    ]
+  },
+  "keyline.html": {
+    "title": "Dividers",
+    "lead": "Horizontal rules and vertical keylines for section separation.",
+    "breadcrumb": [
+      "Content",
+      "Dividers"
+    ],
+    "componentSelector": ".hr, .keyline",
+    "scss": "components/_keyline.scss",
+    "a11y": [
+      "Use <code>&lt;hr&gt;</code> for thematic breaks between sections of content.",
+      "Decorative <code>&lt;div class=\"keyline\"&gt;</code> separators: <code>role=\"separator\"</code> and <code>aria-hidden=\"true\"</code> when structure is already clear.",
+      "Avoid stacking multiple adjacent dividers; one line per logical break."
+    ]
+  },
+  "placeholder.html": {
+    "title": "Placeholder",
+    "lead": "Copy blocks, media ratio placeholders, and skeleton patterns.",
+    "breadcrumb": [
+      "Content",
+      "Placeholder"
+    ],
+    "componentSelector": ".copy-block, .media",
+    "scss": "components/_copy.scss, components/_media.scss",
+    "a11y": [
+      "Use real heading levels with utility classes; do not skip levels for styling only.",
+      "Production images need meaningful <code>alt</code>; decorative placeholders use <code>alt=\"\"</code>.",
+      "When swapping placeholders for content, announce updates with <code>aria-live</code> where needed."
+    ]
+  },
+  "alerts.html": {
+    "title": "Alerts",
+    "lead": "Inline alerts, dismiss controls, and dialog-style confirmations.",
+    "breadcrumb": [
+      "Feedback",
+      "Alerts"
+    ],
+    "componentSelector": ".alert",
+    "scss": "components/_alert.scss",
+    "a11y": [
+      "Use <code>role=\"alert\"</code> for warnings and errors; <code>role=\"status\"</code> for information and success.",
+      "Alert dialogs: <code>role=\"alertdialog\"</code>, <code>aria-modal=\"true\"</code>, labelled title and description.",
+      "Auto-dismiss must not replace a close button; icons are decorative."
+    ]
+  },
+  "components.html": {
+    "title": "Alerts",
+    "lead": "Redirect: use alerts.html (legacy slug /components).",
+    "breadcrumb": [
+      "Feedback",
+      "Alerts"
+    ],
+    "componentSelector": ".alert"
+  },
+  "modals.html": {
+    "title": "Modals",
+    "lead": "Modal overlay, focus trap, and action footers.",
+    "breadcrumb": [
+      "Feedback",
+      "Modals"
+    ],
+    "componentSelector": ".modal__panel",
+    "scss": "components/_modal.scss",
+    "a11y": [
+      "Use <code>role=\"dialog\"</code> and <code>aria-modal=\"true\"</code> with a visible title (<code>aria-labelledby</code>).",
+      "Trap focus inside the panel, restore focus to the trigger on close, and lock page scroll while open.",
+      "Reserve <code>role=\"alertdialog\"</code> for urgent limited-choice prompts (see Alerts)."
+    ]
+  },
+  "cards.html": {
+    "title": "Cards",
+    "lead": "Card patterns for Copy, Newsletter signup, Blank slots, media ratios, and elevated panels.",
+    "breadcrumb": [
+      "Feedback",
+      "Cards"
+    ],
+    "componentSelector": ".card",
+    "scss": "components/_card.scss, components/_slot.scss, components/_copy.scss",
+    "a11y": [
+      "Use <code>&lt;article&gt;</code> for self-contained cards with a visible heading.",
+      "Decorative card images use <code>alt=\"\"</code>; form fields need linked labels.",
+      "Primary actions need an accessible name independent of the card title."
+    ]
+  },
+  "modals-cards.html": {
+    "title": "Modals & cards (moved)",
+    "lead": "This page was split into Modals and Cards. Use the links below.",
+    "breadcrumb": [
+      "Feedback",
+      "Modals & cards"
+    ],
+    "componentSelector": ".pdoc-card"
+  },
+  "snackbar.html": {
+    "title": "Snackbar",
+    "lead": "Transient snackbars with actions, auto-dismiss, and progress.",
+    "breadcrumb": [
+      "Feedback",
+      "Snackbar"
+    ],
+    "componentSelector": ".snackbar",
+    "scss": "components/_snackbar.scss",
+    "a11y": [
+      "Use <code>role=\"status\"</code> or <code>role=\"alert\"</code> with matching <code>aria-live</code> for errors.",
+      "Provide <code>.snackbar__close</code> with an accessible name; do not trap focus in passive toasts.",
+      "Mount live toasts in a single viewport host with <code>aria-relevant=\"additions\"</code>."
+    ]
+  },
+  "progress.html": {
+    "title": "Progress",
+    "lead": "Linear bars, labeled progress, and circular indicators.",
+    "breadcrumb": [
+      "Feedback",
+      "Progress"
+    ],
+    "componentSelector": ".progress",
+    "scss": "components/_progress.scss",
+    "a11y": [
+      "Use role=\"progressbar\" with aria-valuenow, aria-valuemin, and aria-valuemax when the value is known.",
+      "Pair unlabeled bars with aria-label; compound .progress-bar uses aria-labelledby on the visible label.",
+      "Prefer Loader when duration is unknown (indeterminate)."
+    ]
+  },
+  "loader.html": {
+    "title": "Loader",
+    "lead": "Spinners and in-context loading states.",
+    "breadcrumb": [
+      "Feedback",
+      "Loader"
+    ],
+    "componentSelector": ".loader",
+    "scss": "components/_loader.scss",
+    "a11y": [
+      "Use role=\"status\" with aria-label; add aria-live=\"polite\" when the loader appears dynamically.",
+      "Set aria-busy=\"true\" on the loading region; hide the loader with hidden when idle.",
+      "Mark each .loader__dot with aria-hidden=\"true\"."
+    ]
+  },
+  "patterns.html": {
+    "title": "Overview",
+    "lead": "Short recipes that combine forms, feedback, navigation, and content components into real pages.",
+    "breadcrumb": [
+      "Patterns",
+      "Overview"
+    ],
+    "componentSelector": ".pdoc-pattern-recipe-cards .pdoc-card"
+  },
+  "pattern-contact-form.html": {
+    "title": "Contact form",
+    "lead": "Contact form recipe with fields, consent, and submit actions.",
+    "breadcrumb": [
+      "Patterns",
+      "Contact form"
+    ],
+    "componentSelector": ".form .btn--primary"
+  },
+  "pattern-toolbar-modal.html": {
+    "title": "Toolbar + modal",
+    "lead": "Toolbar with status alert, button group, and modal task flow.",
+    "breadcrumb": [
+      "Patterns",
+      "Toolbar + modal"
+    ],
+    "componentSelector": "[data-modal-open]"
+  },
+  "pattern-table-pagination.html": {
+    "title": "Table + pagination",
+    "lead": "Data table with selection and pagination controls.",
+    "breadcrumb": [
+      "Patterns",
+      "Table + pagination"
+    ],
+    "componentSelector": ".pdoc-table-demo"
+  },
+  "slots-layouts.html": {
+    "title": "Slots & layouts",
+    "lead": "Slot placeholders and column/row layout grids for wireframes.",
+    "breadcrumb": [
+      "Patterns",
+      "Slots & layouts"
+    ],
+    "componentSelector": ".slot",
+    "scss": "components/_slot.scss",
+    "a11y": [
+      "Replace .slot placeholders with semantic content before production.",
+      "Use role=\"group\" and aria-label on layouts when slots form one UI pattern.",
+      "Preserve DOM order matching visual reading order in column and row layouts."
+    ]
+  }
+}

@@ -1,0 +1,69 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+.#{v.class-seg()}btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: v.$btn-gap;
+  min-height: v.$btn-min-height;
+  padding: v.$btn-padding-y v.$btn-padding-x;
+  border: v.$border-width-1 solid transparent;
+  border-radius: v.$btn-border-radius;
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-body-medium);
+  font-weight: var(--font-weight-semi-bold);
+  line-height: var(--line-height-body-medium);
+  letter-spacing: var(--letter-spacing-body-medium);
+  white-space: nowrap;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color v.$motion-duration-fast v.$motion-easing,
+    border-color v.$motion-duration-fast v.$motion-easing,
+    color v.$motion-duration-fast v.$motion-easing,
+    box-shadow v.$motion-duration-fast v.$motion-easing;
+}
+
+.#{v.class-seg()}btn__icon {
+  flex-shrink: 0;
+  width: v.$btn-icon-size;
+  height: v.$btn-icon-size;
+}
+
+.#{v.class-seg()}btn--primary {
+  @include m.btn-variant(var(--surface-action), var(--text-on-action), var(--surface-action-hover), var(--primary-700));
+}
+
+.#{v.class-seg()}btn--transparent {
+  @include m.btn-variant(transparent, var(--text-action), var(--surface-muted));
+}
+
+.#{v.class-seg()}btn--outline {
+  @include m.btn-variant(var(--surface-primary), var(--text-action), var(--surface-action-hover-2), null, var(--border-action));
+
+  &:hover,
+  &.#{v.class-seg()}btn--hover {
+    border-color: var(--primary-600);
+  }
+}
+
+.#{v.class-seg()}btn:disabled,
+.#{v.class-seg()}btn[aria-disabled="true"],
+.#{v.class-seg()}btn--disabled {
+  background: var(--surface-disabled);
+  color: var(--text-on-disabled);
+  border-color: transparent;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.#{v.class-seg()}btn--outline:disabled,
+.#{v.class-seg()}btn--outline[aria-disabled="true"] {
+  border-color: var(--border-default);
+  color: var(--text-disabled);
+}
+
+.#{v.class-seg()}btn--icon-only {
+  padding: v.$btn-padding-y;
+  min-width: 2.75rem;
+}

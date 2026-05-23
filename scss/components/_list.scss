@@ -1,0 +1,94 @@
+/**
+ * List — PimentCSS v1
+ */
+@use "../abstracts/variables" as v;
+
+.#{v.class-seg()}list {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: v.$list-gap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.#{v.class-seg()}list__heading {
+  margin: 0;
+}
+
+.#{v.class-seg()}list__items {
+  display: flex;
+  flex-direction: column;
+  gap: v.$list-items-gap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.#{v.class-seg()}list__item {
+  display: flex;
+  align-items: flex-start;
+  gap: v.$list-item-gap;
+}
+
+/* 24px indicator — Process (number) or Icon */
+.#{v.class-seg()}list__indicator {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: v.$list-indicator-size;
+  height: v.$list-indicator-size;
+  min-width: v.$list-indicator-size;
+  min-height: v.$list-indicator-size;
+  border-radius: v.$border-radius-round;
+  background: var(--surface-action-hover-2);
+  color: var(--primary-600);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-body-medium);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-body-medium);
+  letter-spacing: var(--letter-spacing-body-medium);
+  text-align: center;
+}
+
+.#{v.class-seg()}list__indicator-icon {
+  display: block;
+  width: v.$list-indicator-icon;
+  height: v.$list-indicator-icon;
+  color: inherit;
+}
+
+.#{v.class-seg()}list__indicator .ph {
+  font-size: v.$list-indicator-icon;
+}
+
+.#{v.class-seg()}list__content {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: v.$list-content-gap;
+  min-width: 0;
+  padding-block: v.$list-content-py;
+}
+
+.#{v.class-seg()}list__title {
+  margin: 0;
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-heading-h6);
+  font-weight: var(--font-weight-semi-bold);
+  line-height: var(--line-height-heading-h6);
+  letter-spacing: var(--letter-spacing-heading-h6);
+  color: var(--text-headings);
+}
+
+.#{v.class-seg()}list__description {
+  margin: 0;
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-body-medium);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-body-medium);
+  letter-spacing: var(--letter-spacing-body-medium);
+  color: var(--text-body);
+}
