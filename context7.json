@@ -1,0 +1,37 @@
+{
+  "$schema": "https://context7.com/schema/context7.json",
+  "projectTitle": "PimentCSS",
+  "description": "Accessible OKLCH CSS/Sass design system (npm: pimentcss-design-system). Documentation: https://piment.webmonster.tech/docs",
+  "excludeFolders": [
+    ".agents",
+    "tests",
+    "test-results",
+    "playwright-report",
+    "playwright",
+    "fonts",
+    "dist/fonts",
+    "dist/icons",
+    "docs-site/node_modules",
+    "node_modules",
+    "blob-report",
+    "dist-docs"
+  ],
+  "excludeFiles": [
+    "PROSPECTIVE.md"
+  ],
+  "rules": [
+    "Install with: npm install pimentcss-design-system",
+    "Import CSS: import \"pimentcss-design-system/dist/pimentcss.min.css\"",
+    "Sass theme: @use \"pimentcss-design-system\" with ($surface-action: ..., $btn-min-height: ...)",
+    "Partial imports: @use \"pimentcss-design-system/core\" and @use \"pimentcss-design-system/components\"",
+    "Use unprefixed BEM classes (btn--primary, modal, card) — not hm- prefix",
+    "Prefer semantic OKLCH tokens (surface-base, text-primary) over hardcoded colors",
+    "Component reference: https://piment.webmonster.tech/docs"
+  ],
+  "previousVersions": [
+    {
+      "tag": "v1.0.0",
+      "title": "version 1.0.0"
+    }
+  ]
+}

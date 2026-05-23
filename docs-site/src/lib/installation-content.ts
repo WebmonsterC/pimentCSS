@@ -98,7 +98,7 @@ import "${NPM_PACKAGE_NAME}/dist/pimentcss.min.css";`,
           'html',
           SNIPPET_OPEN,
         )}
-        <p class="pdoc-muted-note">Replace <code>@1</code> with a fixed semver (for example <code>@1.0.0</code>) so upgrades stay predictable.</p>
+        <p class="pdoc-muted-note">Replace <code>@1</code> with a fixed semver (for example <code>@1.0.1</code>) so upgrades stay predictable.</p>
 
         <h2 id="static-html">Static HTML (local file)</h2>
         <p>After <code>npm install</code>, link the file from <code>node_modules</code> or copy <code>dist/pimentcss.min.css</code> into your assets folder.</p>

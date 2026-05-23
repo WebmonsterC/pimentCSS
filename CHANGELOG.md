@@ -5,6 +5,18 @@ All notable changes to PimentCSS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.1] - 2026-05-21
+
+### Added
+
+- **`context7.json`** — Context7 indexing configuration (folder exclusions, coding-agent rules, version tags) for AI assistants using MCP or `use context7`.
+- **README badges** — npm version, monthly downloads, license, CI, documentation, and GitHub release links.
+
+### Documentation
+
+- **RELEASING.md** — Context7 submission, library claim, and post-release refresh steps.
+- **README** — Context7 library link and release line for v1.0.1.
+
 ## [1.0.0] - 2026-05-21
 
 ### Added
@@ -25,4 +37,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Color system: **OKLCH** canonical tokens in `tokens/colors.css` with hex fallback.
 - **npm package name**: published as [`pimentcss-design-system`](https://www.npmjs.com/package/pimentcss-design-system) because the legacy name `pimentcss` belongs to another registry account. Install commands, Sass `@use` paths, CDN snippets (jsDelivr/unpkg), and documentation examples now use the new name.
 
+[1.0.1]: https://github.com/WebmonsterC/pimentCSS/releases/tag/v1.0.1
 [1.0.0]: https://github.com/WebmonsterC/pimentCSS/releases/tag/v1.0.0
