@@ -41,6 +41,30 @@ npm publish --access public
 
 Context7 makes PimentCSS discoverable in Cursor, Claude, and other MCP clients (`use context7`).
 
+### Two different keys
+
+| Key | Format | Where | Purpose |
+|-----|--------|-------|---------|
+| **API key** | `ctx7sk-…` | `~/.cursor/mcp.json` or local `.env` (never commit) | Authenticate **your** MCP client to Context7 |
+| **Public key** | `pk_…` | `context7.json` in the repo (safe to commit) | **Claim** library ownership on Context7 |
+
+Do not put `ctx7sk-…` in `context7.json` or Git.
+
+### Cursor MCP (local)
+
+Add to `%USERPROFILE%\.cursor\mcp.json`:
+
+```json
+"context7": {
+  "url": "https://mcp.context7.com/mcp",
+  "headers": {
+    "CONTEXT7_API_KEY": "ctx7sk-…"
+  }
+}
+```
+
+Restart Cursor (or reload MCP) after saving. Get or rotate keys at [context7.com/dashboard](https://context7.com/dashboard).
+
 ### First-time submission
 
 1. **GitHub repo** — [context7.com/add-library?tab=github](https://context7.com/add-library?tab=github) → `https://github.com/WebmonsterC/pimentCSS`
@@ -50,13 +74,13 @@ The repo ships `context7.json` at the root to control exclusions and agent rules
 
 ### Claim the library (maintainer)
 
-1. Open [context7.com/WebmonsterC/pimentCSS/admin](https://context7.com/WebmonsterC/pimentCSS/admin)
+1. Open [context7.com/webmonsterc/pimentcss/admin](https://context7.com/webmonsterc/pimentcss/admin)
 2. Click **Claim Library** and copy the generated `public_key`
 3. Add to `context7.json`:
 
 ```json
 {
-  "url": "https://context7.com/WebmonsterC/pimentCSS",
+  "url": "https://context7.com/webmonsterc/pimentcss",
   "public_key": "pk_…"
 }
 ```

@@ -6,9 +6,9 @@
 [![CI](https://github.com/WebmonsterC/pimentCSS/actions/workflows/ci.yml/badge.svg)](https://github.com/WebmonsterC/pimentCSS/actions/workflows/ci.yml)
 [![Documentation](https://img.shields.io/badge/docs-piment.webmonster.tech-blue)](https://piment.webmonster.tech/docs)
 [![GitHub release](https://img.shields.io/github/v/release/WebmonsterC/pimentCSS)](https://github.com/WebmonsterC/pimentCSS/releases)
-[![Context7](https://img.shields.io/badge/Context7-WebmonsterC%2FpimentCSS-0070f3)](https://context7.com/WebmonsterC/pimentCSS)
+[![Context7](https://img.shields.io/badge/Context7-webmonsterc%2Fpimentcss-0070f3)](https://context7.com/webmonsterc/pimentcss)
 
-**Latest:** [v1.0.1](https://github.com/WebmonsterC/pimentCSS/releases/tag/v1.0.1) · [Changelog](CHANGELOG.md) · [npm](https://www.npmjs.com/package/pimentcss-design-system) · [Context7](https://context7.com/WebmonsterC/pimentCSS)
+**Latest:** [v1.0.1](https://github.com/WebmonsterC/pimentCSS/releases/tag/v1.0.1) · [Changelog](CHANGELOG.md) · [npm](https://www.npmjs.com/package/pimentcss-design-system) · [Context7](https://context7.com/webmonsterc/pimentcss)
 
 **PimentCSS** is the accessible design system from [Webmonster.tech](https://www.webmonster.tech), published at [piment.webmonster.tech](https://piment.webmonster.tech) (documentation at [/docs](https://piment.webmonster.tech/docs)). It extends the [Piment-Css](https://github.com/freepiment/Piment-Css) micro-framework with OKLCH tokens, a customizable Sass layer, and ready-to-use component classes.
 

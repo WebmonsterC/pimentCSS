@@ -1,5 +1,7 @@
 {
   "$schema": "https://context7.com/schema/context7.json",
+  "url": "https://context7.com/webmonsterc/pimentcss",
+  "public_key": "pk_tedjCHsjWmGyaAHzq0QtY",
   "projectTitle": "PimentCSS",
   "description": "Accessible OKLCH CSS/Sass design system (npm: pimentcss-design-system). Documentation: https://piment.webmonster.tech/docs",
   "excludeFolders": [
@@ -29,6 +31,10 @@
     "Component reference: https://piment.webmonster.tech/docs"
   ],
   "previousVersions": [
+    {
+      "tag": "v1.0.1",
+      "title": "version 1.0.1"
+    },
     {
       "tag": "v1.0.0",
       "title": "version 1.0.0"
