@@ -148,7 +148,7 @@ export function buildModalsPageHtml(): string {
             id: 'modal-tokens',
             title: 'Modal width and layering',
             body: 'Override modal tokens before importing components.',
-            code: `@use "pimentcss" with (
+            code: `@use "pimentcss-design-system" with (
   $modal-max-width: 36rem,
   $modal-max-width-lg: 48rem,
   $modal-z: 1300

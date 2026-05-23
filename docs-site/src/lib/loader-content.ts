@@ -117,7 +117,7 @@ export function buildLoaderPageHtml(): string {
             id: 'loader-tokens',
             title: 'Loader layout',
             body: 'Override footprint, dot size, and orbit distance before importing components.',
-            code: `@use "pimentcss" with (
+            code: `@use "pimentcss-design-system" with (
   $loader-size-48: 3.5rem,
   $loader-dot-32: 5px,
   $loader-orbit-ratio: 0.4

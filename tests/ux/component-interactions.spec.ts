@@ -104,7 +104,7 @@ test.describe('Components — UX interactions', () => {
     const pnpmPanel = page.locator('#pdoc-panel-pnpm');
     await expect(pnpmPanel).toBeVisible();
     await expect(pnpmPanel.locator('.pdoc-snippet__pre')).toBeVisible();
-    await expect(pnpmPanel.locator('code')).toContainText('pnpm add pimentcss');
+    await expect(pnpmPanel.locator('code')).toContainText('pnpm add pimentcss-design-system');
   });
 
   test('doc navigation: accessible links', async ({ page }) => {

@@ -189,7 +189,7 @@ export function buildLinkBreadcrumbPageHtml(): string {
             id: 'lb-tokens',
             title: 'Link and breadcrumb spacing',
             body: 'Override gap, padding, and icon size before importing components.',
-            code: `@use "pimentcss" with (
+            code: `@use "pimentcss-design-system" with (
   $link-gap: 0.5rem,
   $link-padding: 0.25rem,
   $link-icon-size: 1.25rem,

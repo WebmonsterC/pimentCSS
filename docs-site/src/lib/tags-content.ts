@@ -181,7 +181,7 @@ export function buildTagsPageHtml(): string {
             id: 'tag-tokens',
             title: 'Tag spacing',
             body: 'Adjust padding, gap, and icon size for denser toolbars.',
-            code: `@use "pimentcss" with (
+            code: `@use "pimentcss-design-system" with (
   $tag-gap: 0.25rem,
   $tag-padding-x: 0.5rem,
   $tag-icon-size: 1rem

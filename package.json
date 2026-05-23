@@ -1,5 +1,5 @@
 {
-  "name": "pimentcss",
+  "name": "pimentcss-design-system",
   "version": "1.0.0",
   "description": "PimentCSS v1 — accessible design system (Webmonster × numera11y), evolution of Piment-Css",
   "homepage": "https://piment.webmonster.tech",
@@ -68,6 +68,7 @@
   },
   "keywords": [
     "pimentcss",
+    "pimentcss-design-system",
     "design-system",
     "a11y",
     "webmonster",

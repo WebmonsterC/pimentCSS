@@ -176,7 +176,7 @@ export function buildSlotsLayoutsPageHtml(): string {
             id: 'slots-tokens',
             title: 'Slot spacing',
             body: 'Override gap and minimum slot width before importing components.',
-            code: `@use "pimentcss" with (
+            code: `@use "pimentcss-design-system" with (
   $slot-gap: 1.5rem,
   $slot-min-width: 10rem
 );`,

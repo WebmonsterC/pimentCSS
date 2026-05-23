@@ -26,7 +26,7 @@ export const STATIC_CONTENT: Record<string, string> = {
         <p>PimentCSS is customizable at three levels, often combined:</p>
         <ul>
           <li><strong>Sass <code>@use … with ()</code></strong>, typography, spacing, radii, semantic aliases (<code>$surface-action</code>, <code>$text-body</code>, …).</li>
-          <li><strong>Partial Sass entry points</strong>, <code>pimentcss/core</code> (tokens + layout + utilities) and <code>pimentcss/components</code> (UI).</li>
+          <li><strong>Partial Sass entry points</strong>, <code>pimentcss-design-system/core</code> (tokens + layout + utilities) and <code>pimentcss-design-system/components</code> (UI).</li>
           <li><strong>Canonical CSS tokens</strong>, edit <code>tokens/colors.css</code> (OKLCH palettes) and regenerate build artifacts.</li>
         </ul>
         <p>All Sass knobs live in <code>scss/abstracts/_variables.scss</code> with the <code>!default</code> flag, so you override only what you need.</p>
@@ -34,7 +34,7 @@ export const STATIC_CONTENT: Record<string, string> = {
         <h2 id="prerequisites">Prerequisites</h2>
         <ul>
           <li><strong>Sass ^1.69</strong>, <code>npm install -D sass</code> in your app (or use the CLI: <code>npx sass</code>).</li>
-          <li><strong>Installed package</strong>, <code>pimentcss</code> in <code>node_modules</code> (see <a href="/docs/installation">Installation</a>).</li>
+          <li><strong>Installed package</strong>, <code>pimentcss-design-system</code> in <code>node_modules</code> (see <a href="/docs/installation">Installation</a>).</li>
           <li><strong>Licensed fonts (optional)</strong>, place Zodiak + Plus Jakarta Sans in <code>fonts/</code>, run <code>npm run build:fonts</code> (see <code>fonts/README.md</code> in the repo).</li>
           <li><strong>Palette pipeline</strong>, only if you change <code>tokens/colors.css</code>: run scripts from the PimentCSS repo or copy updated <code>styles/palettes.css</code>.</li>
         </ul>
@@ -43,7 +43,7 @@ export const STATIC_CONTENT: Record<string, string> = {
         <p>Create a single entry file (for example <code>src/styles/theme.scss</code>) and pass overrides to the main bundle.</p>
         ${pdocSnippet(
           `// src/styles/theme.scss
-@use "pimentcss" with (
+@use "pimentcss-design-system" with (
   $prefix: hm,
   $font-family-heading: "Zodiak", Georgia, serif,
   $font-family-body: "Plus Jakarta Sans", system-ui, sans-serif,
@@ -79,19 +79,19 @@ import "./styles/theme.css";`,
           <table class="pdoc-api">
             <thead><tr><th>Entry</th><th>Includes</th><th>When to use</th></tr></thead>
             <tbody>
-              <tr><td><code>pimentcss</code></td><td>Full bundle (default)</td><td>Most apps, all <code>component classes</code> components</td></tr>
-              <tr><td><code>pimentcss/core</code></td><td>Tokens, layout, utilities</td><td>Custom UI kit, only design tokens + grid</td></tr>
-              <tr><td><code>pimentcss/components</code></td><td>All components</td><td>After <code>core</code>, buttons, forms, nav, …</td></tr>
+              <tr><td><code>pimentcss-design-system</code></td><td>Full bundle (default)</td><td>Most apps, all <code>component classes</code> components</td></tr>
+              <tr><td><code>pimentcss-design-system/core</code></td><td>Tokens, layout, utilities</td><td>Custom UI kit, only design tokens + grid</td></tr>
+              <tr><td><code>pimentcss-design-system/components</code></td><td>All components</td><td>After <code>core</code>, buttons, forms, nav, …</td></tr>
             </tbody>
           </table>
         </div>
         ${pdocSnippet(
           `// lean.scss, foundations only
-@use "pimentcss/core";
+@use "pimentcss-design-system/core";
 
 // full-ui.scss, tokens + components
-@use "pimentcss/core";
-@use "pimentcss/components";`,
+@use "pimentcss-design-system/core";
+@use "pimentcss-design-system/components";`,
           'app.scss',
           'scss',
         )}
@@ -118,8 +118,8 @@ import "./styles/theme.css";`,
           {
             id: 'consume-tokens',
             title: 'Use in your app',
-            body: '<p>Either depend on a new <code>pimentcss</code> release, or copy <code>dist/pimentcss.min.css</code> / token files into your pipeline.</p>',
-            code: 'import "pimentcss/tokens/colors.css";\n/* or link/dist copy after build */',
+            body: '<p>Either depend on a new <code>pimentcss-design-system</code> release, or copy <code>dist/pimentcss.min.css</code> / token files into your pipeline.</p>',
+            code: 'import "pimentcss-design-system/tokens/colors.css";\n/* or link/dist copy after build */',
             label: 'app.css',
             lang: 'css',
           },
@@ -147,7 +147,7 @@ import "./styles/theme.css";`,
         <h2 id="prefix-flags">Prefix and feature flags</h2>
         <p>Rename the <code>.</code> namespace or toggle optional features at compile time.</p>
         ${pdocSnippet(
-          `@use "pimentcss" with (
+          `@use "pimentcss-design-system" with (
   $prefix: app,              // .app-btn, .app-container, …
   $enable-local-fonts: true,
   $enable-google-fonts: false,

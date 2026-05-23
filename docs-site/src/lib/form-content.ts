@@ -189,7 +189,7 @@ export function buildFormPageHtml(): string {
             id: 'form-tokens',
             title: 'Form spacing',
             body: 'Override panel width and gaps before importing components.',
-            code: `@use "pimentcss" with (
+            code: `@use "pimentcss-design-system" with (
   $form-max-width: 22rem,
   $form-gap: 2.5rem,
   $form-body-gap: 1rem

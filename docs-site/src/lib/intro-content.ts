@@ -1,6 +1,7 @@
 import { buildCreditsHtml } from './credits';
 import { pdocSnippet, pdocSteps } from './pdoc-html';
 import { ICON } from './icon';
+import { NPM_CDN_JSdelivr, NPM_PACKAGE_NAME } from './npm-package';
 
 const SNIPPET_OPEN = { expanded: true } as const;
 
@@ -46,7 +47,7 @@ export function buildIntroPageHtml(): string {
           <a class="pdoc-card pdoc-card--path" href="/docs/installation">
             <p class="pdoc-card__eyebrow">Developer</p>
             <p class="pdoc-card__title">npm / bundler</p>
-            <p class="pdoc-card__desc">Install <code>pimentcss</code>, import CSS in Vite, webpack, Parcel, or Astro.</p>
+            <p class="pdoc-card__desc">Install <code>${NPM_PACKAGE_NAME}</code>, import CSS in Vite, webpack, Parcel, or Astro.</p>
           </a>
           <a class="pdoc-card pdoc-card--path" href="/docs/customization">
             <p class="pdoc-card__eyebrow">Design system</p>
@@ -73,7 +74,7 @@ export function buildIntroPageHtml(): string {
     <meta charset="UTF-8" />
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/pimentcss@1/dist/pimentcss.min.css"
+      href="${NPM_CDN_JSdelivr}"
     />
   </head>
   <body>
@@ -91,8 +92,8 @@ export function buildIntroPageHtml(): string {
           {
             id: 'install',
             title: 'Install',
-            body: 'Add <code>pimentcss</code> to your project. The <code>style</code> export points at <code>dist/pimentcss.min.css</code>.',
-            code: 'npm install pimentcss',
+            body: `Add <code>${NPM_PACKAGE_NAME}</code> to your project. The <code>style</code> export points at <code>dist/pimentcss.min.css</code>.`,
+            code: `npm install ${NPM_PACKAGE_NAME}`,
             label: 'Terminal',
             lang: 'bash',
           },
@@ -100,7 +101,7 @@ export function buildIntroPageHtml(): string {
             id: 'import',
             title: 'Import CSS',
             body: 'Load the minified bundle once at application startup.',
-            code: 'import "pimentcss";',
+            code: `import "${NPM_PACKAGE_NAME}";`,
             label: 'main.ts',
             lang: 'js',
           },

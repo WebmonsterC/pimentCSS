@@ -356,7 +356,7 @@ export function buildCarouselPageHtml(): string {
             id: 'carousel-tokens',
             title: 'Carousel sizing',
             body: 'Override max width, gaps, arrow size, and scroll bar metrics.',
-            code: `@use "pimentcss" with (
+            code: `@use "pimentcss-design-system" with (
   $carousel-max-width: 40rem,
   $carousel-gap: 1rem,
   $carousel-arrow-size: 3rem,

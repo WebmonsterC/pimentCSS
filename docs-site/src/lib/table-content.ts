@@ -279,7 +279,7 @@ export function buildTablePageHtml(): string {
             id: 'table-tokens',
             title: 'Table spacing',
             body: 'Override cell padding and compact checkbox size in cells.',
-            code: `@use "pimentcss" with (
+            code: `@use "pimentcss-design-system" with (
   $table-cell-padding-x: 1rem,
   $table-cell-padding-y: 0.75rem,
   $table-icon-size: 1.25rem

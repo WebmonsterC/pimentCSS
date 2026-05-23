@@ -201,7 +201,7 @@ export function buildAutocompletePageHtml(): string {
             id: 'ac-tokens',
             title: 'Autocomplete sizing',
             body: 'Override width tokens before importing components.',
-            code: `@use "pimentcss" with (
+            code: `@use "pimentcss-design-system" with (
   $autocomplete-width: 20.5rem,
   $autocomplete-field-width: 17.5rem
 );`,

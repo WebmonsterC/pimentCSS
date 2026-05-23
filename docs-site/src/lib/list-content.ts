@@ -175,7 +175,7 @@ export function buildListPageHtml(): string {
             id: 'list-tokens',
             title: 'List spacing',
             body: 'Tune gaps between items and indicator size.',
-            code: `@use "pimentcss" with (
+            code: `@use "pimentcss-design-system" with (
   $list-gap: 1rem,
   $list-items-gap: 0.5rem,
   $list-indicator-size: 1.5rem

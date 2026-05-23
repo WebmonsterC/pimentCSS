@@ -312,7 +312,7 @@ export function buildPaginationPageHtml(): string {
             id: 'pag-tokens',
             title: 'Pagination sizing',
             body: 'Override item size, gaps, jumper width, and results select width.',
-            code: `@use "pimentcss" with (
+            code: `@use "pimentcss-design-system" with (
   $pagination-item-size: 2.75rem,
   $pagination-gap: 0.5rem,
   $pagination-jumper-width: 3rem,

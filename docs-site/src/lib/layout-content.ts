@@ -57,7 +57,7 @@ export function buildLayoutPageHtml(): string {
         </aside>
 
         <h2 id="overview">Overview</h2>
-        <p>PimentCSS layout is intentionally small: a centered <strong>container</strong>, a flex-based <strong>12-column grid</strong>, spacing utilities mapped to <code>--space-*</code> tokens, and a handful of <strong>display</strong> helpers. Import via the full bundle or <code>pimentcss/core</code> when you only need tokens + layout.</p>
+        <p>PimentCSS layout is intentionally small: a centered <strong>container</strong>, a flex-based <strong>12-column grid</strong>, spacing utilities mapped to <code>--space-*</code> tokens, and a handful of <strong>display</strong> helpers. Import via the full bundle or <code>pimentcss-design-system/core</code> when you only need tokens + layout.</p>
         <div class="pdoc-table-wrap">
           <table class="pdoc-api">
             <thead><tr><th>Layer</th><th>Location</th><th>Purpose</th></tr></thead>
@@ -78,7 +78,7 @@ export function buildLayoutPageHtml(): string {
         </ul>
 
         <h2 id="tokens">Spacing &amp; layout tokens</h2>
-        <p>Canonical spacing lives in <code>tokens/layout.css</code>. Override Sass variables before <code>@use "pimentcss"</code>, see <a href="/docs/customization">Customization</a>.</p>
+        <p>Canonical spacing lives in <code>tokens/layout.css</code>. Override Sass variables before <code>@use "pimentcss-design-system"</code>, see <a href="/docs/customization">Customization</a>.</p>
         ${pdocSnippet(
           `:root {
   --space-1: 0.25rem;  /* 4px */
@@ -268,7 +268,7 @@ $copy-block-max-width: 33rem;`,
 
         <h2 id="sass">Sass customization</h2>
         ${pdocSnippet(
-          `@use "pimentcss/core" with (
+          `@use "pimentcss-design-system/core" with (
   $container-max-width: 72rem,
   $grid-gutter: 1.25rem,
   $space-5: 2.5rem,

@@ -214,7 +214,7 @@ export function buildAnchorInpageNavPageHtml(): string {
             id: 'anchor-tokens',
             title: 'Anchor spacing',
             body: 'Override gaps, padding, and selected border width.',
-            code: `@use "pimentcss" with (
+            code: `@use "pimentcss-design-system" with (
   $anchor-item-gap: 0.75rem,
   $anchor-item-py: 0.5rem,
   $anchor-item-px-l1: 0.5rem,

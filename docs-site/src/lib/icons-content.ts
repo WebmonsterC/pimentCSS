@@ -44,7 +44,7 @@ export function buildIconsPageHtml(): string {
         </div>
 
         <h2 id="slots">Slot reference</h2>
-        <p>Default sizes come from Sass variables in <code>scss/abstracts/_variables.scss</code> (<code>!default</code>, overridable via <code>@use "pimentcss" with ()</code>). The <code>_icon-slot.scss</code> partial scales child <code>svg</code>, <code>.ph</code>, and <code>i[class*="ph-"]</code> to fill the slot.</p>
+        <p>Default sizes come from Sass variables in <code>scss/abstracts/_variables.scss</code> (<code>!default</code>, overridable via <code>@use "pimentcss-design-system" with ()</code>). The <code>_icon-slot.scss</code> partial scales child <code>svg</code>, <code>.ph</code>, and <code>i[class*="ph-"]</code> to fill the slot.</p>
         <div class="pdoc-table-wrap">
           <table class="pdoc-api pdoc-icons-slot-table">
             <thead><tr><th>Slot class</th><th>Default size</th><th>Used in</th></tr></thead>
@@ -106,7 +106,7 @@ export function buildIconsPageHtml(): string {
 
         <h2 id="customize">Customize slot sizes (Sass)</h2>
         ${pdocSnippet(
-          `@use "pimentcss" with (
+          `@use "pimentcss-design-system" with (
   $btn-icon-size: 1.25rem,
   $field-icon-size: 1.5rem,
   $tab-icon-size: 1.25rem,

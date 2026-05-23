@@ -251,7 +251,7 @@ export function buildSnackbarPageHtml(): string {
             id: 'snackbar-tokens',
             title: 'Snackbar layout',
             body: 'Override width, padding, and close target before importing components.',
-            code: `@use "pimentcss" with (
+            code: `@use "pimentcss-design-system" with (
   $snackbar-max-width: 28rem,
   $snackbar-padding-y: 1rem,
   $snackbar-close-target: 2.75rem

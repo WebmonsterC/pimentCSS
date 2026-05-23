@@ -48,7 +48,7 @@ export function buildTypographyPageHtml(): string {
         </ul>
 
         <h2 id="tokens">CSS tokens</h2>
-        <p>Canonical definitions live in <code>tokens/typography.css</code> (compiled from <code>scss/tokens/_typography.scss</code>). Override Sass variables before <code>@use "pimentcss"</code>, see <a href="/docs/customization">Customization</a>.</p>
+        <p>Canonical definitions live in <code>tokens/typography.css</code> (compiled from <code>scss/tokens/_typography.scss</code>). Override Sass variables before <code>@use "pimentcss-design-system"</code>, see <a href="/docs/customization">Customization</a>.</p>
         ${pdocSnippet(
           `:root {
   --font-family-heading: "Zodiak", Georgia, serif;
@@ -177,7 +177,7 @@ export function buildTypographyPageHtml(): string {
         <h2 id="sass">Sass customization</h2>
         <p>Override families and scale before compiling your theme.</p>
         ${pdocSnippet(
-          `@use "pimentcss" with (
+          `@use "pimentcss-design-system" with (
   $font-family-heading: "Zodiak", Georgia, serif,
   $font-family-body: "Plus Jakarta Sans", system-ui, sans-serif,
   $font-size-heading-h1: 3.25rem,

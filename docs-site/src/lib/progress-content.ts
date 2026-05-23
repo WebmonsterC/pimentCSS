@@ -190,7 +190,7 @@ export function buildProgressPageHtml(): string {
             id: 'progress-tokens',
             title: 'Progress layout',
             body: 'Override track width, bar heights, and circle sizes before importing components.',
-            code: `@use "pimentcss" with (
+            code: `@use "pimentcss-design-system" with (
   $progress-width: 20rem,
   $progress-height-md: 6px,
   $progress-circle-md: 9rem

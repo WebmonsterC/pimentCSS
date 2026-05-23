@@ -292,7 +292,7 @@ export function buildMenuDropdownPageHtml(): string {
             id: 'menu-tokens',
             title: 'Menu width and scroll',
             body: 'Override list width, item padding, and max height before importing components.',
-            code: `@use "pimentcss" with (
+            code: `@use "pimentcss-design-system" with (
   $menu-width: 20rem,
   $menu-item-padding-x: 1rem,
   $menu-item-padding-y: 0.5rem,

@@ -436,7 +436,7 @@ export function buildInputFieldsPageHtml(): string {
             id: 'field-tokens',
             title: 'Field sizing tokens',
             body: 'Override widths and padding when importing PimentCSS. Values feed <code>--field-*</code> CSS variables.',
-            code: `@use "pimentcss" with (
+            code: `@use "pimentcss-design-system" with (
   $field-width: 20rem,
   $field-width-defined: 28rem,
   $field-min-height: 2.75rem,

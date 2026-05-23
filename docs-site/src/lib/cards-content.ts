@@ -254,7 +254,7 @@ export function buildCardsPageHtml(): string {
             id: 'cards-tokens',
             title: 'Card widths and padding',
             body: 'Override layout tokens before importing components.',
-            code: `@use "pimentcss" with (
+            code: `@use "pimentcss-design-system" with (
   $card-width-copy: 36rem,
   $card-width-horizontal: 42rem,
   $card-horizontal-media-width: 12rem,

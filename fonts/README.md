@@ -31,7 +31,7 @@ This converts TTF → WOFF2 for the required files and generates `styles/fonts.l
 
 ## npm package consumers
 
-Published `pimentcss` on npm **does not ship** font binaries (size + licensing). Either:
+Published **`pimentcss-design-system`** on npm **does not ship** font binaries (size + licensing). Either:
 
 1. Keep CDN enabled (default when `fonts/` is absent), or  
 2. Add licensed files under `fonts/` in your app and run `npm run build:fonts` in this repo before compiling your theme.
@@ -39,7 +39,7 @@ Published `pimentcss` on npm **does not ship** font binaries (size + licensing).
 Override in Sass when needed:
 
 ```scss
-@use "pimentcss" with (
+@use "pimentcss-design-system" with (
   $enable-local-fonts: false,
   $enable-fontshare-fonts: true,
   $enable-google-fonts: true,

@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - **PimentCSS v1** design system: OKLCH palettes, semantic light/dark tokens, and unprefixed component classes (evolution of [Piment-Css](https://github.com/freepiment/Piment-Css)).
-- **Distribution**: npm package (`pimentcss`), CDN-ready `dist/pimentcss.min.css`, Sass entry points (`pimentcss`, `pimentcss/core`, `pimentcss/components`).
+- **Distribution**: npm package [`pimentcss-design-system`](https://www.npmjs.com/package/pimentcss-design-system), CDN-ready `dist/pimentcss.min.css`, Sass entry points (`pimentcss-design-system`, `pimentcss-design-system/core`, `pimentcss-design-system/components`).
 - **Foundations**: colors, typography, layout grid, depth/shadows, theme toggle.
 - **Forms**: fields, checkboxes/radios/switches, form layout, date picker, autocomplete.
 - **Actions & navigation**: buttons, button groups, links/breadcrumb, header nav, menus/dropdowns, tabs, pagination, anchor/in-page nav, carousel.
@@ -23,5 +23,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Class namespace: default **unprefixed** BEM-style API (`btn--primary`, not `hm-btn`).
 - Color system: **OKLCH** canonical tokens in `tokens/colors.css` with hex fallback.
+- **npm package name**: published as [`pimentcss-design-system`](https://www.npmjs.com/package/pimentcss-design-system) because the legacy name `pimentcss` belongs to another registry account. Install commands, Sass `@use` paths, CDN snippets (jsDelivr/unpkg), and documentation examples now use the new name.
 
 [1.0.0]: https://github.com/WebmonsterC/pimentCSS/releases/tag/v1.0.0

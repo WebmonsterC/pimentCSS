@@ -10,7 +10,7 @@ Document de référence pour le déploiement du design system auprès des **agen
 
 PimentCSS est un design system **CSS-first** :
 
-- Distribution **npm** (`pimentcss`), **Sass** (`@use "pimentcss" with (...)`), **CDN**, tokens OKLCH
+- Distribution **npm** ([`pimentcss-design-system`](https://www.npmjs.com/package/pimentcss-design-system)), **Sass** (`@use "pimentcss-design-system" with (...)`), **CDN**, tokens OKLCH
 - Classes composants documentées ; **le code compilé est la source de vérité** (`npm run test:doc-classes`)
 - Cible primaire documentée : **développeurs front** qui intègrent, personnalisent et vérifient l’accessibilité
 - Identité : claire, précise, accessible ; ancrage **Caraïbe / Antilles** et francophone
@@ -159,8 +159,8 @@ Formulation cible : *« Conçu pour faciliter la mise en conformité ; audit rec
 
 ### Attentes
 
-- `npm install pimentcss`, imports partiels (`core`, `components`, `tokens/*`)
-- Sass `@use "pimentcss" with (...)` ; tokens canoniques `tokens/colors.css`
+- `npm install pimentcss-design-system`, imports partiels (`core`, `components`, `tokens/*`)
+- Sass `@use "pimentcss-design-system" with (...)` ; tokens canoniques `tokens/colors.css`
 - Stack Vite, Astro, parfois React/Vue avec **classes CSS**, sans portage composants obligatoire en v1
 
 ### Offre recommandée
@@ -266,7 +266,7 @@ Co-branding **Webmonster × numera11y** recommandé sur le **pack secteur public
    - Priorité crédibilité GitHub / npm national → starter puis WP
 
 2. **Repos séparés suggérés**
-   - `pimentcss` (actuel) : package npm et doc
+   - `pimentcss-design-system` (npm) + doc site `pimentcss` (legacy registry name, read-only)
    - `pimentcss-wp-theme` : thème bloc
    - `starter-vite-pimentcss` : template applicatif
 
@@ -279,7 +279,7 @@ Co-branding **Webmonster × numera11y** recommandé sur le **pack secteur public
 ## 12. Prochaines actions concrètes (backlog)
 
 - [ ] Documenter CDN officiel dans README et doc Astro
-- [ ] Créer repo starter Vite (import `pimentcss`, thème, layout, formulaire)
+- [ ] Créer repo starter Vite (import `pimentcss-design-system`, thème, layout, formulaire)
 - [ ] Spécifier périmètre v0.1 thème WP (patterns, `theme.json`, enqueue CSS)
 - [ ] Rédiger guide RGAA secteur public (PDF ou section doc)
 - [ ] Identifier 1 pilote mairie ou EPCI + 1 agence partenaire Antilles

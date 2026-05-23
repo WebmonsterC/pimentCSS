@@ -136,7 +136,7 @@ export function buildPlaceholderPageHtml(): string {
             id: 'placeholder-tokens',
             title: 'Copy and media width',
             body: 'Tune copy block width and default media column size.',
-            code: `@use "pimentcss" with (
+            code: `@use "pimentcss-design-system" with (
   $copy-block-max-width: 36rem,
   $media-width-base: 15rem
 );`,

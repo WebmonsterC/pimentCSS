@@ -244,7 +244,7 @@ localStorage.setItem('pimentcss-theme', 'dark');`,
         <h2 id="customize">Customize (Sass)</h2>
         <p>Dark semantic tokens compile by default (<code>$enable-dark-theme: true</code> in <code>scss/abstracts/_variables.scss</code>). Override surfaces globally, not only the toggle:</p>
         ${pdocSnippet(
-          `@use "pimentcss" with (
+          `@use "pimentcss-design-system" with (
   $enable-dark-theme: true,
 );
 

@@ -301,7 +301,7 @@ export function buildTabsPageHtml(): string {
             id: 'tab-tokens',
             title: 'Tab sizing',
             body: 'Override padding, list gap, indicator width, and min height before importing components.',
-            code: `@use "pimentcss" with (
+            code: `@use "pimentcss-design-system" with (
   $tab-item-px: 1rem,
   $tab-item-py: 0.75rem,
   $tab-list-gap: 0.75rem,

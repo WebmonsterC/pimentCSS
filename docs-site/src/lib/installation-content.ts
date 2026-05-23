@@ -1,4 +1,5 @@
 import { pdocPackageTabs, pdocSnippet, pdocSteps, type PdocSnippetOptions } from './pdoc-html';
+import { NPM_CDN_JSdelivr, NPM_CDN_UNPKG, NPM_PACKAGE_NAME } from './npm-package';
 
 /** Installation is a reference page: keep all snippets open by default. */
 const SNIPPET_OPEN: PdocSnippetOptions = { expanded: true };
@@ -22,7 +23,7 @@ export function buildInstallationPageHtml(): string {
           <table class="pdoc-api">
             <thead><tr><th>Path</th><th>Best for</th><th>Output</th></tr></thead>
             <tbody>
-              <tr><td><a href="#npm"><strong>npm / pnpm / yarn</strong></a></td><td>Vite, webpack, Parcel, Node apps</td><td><code>node_modules/pimentcss/dist/pimentcss.min.css</code></td></tr>
+              <tr><td><a href="#npm"><strong>npm / pnpm / yarn</strong></a></td><td>Vite, webpack, Parcel, Node apps</td><td><code>node_modules/pimentcss-design-system/dist/pimentcss.min.css</code></td></tr>
               <tr><td><a href="#cdn"><strong>CDN</strong></a></td><td>Prototypes, static HTML, CodePen</td><td>Hosted <code>pimentcss.min.css</code></td></tr>
               <tr><td><a href="#sass"><strong>Sass theme</strong></a></td><td>Brand tokens, partial imports</td><td>Your compiled <code>theme.css</code></td></tr>
             </tbody>
@@ -43,8 +44,8 @@ export function buildInstallationPageHtml(): string {
           {
             id: 'step-install',
             title: 'Install',
-            body: 'Add <code>pimentcss</code> to your project. The <code>style</code> export points at <code>dist/pimentcss.min.css</code>.',
-            code: 'npm install pimentcss',
+            body: `Add <code>${NPM_PACKAGE_NAME}</code> to your project. The <code>style</code> export points at <code>dist/pimentcss.min.css</code>.`,
+            code: `npm install ${NPM_PACKAGE_NAME}`,
             label: 'Terminal',
             lang: 'bash',
           },
@@ -52,7 +53,7 @@ export function buildInstallationPageHtml(): string {
             id: 'step-import',
             title: 'Import CSS',
             body: 'Import once at application startup (bundler entry or global CSS).',
-            code: 'import "pimentcss";',
+            code: `import "${NPM_PACKAGE_NAME}";`,
             label: 'main.ts',
             lang: 'js',
           },
@@ -70,16 +71,16 @@ export function buildInstallationPageHtml(): string {
         <p>Install the published package, then import the minified CSS in your bundler entry.</p>
         <h3 id="npm-install">Install the package</h3>
         ${pdocPackageTabs([
-          { id: 'npm', label: 'npm', code: 'npm install pimentcss' },
-          { id: 'pnpm', label: 'pnpm', code: 'pnpm add pimentcss' },
-          { id: 'yarn', label: 'Yarn', code: 'yarn add pimentcss' },
+          { id: 'npm', label: 'npm', code: `npm install ${NPM_PACKAGE_NAME}` },
+          { id: 'pnpm', label: 'pnpm', code: `pnpm add ${NPM_PACKAGE_NAME}` },
+          { id: 'yarn', label: 'Yarn', code: `yarn add ${NPM_PACKAGE_NAME}` },
         ])}
         <h3 id="npm-import">Import in your bundler</h3>
         <p>Use the package root or the explicit file path.</p>
         ${pdocSnippet(
-          `import "pimentcss";
+          `import "${NPM_PACKAGE_NAME}";
 // or
-import "pimentcss/dist/pimentcss.min.css";`,
+import "${NPM_PACKAGE_NAME}/dist/pimentcss.min.css";`,
           'main.ts',
           'js',
           SNIPPET_OPEN,
@@ -90,9 +91,9 @@ import "pimentcss/dist/pimentcss.min.css";`,
         ${pdocSnippet(
           `<link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/pimentcss@1/dist/pimentcss.min.css"
+  href="${NPM_CDN_JSdelivr}"
 />
-<!-- Alternative: https://unpkg.com/pimentcss@1/dist/pimentcss.min.css -->`,
+<!-- Alternative: ${NPM_CDN_UNPKG} -->`,
           'index.html',
           'html',
           SNIPPET_OPEN,
@@ -102,7 +103,7 @@ import "pimentcss/dist/pimentcss.min.css";`,
         <h2 id="static-html">Static HTML (local file)</h2>
         <p>After <code>npm install</code>, link the file from <code>node_modules</code> or copy <code>dist/pimentcss.min.css</code> into your assets folder.</p>
         ${pdocSnippet(
-          `<link rel="stylesheet" href="node_modules/pimentcss/dist/pimentcss.min.css" />
+          `<link rel="stylesheet" href="node_modules/pimentcss-design-system/dist/pimentcss.min.css" />
 <button type="button" class="btn btn--primary focus-visible">
   Submit
 </button>`,
@@ -115,7 +116,7 @@ import "pimentcss/dist/pimentcss.min.css";`,
         <p>Override <code>!default</code> variables, then compile your own CSS. See <a href="/docs/customization">Customization</a> for partial imports and the OKLCH token pipeline.</p>
         ${pdocSnippet(
           `// my-theme.scss
-@use "pimentcss" with (
+@use "${NPM_PACKAGE_NAME}" with (
   $font-family-heading: "Inter", system-ui, sans-serif,
   $btn-min-height: 2.75rem,
   $surface-action: #0f766e,
@@ -150,9 +151,9 @@ import "pimentcss/dist/pimentcss.min.css";`,
           <table class="pdoc-api">
             <thead><tr><th>Import</th><th>What you get</th></tr></thead>
             <tbody>
-              <tr><td><code>pimentcss</code></td><td>Full CSS bundle (default)</td></tr>
-              <tr><td><code>pimentcss/core</code></td><td>Tokens, layout, utilities (Sass only)</td></tr>
-              <tr><td><code>pimentcss/components</code></td><td>UI components (Sass, after core)</td></tr>
+              <tr><td><code>${NPM_PACKAGE_NAME}</code></td><td>Full CSS bundle (default)</td></tr>
+              <tr><td><code>${NPM_PACKAGE_NAME}/core</code></td><td>Tokens, layout, utilities (Sass only)</td></tr>
+              <tr><td><code>${NPM_PACKAGE_NAME}/components</code></td><td>UI components (Sass, after core)</td></tr>
             </tbody>
           </table>
         </div>

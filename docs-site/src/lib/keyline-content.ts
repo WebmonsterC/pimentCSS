@@ -106,7 +106,7 @@ export function buildKeylinePageHtml(): string {
             id: 'keyline-tokens',
             title: 'Keyline width',
             body: 'Override max-width when dividers should span the full content column.',
-            code: `@use "pimentcss" with (
+            code: `@use "pimentcss-design-system" with (
   $keyline-max-width: 100%
 );`,
             label: 'variables',

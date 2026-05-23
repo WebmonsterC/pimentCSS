@@ -40,7 +40,7 @@ describe('normalizeSnippetCode (HTML)', () => {
 
 describe('normalizeSnippetCode (non-HTML)', () => {
   it('normalizes bash without reformatting structure', () => {
-    const raw = '\tnpm install pimentcss\n';
-    assert.equal(normalizeSnippetCodeSSR(raw, 'bash'), 'npm install pimentcss');
+    const raw = '\tnpm install pimentcss-design-system\n';
+    assert.equal(normalizeSnippetCodeSSR(raw, 'bash'), 'npm install pimentcss-design-system');
   });
 });

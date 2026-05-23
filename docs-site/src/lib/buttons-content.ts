@@ -200,7 +200,7 @@ export function buildButtonsPageHtml(): string {
             id: 'btn-vars',
             title: 'Override button tokens',
             body: 'Adjust height, padding, and radius. Keep <code>$btn-min-height</code> at or above 2.75rem (44px) for touch targets.',
-            code: `@use "pimentcss" with (
+            code: `@use "pimentcss-design-system" with (
   $btn-min-height: 2.75rem,
   $btn-padding-x: 1.25rem,
   $btn-border-radius: 0.5rem,

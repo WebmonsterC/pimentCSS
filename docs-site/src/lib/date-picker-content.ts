@@ -280,7 +280,7 @@ export function buildDatePickerPageHtml(): string {
             id: 'calendar-tokens',
             title: 'Calendar sizing',
             body: 'Override picker width and cell size before importing components.',
-            code: `@use "pimentcss" with (
+            code: `@use "pimentcss-design-system" with (
   $date-picker-width: 16rem,
   $calendar-day-size: 1.625rem,
   $calendar-gap: 0.375rem

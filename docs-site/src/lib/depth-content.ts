@@ -216,7 +216,7 @@ export function buildDepthPageHtml(): string {
             id: 'sass-vars',
             title: 'Override shadow stacks',
             body: 'Pass <code>!default</code> variables when importing PimentCSS. Keep OKLCH alpha low enough for AA contrast on adjacent text.',
-            code: `@use "pimentcss" with (
+            code: `@use "pimentcss-design-system" with (
   $shadow-sm: 0 4px 12px oklch(40% 0.04 262 / 0.18),
   $shadow-md: 0 12px 24px oklch(40% 0.04 262 / 0.2),
 );`,
@@ -232,7 +232,7 @@ export function buildDepthPageHtml(): string {
             lang: 'bash',
           },
         ])}
-        <p>See <a href="/docs/customization">Customization</a> for partial imports (<code>pimentcss/core</code> includes depth tokens).</p>
+        <p>See <a href="/docs/customization">Customization</a> for partial imports (<code>pimentcss-design-system/core</code> includes depth tokens).</p>
 
         <h2 id="accessibility">Accessibility (RGAA / WCAG)</h2>
         <div class="pdoc-callout pdoc-callout--a11y">

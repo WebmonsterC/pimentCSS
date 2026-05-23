@@ -361,7 +361,7 @@ export function buildTreePageHtml(): string {
             id: 'tree-tokens',
             title: 'Tree spacing',
             body: 'Adjust indentation and icon sizes. Override max-width on .tree in your app if filenames are long.',
-            code: `@use "pimentcss" with (
+            code: `@use "pimentcss-design-system" with (
   $tree-level-2-pl: 1rem,
   $tree-level-3-pl: 1rem,
   $tree-icon-size: 1.25rem

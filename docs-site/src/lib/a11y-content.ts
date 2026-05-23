@@ -218,7 +218,7 @@ export function buildA11yPageHtml(): string {
             id: 'focus-vars',
             title: 'Override focus and touch tokens',
             body: 'Pass variables when importing PimentCSS. Keep ring width ≥ 2px and sufficient contrast against adjacent surfaces.',
-            code: `@use "pimentcss" with (
+            code: `@use "pimentcss-design-system" with (
   $focus-ring-width: 3px,
   $focus-ring-color: var(--accent-500),
   $min-touch-target: 44px,

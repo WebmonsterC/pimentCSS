@@ -239,7 +239,7 @@ export function buildAlertsPageHtml(): string {
             id: 'alert-tokens',
             title: 'Alert spacing and dialog width',
             body: 'Override tokens before importing PimentCSS.',
-            code: `@use "pimentcss" with (
+            code: `@use "pimentcss-design-system" with (
   $alert-icon-size: 1.25rem,
   $alert-dialog-max-width: 32rem
 );`,

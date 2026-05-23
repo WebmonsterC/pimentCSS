@@ -254,7 +254,7 @@ export function buildNavigationPageHtml(): string {
             id: 'nav-tokens',
             title: 'Navigation spacing',
             body: 'Override item padding, list gap, and header spacing before importing components.',
-            code: `@use "pimentcss" with (
+            code: `@use "pimentcss-design-system" with (
   $nav-item-padding: 0.5rem,
   $nav-item-gap: 0.75rem,
   $nav-list-gap: 0.5rem,

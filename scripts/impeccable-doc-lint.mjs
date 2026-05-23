@@ -1095,7 +1095,10 @@ function checkIntroDemoStructure(file, text) {
       rule: 'intro-paths',
     });
   }
-  if (!text.includes('cdn.jsdelivr.net/npm/pimentcss')) {
+  if (
+    !text.includes('cdn.jsdelivr.net/npm/pimentcss-design-system') &&
+    !text.includes('NPM_CDN_JSdelivr')
+  ) {
     issues.push({
       file,
       line: 0,

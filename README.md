@@ -4,7 +4,7 @@
 
 **PimentCSS v1** is the accessible design system from [Webmonster.tech](https://www.webmonster.tech), published at [piment.webmonster.tech](https://piment.webmonster.tech) (documentation at [/docs](https://piment.webmonster.tech/docs)). It extends the [Piment-Css](https://github.com/freepiment/Piment-Css) micro-framework with OKLCH tokens, a customizable Sass layer, and ready-to-use component classes.
 
-**Repository:** [github.com/WebmonsterC/pimentCSS](https://github.com/WebmonsterC/pimentCSS)
+**Repository:** [github.com/WebmonsterC/pimentCSS](https://github.com/WebmonsterC/pimentCSS) · **npm:** [pimentcss-design-system](https://www.npmjs.com/package/pimentcss-design-system)
 
 This project is the result of a collaboration between [Webmonster](https://www.webmonster.tech) and [numera11y](https://www.numera11y.fr).
 
@@ -13,25 +13,25 @@ This project is the result of a collaboration between [Webmonster](https://www.w
 ### 1. Ready-to-use CSS (npm)
 
 ```bash
-npm install pimentcss
+npm install pimentcss-design-system
 ```
 
 ```html
-<link rel="stylesheet" href="node_modules/pimentcss/dist/pimentcss.min.css" />
+<link rel="stylesheet" href="node_modules/pimentcss-design-system/dist/pimentcss.min.css" />
 <button type="button" class="btn btn--primary">Submit</button>
 ```
 
 With a bundler (Vite, webpack, etc.):
 
 ```js
-import "pimentcss/dist/pimentcss.min.css";
+import "pimentcss-design-system/dist/pimentcss.min.css";
 ```
 
 ### 2. Custom Sass theme
 
 ```scss
 // my-theme.scss
-@use "pimentcss" with (
+@use "pimentcss-design-system" with (
   $font-family-heading: "Inter", system-ui, sans-serif,
   $btn-min-height: 2.75rem,
   $surface-action: #0b5ed7,
@@ -46,11 +46,11 @@ npx sass my-theme.scss dist/my-theme.css
 ### 3. Partial imports (tokens or components only)
 
 ```scss
-@use "pimentcss/core";           // tokens, layout, utilities
-@use "pimentcss/components";    // component classes (after core)
+@use "pimentcss-design-system/core";           // tokens, layout, utilities
+@use "pimentcss-design-system/components";    // component classes (after core)
 ```
 
-Canonical CSS tokens: `import "pimentcss/tokens/colors.css"` (or a `<link>` tag).
+Canonical CSS tokens: `import "pimentcss-design-system/tokens/colors.css"` (or a `<link>` tag).
 
 ### Repository development
 
@@ -116,7 +116,7 @@ PimentCSS uses **semantic CSS variables** (`--surface-page`, `--text-body`, `--b
 
 ```html
 <html lang="en" data-theme="light">
-  <link rel="stylesheet" href="node_modules/pimentcss/dist/pimentcss.min.css" />
+  <link rel="stylesheet" href="node_modules/pimentcss-design-system/dist/pimentcss.min.css" />
   <!-- components use semantic tokens automatically -->
 </html>
 ```

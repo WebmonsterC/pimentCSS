@@ -245,7 +245,7 @@ export function buildButtonGroupPageHtml(): string {
             id: 'bg-tokens',
             title: 'Button group spacing',
             body: 'Override padding, gap, and icon size before importing components.',
-            code: `@use "pimentcss" with (
+            code: `@use "pimentcss-design-system" with (
   $btn-group-item-px: 1rem,
   $btn-group-item-py: 0.5rem,
   $btn-group-item-gap: 0.5rem,

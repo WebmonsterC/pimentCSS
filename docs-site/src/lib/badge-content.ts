@@ -109,7 +109,7 @@ export function buildBadgePageHtml(): string {
             id: 'badge-tokens',
             title: 'Badge sizes',
             body: 'Adjust copy and dot dimensions when your density scale changes.',
-            code: `@use "pimentcss" with (
+            code: `@use "pimentcss-design-system" with (
   $badge-copy-size: 1.5rem,
   $badge-dot-size: 0.5rem
 );`,

@@ -96,5 +96,5 @@ Impeccable skill: `.agents/skills/impeccable/`. Load context with `npm run impec
 
 - Use `border-left` accents on callouts (Impeccable ban).
 - Use em dashes in English prose.
-- Document `hm-*` or `pimentcss/core`-only classes in full-bundle examples without saying so.
+- Document `hm-*` or `pimentcss-design-system/core`-only classes in full-bundle examples without saying so.
 - Wrap every block in identical icon+title cards.

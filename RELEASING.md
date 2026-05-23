@@ -30,7 +30,9 @@ git push -u origin main
 gh release create v1.0.0 --title "PimentCSS v1.0.0" --notes-file .github/release-notes/v1.0.0.md
 ```
 
-## npm (optional)
+## npm
+
+Package name on the registry: **[`pimentcss-design-system`](https://www.npmjs.com/package/pimentcss-design-system)** (the legacy name `pimentcss` is owned by another account).
 
 ```bash
 npm login
