@@ -1,10 +1,15 @@
-# PimentCSS v1
+# PimentCSS
 
+[![npm version](https://img.shields.io/npm/v/pimentcss-design-system.svg)](https://www.npmjs.com/package/pimentcss-design-system)
+[![npm downloads](https://img.shields.io/npm/dm/pimentcss-design-system.svg)](https://www.npmjs.com/package/pimentcss-design-system)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![CI](https://github.com/WebmonsterC/pimentCSS/actions/workflows/ci.yml/badge.svg)](https://github.com/WebmonsterC/pimentCSS/actions/workflows/ci.yml)
+[![Documentation](https://img.shields.io/badge/docs-piment.webmonster.tech-blue)](https://piment.webmonster.tech/docs)
+[![GitHub release](https://img.shields.io/github/v/release/WebmonsterC/pimentCSS)](https://github.com/WebmonsterC/pimentCSS/releases)
 
-**PimentCSS v1** is the accessible design system from [Webmonster.tech](https://www.webmonster.tech), published at [piment.webmonster.tech](https://piment.webmonster.tech) (documentation at [/docs](https://piment.webmonster.tech/docs)). It extends the [Piment-Css](https://github.com/freepiment/Piment-Css) micro-framework with OKLCH tokens, a customizable Sass layer, and ready-to-use component classes.
+**Latest:** [v1.0.0](https://github.com/WebmonsterC/pimentCSS/releases/tag/v1.0.0) · [Changelog](CHANGELOG.md) · [npm](https://www.npmjs.com/package/pimentcss-design-system)
 
-**Repository:** [github.com/WebmonsterC/pimentCSS](https://github.com/WebmonsterC/pimentCSS) · **npm:** [pimentcss-design-system](https://www.npmjs.com/package/pimentcss-design-system)
+**PimentCSS** is the accessible design system from [Webmonster.tech](https://www.webmonster.tech), published at [piment.webmonster.tech](https://piment.webmonster.tech) (documentation at [/docs](https://piment.webmonster.tech/docs)). It extends the [Piment-Css](https://github.com/freepiment/Piment-Css) micro-framework with OKLCH tokens, a customizable Sass layer, and ready-to-use component classes.
 
 This project is the result of a collaboration between [Webmonster](https://www.webmonster.tech) and [numera11y](https://www.numera11y.fr).
 
